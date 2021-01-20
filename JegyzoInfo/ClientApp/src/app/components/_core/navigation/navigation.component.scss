@@ -3,9 +3,9 @@
 nav{
   display: flex;
   .container{
+    max-width: 1400px;
     display: flex;
     justify-content: space-around;
-    max-width: 1400px;
     .side{
       display: flex;
       align-items: center;
