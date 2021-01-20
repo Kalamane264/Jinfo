@@ -1,0 +1,48 @@
+@import "../../../../varsAndMixins.scss";
+
+nav{
+  display: flex;
+  .container{
+    display: flex;
+    justify-content: space-around;
+    .side{
+      display: flex;
+      align-items: center;
+      height: 86px;
+    }
+    .leftSide{
+      position: relative;
+      background-color: $blue;
+      padding-left: 30px;
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+      &::after{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        right: -40px;
+        border-bottom: 86px solid $blue;
+        border-right: 40px solid transparent;
+      }
+      &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 100%;
+        width: 8000px;
+        background-color: $blue;
+      }
+    }
+    .rightSide{
+      ul.defaultMenu{
+        display: flex;
+        li{
+          margin-right: 25px;
+        }
+      }
+    }
+  }
+}
