@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 
 @import "~bootstrap/scss/bootstrap.scss";
 @import "varsAndMixins.scss";
@@ -6,7 +6,8 @@
 body{
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 16px;
-  color: #121212;
+  background-color: #E5E5E5;
+  color: $dark;
   min-height: 2500px;
 }
 a, a:hover, a:visited{ color: inherit; text-decoration: none;}
@@ -14,9 +15,16 @@ h1, h2, h3, ul, p{ padding: 0; margin: 0; }
 hr{ border: 0; height: 2px; border-radius: 2px; background-color: $blue; margin: 5px 0; width: 100%; }
 ul{ list-style: none; }
 
-button.defaultBlue{
+button{
   padding: 12px 30px;
-  border: 0;
-  background-color: $blue;
-  color: white;
+  font-size: 16px;
+  &.defaultBlue{
+    border: 0;
+    background-color: $blue;
+    color: white;
+  }
+  &.transparent{
+    color: $dark;
+    border: 1px solid $dark;
+  }
 }

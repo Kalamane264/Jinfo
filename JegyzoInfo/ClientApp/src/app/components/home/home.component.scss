@@ -59,4 +59,45 @@ header{
       }
     }
   }
+  .rightSide{
+    padding-left: 15px;
+    section{
+      h2{
+        text-align: center;
+        font-size: 18px;
+        font-weight: 800;
+        margin-top: 65px;
+        margin-bottom: 22px;
+      }
+      .whiteBack{
+        background-color: white;
+        padding: 40px 40px 30px 40px;
+        h3{
+          font-size: 18px;
+          font-weight: 700;
+        }
+        span.date{
+          display: flex;
+          font-size: 14px;
+          background-image: url("/assets/img/smallClock.svg");
+          background-repeat: no-repeat;
+          background-position: left center;
+          padding-left: 20px;
+          margin: 20px 0;
+        }
+        p{
+          line-height: 26px;
+        }
+        hr{
+          width: 40px;
+          height: 4px;
+          margin: 60px auto 0 auto;
+        }
+      }
+      .buttonWrap{
+        padding-top: 30px;
+        text-align: center;
+      }
+    }
+  }
 }
