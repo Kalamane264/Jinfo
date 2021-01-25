@@ -76,13 +76,7 @@ header{
           font-size: 18px;
           font-weight: 700;
         }
-        span.date{
-          display: flex;
-          font-size: 14px;
-          background-image: url("/assets/img/smallClock.svg");
-          background-repeat: no-repeat;
-          background-position: left center;
-          padding-left: 20px;
+        span.clockIcon{
           margin: 20px 0;
         }
         p{
