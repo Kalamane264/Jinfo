@@ -25,9 +25,10 @@ h6{
   font-weight: 700;
 }
 
-button{
+button, button:focus{
   padding: 12px 30px;
   font-size: 16px;
+  outline: none;
   &.defaultBlue{
     border: 0;
     background-color: $blue;
@@ -36,6 +37,12 @@ button{
   &.transparent{
     color: $dark;
     border: 1px solid $dark;
+  }
+  &.hollow{
+    color: $dark;
+    border: 1px solid $dark;
+    background-color: transparent;
+    padding: 12px 40px;
   }
 }
 
