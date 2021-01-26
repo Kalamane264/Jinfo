@@ -8,6 +8,7 @@ import { NavigationComponent } from './components/_core/navigation/navigation.co
 import { FooterComponent } from './components/_core/footer/footer.component';
 import { TopicComponent } from './components/topic/topic.component';
 import { TopicsComponent } from './components/topics/topics.component';
+import { VideosComponent } from './components/videos/videos.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TopicsComponent } from './components/topics/topics.component';
     FooterComponent,
     NavigationComponent,
     TopicComponent,
-    TopicsComponent
+    TopicsComponent,
+    VideosComponent
   ],
   imports: [
     BrowserModule,
