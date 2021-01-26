@@ -1,6 +1,6 @@
 @import "../../../varsAndMixins.scss";
 
-.videosWrap{
+.videosWrap::ng-deep{
   .videos{
     padding-top: 78px;
     padding-bottom: 200px;
@@ -38,6 +38,29 @@
     h1{
       text-transform: uppercase;
       margin-bottom: 55px;
+    }
+    .carousel:focus{
+      outline: none;
+    }
+    .carousel-control-prev-icon, .carousel-control-next-icon{
+      width: 60px;
+      height: 60px;
+    }
+    .carousel-control-prev-icon{
+      background-image: url("/assets/img/carouselArrowLeft.svg");
+    }
+    .carousel-control-next-icon{
+      background-image: url("/assets/img/carouselArrowRight.svg");
+    }
+    .carousel-inner{
+      overflow: visible;
+    }
+    .carousel-caption{
+      bottom: -100px;
+      //transform: translate(0, 50%);
+    }
+    .carousel-indicators{
+      bottom: -140px;
     }
   }
 }
