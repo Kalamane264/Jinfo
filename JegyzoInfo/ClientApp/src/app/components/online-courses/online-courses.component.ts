@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-online-courses',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OnlineCoursesComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('ngcarousel', { static: true }) ngCarousel: NgbCarousel;
 
   ngOnInit(): void {
+    this.ngCarousel.pause();
   }
 
 }

@@ -13,6 +13,7 @@ import { VideosComponent } from './components/videos/videos.component';
 import { CarouselConfigComponent } from './components/carousel-config/carousel-config.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OnlineCoursesComponent } from './components/online-courses/online-courses.component';
+import { HowItWorksComponent } from './components/how-it-works/how-it-works.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { OnlineCoursesComponent } from './components/online-courses/online-cours
     TopicsComponent,
     VideosComponent,
     CarouselConfigComponent,
-    OnlineCoursesComponent
+    OnlineCoursesComponent,
+    HowItWorksComponent
   ],
   imports: [
     BrowserModule,
