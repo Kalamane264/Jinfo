@@ -16,8 +16,8 @@ hr{ border: 0; height: 2px; border-radius: 2px; background-color: $blue; margin:
 ul{ list-style: none; }
 
 h1{
-  font-size: 30px;
-  font-weight: 800;
+  font-size: 30px !important;
+  font-weight: 800 !important;
 }
 
 h4{
@@ -26,8 +26,8 @@ h4{
 }
 
 h6{
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 16px !important;
+  font-weight: 700 !important;
 }
 
 button, button:focus{

@@ -9,10 +9,8 @@ import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 export class VideosComponent implements OnInit {
   @ViewChild('ngcarousel', { static: true }) ngCarousel: NgbCarousel;
 
-  constructor() { }
-
   ngOnInit(): void {
-    this.ngCarousel.pause();
+    // this.ngCarousel.pause();
   }
 
 }

@@ -1,44 +1,12 @@
 @import "../../../varsAndMixins.scss";
 
-.videosWrap::ng-deep{
-  overflow: hidden;
-  .videos{
-    padding-top: 78px;
-    padding-bottom: 304px;
-    position: relative;
+.coursesWrap::ng-deep{
+  .courses{
     z-index: 0;
-    background-color: $dark;
-    min-height: 750px;
-    color: white;
     text-align: center;
-    &::before{
-      content: "";
-      position: absolute;
-      z-index: 1;
-      background-image: url("/assets/img/triangleNotBlueTopLeft.svg");
-      background-size: 100% 100%;
-      top: 0;
-      left: 0;
-      width: 50%;
-      height: 96px;
-    }
-    &::after{
-      content: "";
-      position: absolute;
-      z-index: 1;
-      background-image: url("/assets/img/triangleBlueTopRight.svg");
-      background-size: 100%;
-      right: 0;
-      top: 0;
-      width: 50%;
-      height: 104px;
-      transform: translate(0, -100%);
-      background-position: bottom;
-      background-repeat: no-repeat;
-    }
     h1{
       text-transform: uppercase;
-      margin-bottom: 55px;
+      margin-bottom: 35px;
     }
     .carousel:focus{
       outline: none;
