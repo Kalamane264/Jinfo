@@ -3,3 +3,31 @@ footer{
   bottom: 0;
   text-align: center;
 }
+@import "../../../../varsAndMixins.scss";
+
+footer{
+  background-color: $dark;
+  color: $slateLight;
+  .contaInner{
+    height: 129px;
+    display: flex;
+    align-items: center;
+    .side{
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &.rightSide{
+        ul{
+          margin-bottom: 0;
+          li{
+            text-align: left;
+          }
+        }
+        a{
+          margin: 0 7px;
+        }
+      }
+    }
+  }
+}
