@@ -9,6 +9,7 @@ body{
   background-color: #E5E5E5 !important;
   color: $dark;
   min-height: 2500px;
+  overflow-x: hidden;
 }
 a, a:hover, a:visited{ color: inherit !important; text-decoration: none !important;}
 h1, h2, h3, ul, p{ padding: 0; margin: 0; }

@@ -1,7 +1,7 @@
 @import "../../../varsAndMixins.scss";
 
 .videosWrap::ng-deep{
-  overflow: hidden;
+  overflow: visible;
   .videos{
     padding-top: 78px;
     padding-bottom: 304px;
