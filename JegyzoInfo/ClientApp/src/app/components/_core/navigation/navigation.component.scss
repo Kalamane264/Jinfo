@@ -38,6 +38,7 @@ nav{
       }
     }
     .rightSide{
+      position: relative;
       ul.defaultMenu{
         display: flex;
         user-select: none;
@@ -68,6 +69,46 @@ nav{
             margin-right: auto;
             height: 3px;
           }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 991px){
+  nav{
+    .container{
+      .rightSide{
+        // display: block;
+        ul.defaultMenu{
+          top: 86px;
+          position: absolute;
+          display: none;
+          li{
+            margin: 0;
+            &.loginIcon{
+              display: none;
+            }
+          }
+        }
+        ul.mobileMenu{
+          display: block;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 992px){
+  .nav{
+    .container{
+      .rightSide{
+        ul.defaultMenu{
+
+        }
+        ul.mobileMenu{
+          display: none;
         }
       }
     }
