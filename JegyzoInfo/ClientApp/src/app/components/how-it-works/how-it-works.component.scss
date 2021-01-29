@@ -17,6 +17,10 @@ $solidBorderColor: #A3B2B7;
       margin-top: 18px;
     }
   }
+  .buttonWrap{
+    text-align: center;
+    margin-top: 50px;
+  }
 }
 
 .process{
@@ -210,7 +214,7 @@ $solidBorderColor: #A3B2B7;
       }
       &.middle{
         display: grid;
-        grid-template-columns: 4fr 1fr 4fr;
+        grid-template-columns: 3fr 1fr 3fr;
         > div{
           &:nth-child(1){
             border-right: 2px dotted $solidBorderColor;
