@@ -81,13 +81,28 @@ nav{
       .rightSide{
         // display: block;
         ul.defaultMenu{
-          top: 86px;
+          padding: 15px 30px 10px 30px;
           position: absolute;
+          top: 64px;
+          right: 0;
+          z-index: 110;
           display: none;
+          background-color: $blue;
+          color: white;
+          &.opened{
+            display: block;
+          }
           li{
             margin: 0;
+            //font-weight: 300;
             &.loginIcon{
               display: none;
+            }
+            &.on, &:hover{
+              hr{
+                background-color: white;
+                height: 1px;
+              }
             }
           }
         }
@@ -101,7 +116,7 @@ nav{
 }
 
 @media(min-width: 992px){
-  .nav{
+  nav{
     .container{
       .rightSide{
         ul.defaultMenu{

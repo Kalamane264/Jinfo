@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
+  menuIsOpened = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  clickSandvichMenu(){
+    this.menuIsOpened = !this.menuIsOpened;
+  }
 }
