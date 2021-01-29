@@ -63,6 +63,23 @@ button, button:focus{
     background-color: #FA6F3C;
     color: white;
   }
+  &.backButton{
+    border: 0;
+    background-color: transparent;
+    color: $dark2;
+    &::before{
+      transition: .2s linear;
+      content: url("/assets/img/backArrow.svg");
+      margin-right: 10px;
+      position: relative;
+      left: 0;
+    }
+    &:hover{
+      &::before{
+        left: -8px;
+      }
+    }
+  }
 }
 
 .clockIcon{
@@ -72,6 +89,15 @@ button, button:focus{
   background-repeat: no-repeat;
   background-position: left center;
   padding-left: 20px;
+}
+
+.delimSmallRight{
+  &::after{
+    position: relative;
+    content: url("/assets/img/delimSmall.svg");
+    margin-left: 10px;
+    top: 3px;
+  }
 }
 
 html, body { height: 100%; }

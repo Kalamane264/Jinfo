@@ -14,6 +14,7 @@ import { CarouselConfigComponent } from './components/carousel-config/carousel-c
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OnlineCoursesComponent } from './components/online-courses/online-courses.component';
 import { HowItWorksComponent } from './components/how-it-works/how-it-works.component';
+import { ArticleComponent } from './pages/article/article.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HowItWorksComponent } from './components/how-it-works/how-it-works.comp
     VideosComponent,
     CarouselConfigComponent,
     OnlineCoursesComponent,
-    HowItWorksComponent
+    HowItWorksComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,

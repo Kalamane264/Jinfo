@@ -1,0 +1,54 @@
+@import "../../../varsAndMixins.scss";
+
+
+.articleWrap{
+  .container{
+    .backButtonWrap{
+      display: flex;
+      align-content: center;
+      height: 76px;
+    }
+    article{
+      background-color: white;
+      padding: 60px 190px;
+      h1{
+        font-weight: 700 !important;
+      }
+      .labelsWrap{
+        margin-top: 17px;
+        span{
+          font-size: 12px;
+          text-transform: uppercase;
+          display: inline-block;
+          background-color: $orange;
+          color: white;
+          padding: 3px 6px;
+          margin-right: 10px;
+        }
+      }
+      .infosActions{
+        margin-top: 36px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $lightBorder;
+        display: flex;
+        justify-content: space-between;
+        .leftSide{
+          .clockIcon{
+            display: inline-block;
+            margin-left: 14px;
+          }
+        }
+        .rightSide{
+          img{
+            margin-left: 20px;
+            cursor: pointer;
+            display: inline-block;
+            &:hover{
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+    }
+  }
+}
