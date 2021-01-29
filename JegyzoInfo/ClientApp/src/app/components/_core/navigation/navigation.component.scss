@@ -11,6 +11,7 @@ nav{
       height: 86px;
     }
     .leftSide{
+      transition: 0.2s;
       position: relative;
       background-color: $blue;
       width: 318px;
@@ -124,6 +125,29 @@ nav{
         }
         ul.mobileMenu{
           display: none;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 479px){
+  nav{
+    .container{
+      .leftSide{
+        width: 230px;
+      }
+    }
+  }
+}
+
+@media(max-width: 349px){
+  nav{
+    .container{
+      .leftSide{
+        width: 230px;
+        &::after{
+          content: none;
         }
       }
     }

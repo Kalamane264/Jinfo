@@ -39,7 +39,8 @@ header{
         line-height: 36.6px;
       }
       ul{
-        margin-top: 25px;
+        transition: .2s linear;
+        margin-top: 30px;
         margin-left: 40px;
         font-size: 18px;
         font-weight: 300;
@@ -133,6 +134,18 @@ header{
           button{
             margin-bottom: 30px;
           }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 479px){
+  header{
+    .leftSide{
+      section{
+        ul{
+          margin-left: 0;
         }
       }
     }

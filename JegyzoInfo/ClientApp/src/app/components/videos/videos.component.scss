@@ -3,7 +3,7 @@
 .videosWrap::ng-deep{
   .videos{
     padding-top: 78px;
-    padding-bottom: 304px;
+    padding-bottom: 50px;
     position: relative;
     z-index: 0;
     background-color: $dark;
@@ -39,9 +39,12 @@
       text-transform: uppercase;
       margin-bottom: 55px;
     }
+    iframe{
+      max-width: 100%;
+    }
     h4{
-      margin-top: 30px;
-      height: 60px;
+      margin-top: 60px;
+      height: 120px;
     }
     .carousel:focus{
       outline: none;
@@ -52,9 +55,11 @@
     }
     .carousel-control-prev-icon{
       background-image: url("/assets/img/carouselArrowLeft.svg");
+      margin-top: -180px;
     }
     .carousel-control-next-icon{
       background-image: url("/assets/img/carouselArrowRight.svg");
+      margin-top: -180px;
     }
     .carousel-inner{
       // overflow: visible;
@@ -63,7 +68,7 @@
       // bottom: 40px;
     }
     .carousel-indicators{
-      bottom: -60px;
+      bottom: 133px;
       li{
         width: 10px;
         height: 10px;

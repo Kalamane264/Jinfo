@@ -12,14 +12,15 @@
       display: flex;
       margin: auto;
       max-width: 800px;
-      height: 328px;
       .side{
+        min-height: 328px;
         position: relative;
         &.leftSide{
+          transition: .2s linear;
           width: 53%;
           background-color: $blue;
           color: white;
-          padding: 38px 15px 38px 44px;
+          padding: 38px 44px 38px 44px;
           .infos{
             margin-top: 30px;
             display: grid;
@@ -85,6 +86,87 @@
     }
     .buttonWrap{
 
+    }
+  }
+}
+
+@media(max-width: 1199px){
+  .coursesWrap{
+    .courses{
+      .container{
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media(max-width: 991px){
+  .coursesWrap{
+    .courseBox{
+      display: block;
+      max-width: 600px;
+      .side{
+        width: 100%;
+        &.leftSide{
+          &::after{
+            content: none;
+          }
+          > *{
+            position: relative;
+          }
+          &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url("/assets/img/houseFeeling.svg");
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            opacity: .2;
+          }
+        }
+        &.rightSide{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 767px){
+  .coursesWrap::ng-deep{
+    .courses{
+      .carousel-control-prev-icon{
+        background-color: $dark;
+        border-radius: 50px;
+      }
+      .carousel-control-next-icon{
+        background-color: $dark;
+        border-radius: 50px;
+      }
+    }
+  }
+}
+
+@media(max-width: 575px){
+  .coursesWrap::ng-deep{
+    .courses{
+      .courseBox{
+        .side.leftSide{
+          padding-left: 25px;
+          padding-right: 25px;
+        }
+      }
+      .carousel-control-prev-icon{
+        background-color: $dark;
+        border-radius: 50px;
+      }
+      .carousel-control-next-icon{
+        background-color: $dark;
+        border-radius: 50px;
+      }
     }
   }
 }
