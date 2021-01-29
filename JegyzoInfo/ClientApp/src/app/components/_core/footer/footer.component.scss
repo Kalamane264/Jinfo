@@ -31,3 +31,36 @@ footer{
     }
   }
 }
+
+@media(max-width: 767px){
+  footer{
+    .contaInner{
+      padding: 30px 0;
+      height: auto;
+      display: block;
+      .side{
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media(max-width: 575px){
+  footer{
+    .contaInner{
+      .side{
+        display: block;
+        width: 100%;
+        &.rightSide{
+          margin-top: 30px;
+          > div{
+            margin-top: 30px;
+            li{
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
