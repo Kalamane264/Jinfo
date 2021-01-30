@@ -49,6 +49,38 @@
           }
         }
       }
+      .lead{
+        font-size: 18px;
+        margin-top: 40px;
+        font-weight: 700;
+      }
+      .text{
+        h4{
+          margin-top: 40px;
+        }
+        p{
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+        .quote{
+          margin-left: 64px;
+          border-left: 4px solid $orange;
+          padding: 18px 40px 18px 0;
+          color: $quoteColor;
+          p{
+            margin: 0;
+            font-style: italic;
+            padding-left: 84px;
+            position: relative;
+            &::before{
+              content: url("/assets/img/quote.svg");
+              position: absolute;
+              left: 35px;
+              top: 0;
+            }
+          }
+        }
+      }
     }
   }
 }
