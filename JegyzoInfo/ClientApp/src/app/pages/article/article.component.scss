@@ -61,6 +61,7 @@
         p{
           margin-top: 20px;
           margin-bottom: 20px;
+          color: $dark2;
         }
         .quote{
           margin-left: 64px;
@@ -77,6 +78,36 @@
               position: absolute;
               left: 35px;
               top: 0;
+            }
+          }
+        }
+        .offer{
+          .top{
+            height: 38px;
+            background-color: $darkBlue;
+            color: white;
+            padding: 0 64px;
+            display: flex;
+            align-items: center;
+          }
+          .bottom{
+            background-color: $lightGray;
+            display: flex;
+            justify-content: space-between;
+            .leftSide{
+              padding: 15px 15px 15px 64px;
+              h5{
+                color: $dark;
+              }
+              p{
+                color: $dark2;
+                margin: 15px 0 0 0;
+              }
+            }
+            .rightSide{
+              img{
+                max-width: 186px;
+              }
             }
           }
         }
