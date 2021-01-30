@@ -8,7 +8,6 @@ body{
   font-size: 16px;
   background-color: #E5E5E5 !important;
   color: $dark;
-  min-height: 2500px;
 }
 a, a:hover, a:visited{ color: inherit !important; text-decoration: none !important;}
 h1, h2, h3, ul, p{ padding: 0; margin: 0; }
@@ -40,7 +39,7 @@ h6{
 }
 
 button, button:focus{
-  padding: 12px 34px;
+  padding: 11px 35px;
   font-size: 16px;
   outline: none;
   &.defaultBlue{
