@@ -176,11 +176,28 @@
         margin-top: 16px;
         border: 1px solid $orange;
         padding: 10px 20px;
+        display: flex;
+        align-content: center;
         img{
           margin-right: 20px;
         }
         span{
           margin-right: 45px;
+          margin-top: 2px;
+        }
+        button{
+          white-space: nowrap;
+        }
+        @media(max-width: 575px){
+          display: block;
+          img, span, button{
+            text-align: center;
+            display: block;
+            margin: auto;
+          }
+          button{
+            margin-top: 15px;
+          }
         }
       }
     }
