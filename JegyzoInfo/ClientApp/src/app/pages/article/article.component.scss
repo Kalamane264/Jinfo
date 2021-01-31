@@ -10,7 +10,7 @@
     }
     article{
       background-color: white;
-      padding: 60px 190px;
+      padding: 60px 150px;
       margin-bottom: 160px;
       @media(max-width: 991px){
         padding-left: 30px;
@@ -172,6 +172,7 @@
         text-align: center;
       }
       .infoAlert{
+        color: $dark2;
         font-size: 14px;
         margin-top: 16px;
         border: 1px solid $orange;
@@ -181,9 +182,13 @@
         img{
           margin-right: 20px;
         }
-        span{
+        p{
           margin-right: 45px;
           margin-top: 2px;
+          margin-bottom: 0;
+        }
+        a{
+          color: $blueStandard !important;
         }
         button{
           white-space: nowrap;
