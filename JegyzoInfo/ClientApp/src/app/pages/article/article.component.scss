@@ -8,9 +8,54 @@
       align-content: center;
       height: 76px;
     }
+    .labelsWrap{
+      margin-top: 17px;
+      span{
+        font-size: 12px;
+        text-transform: uppercase;
+        display: inline-block;
+        background-color: $orange;
+        color: white;
+        padding: 3px 6px;
+        margin-right: 10px;
+        margin-bottom: 5px;
+      }
+    }
+    .bigPicture{
+      position: relative;
+      min-height: 545px;
+      background-image: url("/assets/pic/artex.jpg");
+      padding: 0 150px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      .bottomStuff{
+        position: relative;
+        margin-bottom: 35px;
+        h1{
+          color: white;
+          font-weight: 600 !important;
+          line-height: 41px;
+        }
+        .labelsWrap{
+          span{
+            background-color: $darkBlue;
+          }
+        }
+      }
+      &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(357.56deg, black -26.13%, rgba(0, 0, 0, 0) 97.08%);
+      }
+    }
     article{
       background-color: white;
-      padding: 60px 150px;
+      padding: 0 150px 60px 150px;
       margin-bottom: 160px;
       @media(max-width: 991px){
         padding-left: 30px;
@@ -18,22 +63,10 @@
       }
       h1{
         font-weight: 700 !important;
-      }
-      .labelsWrap{
-        margin-top: 17px;
-        span{
-          font-size: 12px;
-          text-transform: uppercase;
-          display: inline-block;
-          background-color: $orange;
-          color: white;
-          padding: 3px 6px;
-          margin-right: 10px;
-          margin-bottom: 5px;
-        }
+        padding-top: 60px;
       }
       .infosActions{
-        margin-top: 30px;
+        padding-top: 30px;
         padding-bottom: 20px;
         border-bottom: 1px solid $lightBorder;
         display: flex;
