@@ -200,6 +200,25 @@
           }
         }
       }
+      .freshContent{
+        background-color: $lightGray;
+        padding: 40px;
+        margin: 40px 0;
+        border-left: 9px solid $orange;
+        h5{
+          color: $dark;
+          margin-top: 20px;
+          &:first-child{
+            margin-top: 0;
+            margin-bottom: 7px;
+          }
+        }
+        p{
+          color: $dark2;
+          margin-top: 15px;
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }
