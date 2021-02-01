@@ -1,3 +1,4 @@
+import { ArticlesComponent } from './pages/articles/articles.component';
 import { ArticleComponent } from './pages/article/article.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: "cikk",
     component: ArticleComponent
+  },
+  {
+    path: "cikkek",
+    component: ArticlesComponent
   },
   {
     path: "",

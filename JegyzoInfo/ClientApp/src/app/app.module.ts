@@ -15,6 +15,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OnlineCoursesComponent } from './components/online-courses/online-courses.component';
 import { HowItWorksComponent } from './components/how-it-works/how-it-works.component';
 import { ArticleComponent } from './pages/article/article.component';
+import { ArticlesComponent } from './pages/articles/articles.component';
+import { BackComponent } from './components/back/back.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ArticleComponent } from './pages/article/article.component';
     CarouselConfigComponent,
     OnlineCoursesComponent,
     HowItWorksComponent,
-    ArticleComponent
+    ArticleComponent,
+    ArticlesComponent,
+    BackComponent
   ],
   imports: [
     BrowserModule,

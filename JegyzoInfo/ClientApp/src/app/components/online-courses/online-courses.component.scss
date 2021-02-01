@@ -71,21 +71,24 @@
     }
     .carousel-control-prev-icon{
       background-image: url("/assets/img/carouselArrowLeft.svg");
+      margin-top: -90px;
     }
     .carousel-control-next-icon{
       background-image: url("/assets/img/carouselArrowRight.svg");
+      margin-top: -90px;
     }
     .carousel-inner{
-      overflow: visible;
+      // overflow: visible;
     }
     .carousel-caption{
-      bottom: -110px;
+      // bottom: -110px;
     }
     .carousel-indicators{
       display: none;
     }
     .buttonWrap{
-
+      text-align: center;
+      margin-top: 50px;
     }
   }
 }
@@ -153,10 +156,13 @@
 @media(max-width: 575px){
   .coursesWrap::ng-deep{
     .courses{
-      .courseBox{
-        .side.leftSide{
-          padding-left: 25px;
-          padding-right: 25px;
+      .container{
+        padding: 0;
+        .courseBox{
+          .side.leftSide{
+            padding-left: 25px;
+            padding-right: 25px;
+          }
         }
       }
     }

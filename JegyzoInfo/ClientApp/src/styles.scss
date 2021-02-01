@@ -66,6 +66,8 @@ button, button:focus{
     border: 0;
     background-color: transparent;
     color: $dark2;
+    padding-left: 0;
+    padding-right: 0;
     &::before{
       transition: .2s linear;
       content: url("/assets/img/backArrow.svg");
@@ -105,8 +107,45 @@ button, button:focus{
   }
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.labelsWrap{
+  margin-top: 17px;
+  span{
+    font-size: 12px;
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: $orange;
+    color: white;
+    padding: 3px 6px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+}
 
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+.myCheckbox{
+  display: none;
+  + label{
+    padding-left: 30px;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    &::before{
+      content: "";
+      transition: .2s linear;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      margin-top: -8px;
+      left: 0;
+      top: 50%;
+      background-color: white;
+      border: 1px solid $slateLight;
+    }
+  }
+  &:checked{
+    + label{
+      &::before{
+        background-color: $blue;
+      }
+    }
+  }
+}

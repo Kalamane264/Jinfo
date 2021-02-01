@@ -1,0 +1,28 @@
+@import "../../../varsAndMixins.scss";
+
+.interests{
+  p{
+    font-weight: 700;
+  }
+  ul{
+    margin-top: 20px;
+  }
+}
+
+.articlesList{
+  article{
+    background-color: white;
+    padding: 30px 40px 20px 40px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    p{
+      margin-top: 20px;
+      color: $dark2;
+    }
+    .date{
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 5px;
+      color: $darkBlue;
+    }
+  }
+}

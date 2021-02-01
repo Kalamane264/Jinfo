@@ -3,23 +3,8 @@
 
 .articleWrap{
   .container{
-    .backButtonWrap{
-      display: flex;
-      align-content: center;
-      height: 76px;
-    }
     .labelsWrap{
-      margin-top: 17px;
-      span{
-        font-size: 12px;
-        text-transform: uppercase;
-        display: inline-block;
-        background-color: $orange;
-        color: white;
-        padding: 3px 6px;
-        margin-right: 10px;
-        margin-bottom: 5px;
-      }
+
     }
     .bigPicture{
       position: relative;
