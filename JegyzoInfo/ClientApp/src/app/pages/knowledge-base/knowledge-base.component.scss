@@ -1,0 +1,24 @@
+.knowledgeBaseWrap{
+  padding-bottom: 245px;
+  .ordering{
+    margin-top: 15px;
+    margin-bottom: 50px;
+    p{
+      font-weight: 700;
+    }
+    ul{
+      margin-top: 10px;
+      display: flex;
+      @media(max-width: 767px){
+        display: block;
+      }
+      li{
+        margin-right: 50px;
+      }
+    }
+  }
+  .buttonWrap{
+    margin-top: 50px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,36 @@
+<div class="knowledgeBaseWrap">
+  <div class="container">
+    <app-back></app-back>
+    <div class="ordering">
+      <p>
+        Rendezés
+      </p>
+      <ul>
+        <li>
+          <input id="orderDate" type="checkbox" class="myCheckbox" />
+          <label for="orderDate">
+            Legutóbbi frissítés dátuma szerint
+          </label>
+        </li>
+        <li>
+          <input id="orderAddress" type="checkbox" class="myCheckbox" />
+          <label for="orderAddress">
+            Cím szerint
+          </label>
+        </li>
+        <li>
+          <input id="orderPopularity" type="checkbox" class="myCheckbox" />
+          <label for="orderPopularity">
+            Legnépszerűbbek elöl
+          </label>
+        </li>
+      </ul>
+    </div>
+    <app-topics></app-topics>
+    <div class="buttonWrap">
+      <button class="orange" routerLink="/tudastar">
+        Érdekel az előfizetés
+      </button>
+    </div>
+  </div>
+</div>

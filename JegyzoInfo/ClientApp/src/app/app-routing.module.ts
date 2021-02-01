@@ -1,3 +1,4 @@
+import { KnowledgeBaseComponent } from './pages/knowledge-base/knowledge-base.component';
 import { StatuteComponent } from './pages/statute/statute.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { ArticleComponent } from './pages/article/article.component';
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: "jogszabaly",
     component: StatuteComponent
+  },
+  {
+    path: "tudastar",
+    component: KnowledgeBaseComponent
   },
   {
     path: "",

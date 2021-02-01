@@ -18,6 +18,7 @@ import { ArticleComponent } from './pages/article/article.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { BackComponent } from './components/back/back.component';
 import { StatuteComponent } from './pages/statute/statute.component';
+import { KnowledgeBaseComponent } from './pages/knowledge-base/knowledge-base.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { StatuteComponent } from './pages/statute/statute.component';
     ArticleComponent,
     ArticlesComponent,
     BackComponent,
-    StatuteComponent
+    StatuteComponent,
+    KnowledgeBaseComponent
   ],
   imports: [
     BrowserModule,
