@@ -1,5 +1,10 @@
-.backButtonWrap{
+.backWrap{
   display: flex;
   align-content: center;
-  height: 76px;
+  .buttonWrap{
+    width: 200px;
+    padding: 15px 0;
+    display: flex;
+    align-content: center;
+  }
 }

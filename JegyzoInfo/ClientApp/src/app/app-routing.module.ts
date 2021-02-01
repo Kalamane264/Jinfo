@@ -1,3 +1,4 @@
+import { StatuteComponent } from './pages/statute/statute.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { ArticleComponent } from './pages/article/article.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: "cikkek",
     component: ArticlesComponent
+  },
+  {
+    path: "jogszabaly",
+    component: StatuteComponent
   },
   {
     path: "",

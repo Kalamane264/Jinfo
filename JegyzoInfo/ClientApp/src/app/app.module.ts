@@ -17,6 +17,7 @@ import { HowItWorksComponent } from './components/how-it-works/how-it-works.comp
 import { ArticleComponent } from './pages/article/article.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { BackComponent } from './components/back/back.component';
+import { StatuteComponent } from './pages/statute/statute.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BackComponent } from './components/back/back.component';
     HowItWorksComponent,
     ArticleComponent,
     ArticlesComponent,
-    BackComponent
+    BackComponent,
+    StatuteComponent
   ],
   imports: [
     BrowserModule,

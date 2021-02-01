@@ -46,6 +46,9 @@ nav{
         margin-bottom: 0;
         li{
           margin: 0 12px;
+          &:last-child{
+            margin-right: 0;
+          }
           &.loginIcon{
             margin-top: -2px;
             background: url("/assets/img/delim.svg") no-repeat;

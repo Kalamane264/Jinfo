@@ -149,3 +149,10 @@ button, button:focus{
     }
   }
 }
+
+.download{
+  &::before{
+    content: url("/assets/img/download.svg");
+    margin-right: 8px;
+  }
+}
