@@ -10,7 +10,7 @@
   .leftSide{
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 65%;
     @media(max-width: 991px){
       display: block;
       width: 100%;
@@ -18,10 +18,15 @@
     input{
       border: 0;
       background-color: white;
-      padding: 6px 34px;
+      padding: 8px 34px;
       margin: 10px 0;
+      font-size: 13px;
+      width: 100%;
+
       @media(max-width: 767px){
-        width: 100%;
+      }
+      &::placeholder{
+        color: rgba(163, 178, 183, 1);
       }
     }
     .inText{
@@ -39,9 +44,9 @@
   .rightSide{
     display: flex;
     align-items: center;
+    margin: 10px;
     @media(max-width: 767px){
       display: block;
-      margin-top: 10px;
       text-align: center;
     }
   }
