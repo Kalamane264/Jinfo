@@ -19,6 +19,8 @@ import { ArticlesComponent } from './pages/articles/articles.component';
 import { BackComponent } from './components/back/back.component';
 import { StatuteComponent } from './pages/statute/statute.component';
 import { KnowledgeBaseComponent } from './pages/knowledge-base/knowledge-base.component';
+import { TopicPageComponent } from './pages/topic-page/topic-page.component';
+import { ChapterComponent } from './components/chapter/chapter.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { KnowledgeBaseComponent } from './pages/knowledge-base/knowledge-base.co
     ArticlesComponent,
     BackComponent,
     StatuteComponent,
-    KnowledgeBaseComponent
+    KnowledgeBaseComponent,
+    TopicPageComponent,
+    ChapterComponent
   ],
   imports: [
     BrowserModule,

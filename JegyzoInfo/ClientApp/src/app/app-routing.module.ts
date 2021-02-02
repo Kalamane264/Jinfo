@@ -1,3 +1,4 @@
+import { TopicPageComponent } from './pages/topic-page/topic-page.component';
 import { KnowledgeBaseComponent } from './pages/knowledge-base/knowledge-base.component';
 import { StatuteComponent } from './pages/statute/statute.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: "tudastar",
     component: KnowledgeBaseComponent
+  },
+  {
+    path: "topic",
+    component: TopicPageComponent
   },
   {
     path: "",

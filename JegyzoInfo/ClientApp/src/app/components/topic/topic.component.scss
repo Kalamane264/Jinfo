@@ -1,3 +1,5 @@
+@import "../../../varsAndMixins.scss";
+
 .topicWrap{
   position: relative;
   z-index: 1;
@@ -25,6 +27,15 @@
           margin-bottom: 0;
         }
       }
+    }
+    .openTopic{
+      margin-top: 35px;
+      font-weight: bold;
+      color: $orange;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      justify-content: flex-end;
     }
     &.new{
       &::after{

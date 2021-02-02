@@ -1,0 +1,31 @@
+@import "../../../varsAndMixins.scss";
+
+.chapterWrap{
+  display: flex;
+  background-color: white;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  .firstRow{
+    display: flex;
+    .leftSide{
+      display: flex;
+      .number{
+        width: 55px;
+        height: 62px;
+        background-color: $blue;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .title{
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        h5{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

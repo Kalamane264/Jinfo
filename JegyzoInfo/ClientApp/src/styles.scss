@@ -156,3 +156,18 @@ button, button:focus{
     margin-right: 8px;
   }
 }
+
+.arrorange{
+  &::after{
+    content: url("/assets/img/arrorange.svg");
+    transition: .2s linear;
+    margin-left: 5px;
+    position: relative;
+    right: 0;
+  }
+  &:hover{
+    &::after{
+      right: -8px;
+    }
+  }
+}
