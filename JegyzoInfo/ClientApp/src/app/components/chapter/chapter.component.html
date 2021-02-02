@@ -1,20 +1,24 @@
 <div class="chapterWrap">
-  <div class="firstRow">
+  <div class="firstRow" (click)="open()">
     <div class="leftSide">
-      <div class="number">
-        2
+      <div class="number" [class.opened]="opened">
+        <div>
+          23
+        </div>
       </div>
-      <div class="title">
+      <div class="title" [class.opened]="opened">
         <h5>
           A településképi arculati kézikönyv és a településképi rendelet elkészítése
         </h5>
       </div>
     </div>
-    <div class="rightSide">
-
-    </div>
+    <div class="rightSide" [class.opened]="opened"></div>
   </div>
-  <div class="content">
-
+  <div class="content" [class.opened]="opened">
+    <section class="about">
+      <h6>
+        Erről lesz szó ebben a fejezetben
+      </h6>
+    </section>
   </div>
 </div>

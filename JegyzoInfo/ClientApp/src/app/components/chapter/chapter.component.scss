@@ -1,29 +1,92 @@
 @import "../../../varsAndMixins.scss";
 
 .chapterWrap{
-  display: flex;
+  // display: flex;
   background-color: white;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
   .firstRow{
+    width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid $lightGray;
     .leftSide{
       display: flex;
       .number{
-        width: 55px;
+        position: relative;
+        width: 62px;
         height: 62px;
-        background-color: $blue;
         color: white;
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
+        &::before{
+          content: "";
+          transition: .2s linear;
+          background-color: $blue;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+        &.opened{
+          &::before{
+            transform: rotate(45deg) scale(2) translate(-50%);
+          }
+          > div{
+            left: -10px;
+            top: -12px;
+          }
+        }
+        > div{
+          transition: .2s linear;
+          position: relative;
+          left: 0;
+          top: 0;
+        }
       }
       .title{
         display: flex;
         align-items: center;
-        padding-left: 10px;
+        padding-left: 20px;
+        transition: .2s linear;
+        &.opened{
+          padding-left: 45px;
+        }
         h5{
           margin-bottom: 0;
+        }
+      }
+    }
+    .rightSide{
+      width: 18px;
+      height: 18px;
+      background-image: url("/assets/img/plus-minus.svg");
+      margin-right: 60px;
+      &.opened{
+        background-position: 0 -18px;
+      }
+    }
+  }
+  .content{
+    padding: 20px 120px 70px 100px;
+    display: none;
+    &.opened{
+      display: block;
+    }
+    .about{
+      background-color: $lightGray;
+      padding: 30px 35px;
+      h6{
+        &::before{
+          content: url("/assets/img/book.svg");
+          margin-right: 15px;
+          position: relative;
+          bottom: -6px;
         }
       }
     }
