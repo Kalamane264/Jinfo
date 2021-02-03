@@ -73,7 +73,7 @@
     }
   }
   .content{
-    padding: 20px 120px 70px 100px;
+    padding: 20px 100px 70px 100px;
     display: none;
     &.opened{
       display: block;
@@ -81,12 +81,52 @@
     .about{
       background-color: $lightGray;
       padding: 30px 35px;
+      > div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h6{
+          &::before{
+            content: url("/assets/img/book.svg");
+            margin-right: 15px;
+            position: relative;
+            bottom: -7px;
+          }
+        }
+        span{
+          color: $darkBlue;
+        }
+      }
+      ul{
+        list-style: url("/assets/img/liststyle.svg");
+        margin-top: 30px;
+        margin-left: 70px;
+        li{
+          margin-bottom: 5px;
+          padding-left: 7px;
+        }
+      }
+    }
+    .text{
+      h6{
+        margin-top: 40px;
+      }
+      p{
+        margin-top: 15px;
+        margin-bottom: 30px;
+        text-align: justify;
+      }
+    }
+    .question{
+      background-color: $lightGray;
+      border: 1px solid $lightBorder;
+      padding: 25px 60px;
       h6{
         &::before{
-          content: url("/assets/img/book.svg");
-          margin-right: 15px;
+          content: url("/assets/img/questioncircle.svg");
+          margin-right: 12px;
           position: relative;
-          bottom: -7px;
+          bottom: -5px;
         }
       }
     }
