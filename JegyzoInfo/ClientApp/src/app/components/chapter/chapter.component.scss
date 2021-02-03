@@ -145,4 +145,22 @@
       margin-top: 60px;
     }
   }
+  .content.test{
+    margin-top: 27px;
+    border-top: 1px solid $lightBorder;
+    .side{
+      padding: 0 35px;
+    }
+    .leftSide{
+      text-align: right;
+    }
+    .rightSide{
+      h5{
+        margin-top: 60px;
+      }
+      .buttonWrap{
+        margin-top: 70px;
+      }
+    }
+  }
 }
