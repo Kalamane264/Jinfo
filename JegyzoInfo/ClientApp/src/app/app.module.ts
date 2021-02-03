@@ -21,6 +21,7 @@ import { StatuteComponent } from './pages/statute/statute.component';
 import { KnowledgeBaseComponent } from './pages/knowledge-base/knowledge-base.component';
 import { TopicPageComponent } from './pages/topic-page/topic-page.component';
 import { ChapterComponent } from './components/chapter/chapter.component';
+import { DocumentSampleComponent } from './components/document-sample/document-sample.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ChapterComponent } from './components/chapter/chapter.component';
     StatuteComponent,
     KnowledgeBaseComponent,
     TopicPageComponent,
-    ChapterComponent
+    ChapterComponent,
+    DocumentSampleComponent
   ],
   imports: [
     BrowserModule,
