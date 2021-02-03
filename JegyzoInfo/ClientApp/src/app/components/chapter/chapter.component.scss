@@ -121,6 +121,7 @@
       background-color: $lightGray;
       border: 1px solid $lightBorder;
       padding: 25px 60px;
+      margin-top: 50px;
       h6{
         &::before{
           content: url("/assets/img/questioncircle.svg");
