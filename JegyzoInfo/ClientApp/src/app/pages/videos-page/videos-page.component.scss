@@ -6,7 +6,10 @@
     background-color: white;
     margin-bottom: 40px;
     .video{
-      img{min-width: 100%;}
+      img{
+        min-width: 100%;
+        max-width: 100%;
+      }
     }
     .details{
       h6{
