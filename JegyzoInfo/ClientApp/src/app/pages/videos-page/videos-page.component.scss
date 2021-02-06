@@ -1,0 +1,32 @@
+@import "../../../varsAndMixins.scss";
+
+.videosWrap{
+  margin-top: 30px;
+  section.aVideo{
+    background-color: white;
+    margin-bottom: 40px;
+    .video{
+      img{min-width: 100%;}
+    }
+    .details{
+      h6{
+        line-height: 24px;
+      }
+      padding: 20px 30px 30px 30px;
+      p{
+        color: $dark2;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      p.author{
+      }
+      p.duration{
+        color: $quoteColor;
+        &::before{
+          content: url("/assets/img/blueclock.svg");
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}

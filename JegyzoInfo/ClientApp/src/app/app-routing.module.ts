@@ -1,3 +1,5 @@
+import { VideosPageComponent } from './pages/videos-page/videos-page.component';
+import { VideosComponent } from './components/videos/videos.component';
 import { TopicPageComponent } from './pages/topic-page/topic-page.component';
 import { KnowledgeBaseComponent } from './pages/knowledge-base/knowledge-base.component';
 import { StatuteComponent } from './pages/statute/statute.component';
@@ -31,6 +33,10 @@ const routes: Routes = [
   {
     path: "topic",
     component: TopicPageComponent
+  },
+  {
+    path: "videos",
+    component: VideosPageComponent
   },
   {
     path: "",

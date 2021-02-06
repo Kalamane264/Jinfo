@@ -22,6 +22,7 @@ import { KnowledgeBaseComponent } from './pages/knowledge-base/knowledge-base.co
 import { TopicPageComponent } from './pages/topic-page/topic-page.component';
 import { ChapterComponent } from './components/chapter/chapter.component';
 import { DocumentSampleComponent } from './components/document-sample/document-sample.component';
+import { VideosPageComponent } from './pages/videos-page/videos-page.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { DocumentSampleComponent } from './components/document-sample/document-s
     KnowledgeBaseComponent,
     TopicPageComponent,
     ChapterComponent,
-    DocumentSampleComponent
+    DocumentSampleComponent,
+    VideosPageComponent
   ],
   imports: [
     BrowserModule,
