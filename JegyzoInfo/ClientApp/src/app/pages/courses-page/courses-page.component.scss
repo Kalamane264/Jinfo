@@ -3,6 +3,14 @@
 .shadowedBoxWhite{
   padding-left: 60px;
   padding-bottom: 60px;
+  @media(max-width: 991px){
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @media(max-width: 575px){
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   .leftSide{
     padding-top: 50px;
     h4{
@@ -26,15 +34,27 @@
     }
   }
   .rightSide{
-    background-image: url("/assets/img/housefeeling2.svg");
-    background-size: 90% auto;
-    background-repeat: no-repeat;
-    background-position: left center;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    justify-content: center;
+    img{
+      max-width: 100%;
+    }
   }
   h5.orange{
     margin-top: 20px;
   }
   p{
     margin-top: 15px;
+  }
+}
+
+.coursesWrap{
+  margin-bottom: 100px;
+  h4{
+    margin-top: 68px;
+    margin-bottom: 27px;
+    font-weight: 700;
   }
 }
