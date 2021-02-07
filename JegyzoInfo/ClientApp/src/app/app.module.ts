@@ -23,6 +23,7 @@ import { TopicPageComponent } from './pages/topic-page/topic-page.component';
 import { ChapterComponent } from './components/chapter/chapter.component';
 import { DocumentSampleComponent } from './components/document-sample/document-sample.component';
 import { VideosPageComponent } from './pages/videos-page/videos-page.component';
+import { CoursesPageComponent } from './pages/courses-page/courses-page.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { VideosPageComponent } from './pages/videos-page/videos-page.component';
     TopicPageComponent,
     ChapterComponent,
     DocumentSampleComponent,
-    VideosPageComponent
+    VideosPageComponent,
+    CoursesPageComponent
   ],
   imports: [
     BrowserModule,

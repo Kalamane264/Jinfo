@@ -1,0 +1,40 @@
+@import "../../../varsAndMixins.scss";
+
+.shadowedBoxWhite{
+  padding-left: 60px;
+  padding-bottom: 60px;
+  .leftSide{
+    padding-top: 50px;
+    h4{
+      margin-bottom: 40px;
+    }
+    .blueSquareDivWrap{
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      .blueSquare{
+        width: 55px;
+        min-width: 55px;
+        height: 62px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $blue;
+        color: white;
+        margin-right: 20px;
+      }
+    }
+  }
+  .rightSide{
+    background-image: url("/assets/img/housefeeling2.svg");
+    background-size: 90% auto;
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+  h5.orange{
+    margin-top: 20px;
+  }
+  p{
+    margin-top: 15px;
+  }
+}

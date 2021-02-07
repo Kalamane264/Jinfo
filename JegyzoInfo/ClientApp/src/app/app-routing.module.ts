@@ -1,3 +1,4 @@
+import { CoursesPageComponent } from './pages/courses-page/courses-page.component';
 import { VideosPageComponent } from './pages/videos-page/videos-page.component';
 import { VideosComponent } from './components/videos/videos.component';
 import { TopicPageComponent } from './pages/topic-page/topic-page.component';
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: "videos",
     component: VideosPageComponent
+  },
+  {
+    path: "courses",
+    component: CoursesPageComponent
   },
   {
     path: "",
