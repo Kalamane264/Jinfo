@@ -1,3 +1,4 @@
+import { logging } from 'protractor';
 import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
@@ -8,6 +9,7 @@ import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
 export class NavigationComponent implements OnInit {
 
   menuIsOpened = false;
+  loginIsOpened = false;
 
   constructor() { }
 
@@ -16,5 +18,9 @@ export class NavigationComponent implements OnInit {
 
   clickSandvichMenu(){
     this.menuIsOpened = !this.menuIsOpened;
+  }
+
+  clickLogin(){
+    this.loginIsOpened = !this.loginIsOpened;
   }
 }

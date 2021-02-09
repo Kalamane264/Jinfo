@@ -8,33 +8,41 @@
     <div class="side rightSide">
       <ul class="defaultMenu" [class.opened]="menuIsOpened">
         <li class="on">
-          <a href="">
+          <a>
             Tudástár
           </a>
           <hr/>
         </li>
         <li>
-          <a href="">
+          <a>
             Videotár
           </a>
           <hr/>
         </li>
         <li>
-          <a href="">
+          <a>
             Online képzéseink
           </a>
           <hr/>
         </li>
         <li class="loginIcon">
-          <a href="">
+          <a>
             <img src="/assets/img/iconUser.svg" alt="">
           </a>
         </li>
         <li class="loginText">
-          <a href="">
+          <a (click)="clickLogin()">
             Bejelentkezés
           </a>
           <hr/>
+          <ul class="login" [class.opened]="loginIsOpened">
+            <li>
+              <input name="email" type="text" placeholder="e-mail" />
+            </li>
+            <li>
+              <input name="password" type="password" placeholder="jelszó" />
+            </li>
+          </ul>
         </li>
       </ul>
       <ul class="mobileMenu">

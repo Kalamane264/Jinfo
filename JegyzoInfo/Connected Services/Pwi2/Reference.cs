@@ -9,10 +9,9 @@
 
 namespace Pwi2
 {
-    using System;
     using System.Runtime.Serialization;
-    using System.ServiceModel;
-
+    
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.Runtime.Serialization.DataContractAttribute(Name="WMWIResult", Namespace="http://pwi2.mpraxis.hu/")]
@@ -14963,34 +14962,53 @@ namespace Pwi2
         {
             return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginClose(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndClose));
         }
-
-        private static System.ServiceModel.Channels.Binding GetBindingForEndpoint(TimeSpan timeout)
+        
+        private static System.ServiceModel.Channels.Binding GetBindingForEndpoint(EndpointConfiguration endpointConfiguration)
         {
-            var httpsBinding = new BasicHttpsBinding();
-            httpsBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Basic;
-            httpsBinding.Security.Mode = BasicHttpsSecurityMode.Transport;
-
-            var integerMaxValue = int.MaxValue;
-            httpsBinding.MaxBufferSize = integerMaxValue;
-            httpsBinding.MaxReceivedMessageSize = integerMaxValue;
-            httpsBinding.ReaderQuotas = System.Xml.XmlDictionaryReaderQuotas.Max;
-            httpsBinding.AllowCookies = true;
-
-            httpsBinding.ReceiveTimeout = timeout;
-            httpsBinding.SendTimeout = timeout;
-            httpsBinding.OpenTimeout = timeout;
-            httpsBinding.CloseTimeout = timeout;
-
-            return httpsBinding;
-        }
-
-        private static System.ServiceModel.EndpointAddress GetEndpointAddress(string endpointUrl)
-        {
-            if (!endpointUrl.StartsWith("https://"))
+            if ((endpointConfiguration == EndpointConfiguration.WSSoap))
             {
-                throw new UriFormatException("The endpoint URL must start with https://.");
+                System.ServiceModel.BasicHttpBinding result = new System.ServiceModel.BasicHttpBinding();
+                result.MaxBufferSize = int.MaxValue;
+                result.ReaderQuotas = System.Xml.XmlDictionaryReaderQuotas.Max;
+                result.MaxReceivedMessageSize = int.MaxValue;
+                result.AllowCookies = true;
+                return result;
             }
-            return new System.ServiceModel.EndpointAddress(endpointUrl);
+            if ((endpointConfiguration == EndpointConfiguration.WSSoap12))
+            {
+                System.ServiceModel.Channels.CustomBinding result = new System.ServiceModel.Channels.CustomBinding();
+                System.ServiceModel.Channels.TextMessageEncodingBindingElement textBindingElement = new System.ServiceModel.Channels.TextMessageEncodingBindingElement();
+                textBindingElement.MessageVersion = System.ServiceModel.Channels.MessageVersion.CreateVersion(System.ServiceModel.EnvelopeVersion.Soap12, System.ServiceModel.Channels.AddressingVersion.None);
+                result.Elements.Add(textBindingElement);
+                System.ServiceModel.Channels.HttpTransportBindingElement httpBindingElement = new System.ServiceModel.Channels.HttpTransportBindingElement();
+                httpBindingElement.AllowCookies = true;
+                httpBindingElement.MaxBufferSize = int.MaxValue;
+                httpBindingElement.MaxReceivedMessageSize = int.MaxValue;
+                result.Elements.Add(httpBindingElement);
+                return result;
+            }
+            throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
+        }
+        
+        private static System.ServiceModel.EndpointAddress GetEndpointAddress(EndpointConfiguration endpointConfiguration)
+        {
+            if ((endpointConfiguration == EndpointConfiguration.WSSoap))
+            {
+                return new System.ServiceModel.EndpointAddress("http://pwi2.mpraxis.hu/ws.asmx");
+            }
+            if ((endpointConfiguration == EndpointConfiguration.WSSoap12))
+            {
+                return new System.ServiceModel.EndpointAddress("http://pwi2.mpraxis.hu/ws.asmx");
+            }
+            throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
+        }
+        
+        public enum EndpointConfiguration
+        {
+            
+            WSSoap,
+            
+            WSSoap12,
         }
     }
 }

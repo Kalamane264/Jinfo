@@ -10,7 +10,7 @@ namespace JegyzoInfo.Controllers
     {
         public bool Login()
         {
-            Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient();
+            Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
 
             return true;
         }
