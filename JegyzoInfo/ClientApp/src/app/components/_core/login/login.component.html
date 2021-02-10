@@ -1,0 +1,8 @@
+<ul class="login" [class.opened]="loginIsOpened">
+  <li>
+    <input name="email" type="text" placeholder="e-mail" (keydown.enter)="login()" [(ngModel)]="loginForm.email" />
+  </li>
+  <li>
+    <input name="password" type="password" placeholder="jelszó" (keydown.enter)="login()" [(ngModel)]="loginForm.password" />
+  </li>
+</ul>

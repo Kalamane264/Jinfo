@@ -1,0 +1,27 @@
+@import "../../../../varsAndMixins.scss";
+
+ul.login{
+  display: none;
+  position: absolute;
+  right: 0;
+  z-index: 1500;
+  background-color: $blue;
+  padding: 15px;
+  border: 1px solid white;
+  input{
+    border: 0;
+    background-color: white;
+    font-size: 14px;
+    width: 230px;
+    padding: 4px 16px;
+  }
+  li{
+    margin-bottom: 10px !important;
+    &:last-child{
+      margin-bottom: 0 !important;
+    }
+  }
+  &.opened{
+    display: block;
+  }
+}

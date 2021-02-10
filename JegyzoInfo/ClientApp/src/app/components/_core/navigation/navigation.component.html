@@ -26,7 +26,7 @@
           <hr/>
         </li>
         <li class="loginIcon">
-          <a>
+          <a (click)="clickLogin()">
             <img src="/assets/img/iconUser.svg" alt="">
           </a>
         </li>
@@ -35,14 +35,7 @@
             Bejelentkezés
           </a>
           <hr/>
-          <ul class="login" [class.opened]="loginIsOpened">
-            <li>
-              <input name="email" type="text" placeholder="e-mail" />
-            </li>
-            <li>
-              <input name="password" type="password" placeholder="jelszó" />
-            </li>
-          </ul>
+          <app-login [loginIsOpened]="loginIsOpened"></app-login>
         </li>
       </ul>
       <ul class="mobileMenu">

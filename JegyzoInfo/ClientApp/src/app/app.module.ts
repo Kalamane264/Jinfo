@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -25,6 +26,8 @@ import { DocumentSampleComponent } from './components/document-sample/document-s
 import { VideosPageComponent } from './pages/videos-page/videos-page.component';
 import { CoursesPageComponent } from './pages/courses-page/courses-page.component';
 import { CourseComponent } from './components/course/course.component';
+import { LoginComponent } from './components/_core/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,13 +51,16 @@ import { CourseComponent } from './components/course/course.component';
     DocumentSampleComponent,
     VideosPageComponent,
     CoursesPageComponent,
-    CourseComponent
+    CourseComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
