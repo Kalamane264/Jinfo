@@ -11,8 +11,8 @@ export class LoginComponent implements OnInit {
   @Input() loginIsOpened = false;
 
   loginForm = {
-    email: "",
-    password: ""
+    email: "hivessy@menedzserpraxis.hu",
+    password: "123456"
   };
 
   constructor(private userService: UserService) {

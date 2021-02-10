@@ -51,11 +51,14 @@ namespace JegyzoInfo
 
             app.UseRouting();
 
-            app.UseMvc(routes =>
+            app.UseEndpoints(endpoints =>
             {
-                routes
-                .MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}")
-                .MapRoute(name: "api", template: "api/{controller}/{action}/{id?}");
+                //endpoints.MapControllerRoute(
+                //    name: "api",
+                //    pattern: "api/{controller}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller}/{action=Index}/{id?}");
             });
 
             app.UseSpa(spa =>
