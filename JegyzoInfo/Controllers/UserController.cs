@@ -26,9 +26,12 @@ namespace JegyzoInfo.Controllers
             var jelszo = loginVM.password;
             var alkalmazas = _configuration["SiteCode"];
 
-            var resp =  await pwi2.FelhasznaloLoginAsync(belepokod, jelszo, alkalmazas);
-
-            return true;
+            Pwi2.FelhasznaloLoginResponse resp =  await pwi2.FelhasznaloLoginAsync(belepokod, jelszo, alkalmazas);
+            if (resp.Body.FelhasznaloLoginResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

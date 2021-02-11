@@ -6,10 +6,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
 
+  userLoggedIn = false;
+
   constructor(private http: HttpClient) { }
 
   login(email: string, password: string){
-    console.log('Logájn', email, password);
     return this.http.post('/api/User/Login', { email: email, password: password });
   }
 }
