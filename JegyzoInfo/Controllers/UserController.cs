@@ -1,4 +1,5 @@
-﻿using JegyzoInfo.ViewModels;
+﻿using JegyzoInfo.Models;
+using JegyzoInfo.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -18,7 +19,7 @@ namespace JegyzoInfo.Controllers
 
         [HttpPost]
         [Route("api/User/Login")]
-        public async Task<bool> Login(LoginVM loginVM)
+        public async Task<User> Login(LoginVM loginVM)
         {
             Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
 
@@ -29,9 +30,21 @@ namespace JegyzoInfo.Controllers
             Pwi2.FelhasznaloLoginResponse resp =  await pwi2.FelhasznaloLoginAsync(belepokod, jelszo, alkalmazas);
             if (resp.Body.FelhasznaloLoginResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
             {
-                return true;
+                var userResp = resp.Body.FelhasznaloLoginResult.List[0];
+                var user = new User
+                {
+                    FelhasznaloID = userResp.FelhasznaloID,
+                    Email = userResp.Email,
+                    Nev = userResp.Nev
+                };
+                return user;
             }
-            return false;
+            return null;
         }
+
+        //public void storeUserInCookie(User user)
+        //{ 
+        //    Sess
+        //}
     }
 }

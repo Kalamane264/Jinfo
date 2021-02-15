@@ -1,12 +1,13 @@
 <div class="topicWrap">
   <section class="topic new">
     <h6>
-      Az Önkormányzatok gazdálkodása
+      {{ folyamat.nev }}
     </h6>
     <p class="clockIcon">
       Legutóbb frissítve: 2018.01.21.
     </p>
-    <ul>
+    <div [innerHTML]="folyamat.szoveg"></div>
+    <!-- <ul>
       <li>
         A költségvetési rendelet, és az ezzel kapcsolatos kötelező tartalmi elemek, fogalmak.
       </li>
@@ -16,73 +17,7 @@
       <li>
         Gazdálkodási jogkörök, kötelezettségvállalás, pénzügyi ellenjegyzés és teljesítésigazolás
       </li>
-    </ul>
-    <div class="openTopic">
-      <a class="arrorange" routerLink="/topic">
-        Téma megnyitása
-      </a>
-    </div>
-  </section>
-</div>
-
-<div class="topicWrap">
-  <section class="topic">
-    <h6>
-      Humánerőforrás-gazdálkodás
-    </h6>
-    <p class="clockIcon">
-      Legutóbb frissítve: 2018.01.21.
-    </p>
-    <ul>
-      <li>
-        A vezetés humán erőforrás-gazdálkodással kapcsolatos feladatai (munkaerőigény meghatározása, toborzás, kiválasztás, teljesítményértékelés, stb.)
-      </li>
-      <li>
-        A belső ellenőrzésnek a humán erőforrás kezelés szabályozásával kapcsolatos feladatai (kockázatok feltárása, toborzás és kiválasztás vizsgálata, teljesítményértékelés ellenőrzése, anyagi és erkölcsi ösztönzés vizsgálata, stb.)
-      </li>
-      <li>
-        Gazdálkodási jogkörök, kötelezettségvállalás, pénzügyi ellenjegyzés és teljesítésigazolás
-      </li>
-    </ul>
-    <div class="openTopic">
-      <a class="arrorange" routerLink="/topic">
-        Téma megnyitása
-      </a>
-    </div>
-  </section>
-</div>
-
-<div class="topicWrap">
-  <section class="topic last">
-    <h6>
-      Humánerőforrás-gazdálkodás
-    </h6>
-    <p class="clockIcon">
-      Legutóbb frissítve: 2018.01.21.
-    </p>
-    <ul>
-      <li>
-        Információs társadalom, a e-közigazgatás meghatározása
-      </li>
-      <li>
-        Adatbázisok a közigazgatásban
-      </li>
-      <li>
-        Szoftverek alkalmazása a közigazgatásban
-      </li>
-      <li>
-        Digitalizáció
-      </li>
-      <li>
-        A döntéstámogatás rendszerei
-      </li>
-      <li>
-        Többcsatornás ügyintézés
-      </li>
-      <li>
-        Ügymenetvizsgálat
-      </li>
-    </ul>
+    </ul> -->
     <div class="openTopic">
       <a class="arrorange" routerLink="/topic">
         Téma megnyitása

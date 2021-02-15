@@ -1,3 +1,5 @@
+import { Folyamat } from './../../interfaces/folyamat';
+import { KnowledgeBaseService } from './../../services/knowledge-base.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KnowledgeBaseComponent implements OnInit {
 
-  constructor() { }
+  folyamats: Folyamat[] = [];
+
+  constructor(private knowledgeBaseService: KnowledgeBaseService) { }
 
   ngOnInit(): void {
+    this.getFolyamats();
   }
 
+  getFolyamats(){
+    this.knowledgeBaseService.getFolyamats().subscribe(folyamats => {
+      this.folyamats = folyamats;
+      console.log('diz folyamacc', this.folyamats);
+    })
+  }
 }

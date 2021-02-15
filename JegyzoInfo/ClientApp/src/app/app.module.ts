@@ -28,6 +28,7 @@ import { CoursesPageComponent } from './pages/courses-page/courses-page.componen
 import { CourseComponent } from './components/course/course.component';
 import { LoginComponent } from './components/_core/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,7 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

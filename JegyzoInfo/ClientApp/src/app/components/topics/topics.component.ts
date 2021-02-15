@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Folyamat } from './../../interfaces/folyamat';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-topics',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./topics.component.scss']
 })
 export class TopicsComponent implements OnInit {
+
+  @Input() folyamats: Folyamat[] = [];
 
   constructor() { }
 
