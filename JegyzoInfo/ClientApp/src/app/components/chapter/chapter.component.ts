@@ -1,13 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Folyamat } from './../../interfaces/folyamat';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-chapter',
   templateUrl: './chapter.component.html',
-  styleUrls: ['./chapter.component.scss']
+  styleUrls: ['./chapter.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ChapterComponent implements OnInit {
 
   @Input() opened = false;
+  @Input() parentFolyamat: Folyamat;
+  @Input() folyamat: Folyamat;
 
   constructor() { }
 

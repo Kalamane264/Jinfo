@@ -8,7 +8,7 @@
       </div>
       <div class="title" [class.opened]="opened">
         <h5>
-          A településképi arculati kézikönyv és a településképi rendelet elkészítése
+          {{ folyamat.nev }}
         </h5>
       </div>
     </div>
@@ -42,7 +42,7 @@
         </li>
       </ul>
     </section>
-    <div class="text">
+    <div class="text" [innerHTML]="folyamat.szoveg">
       <h6>
         A helyi építési szabályozás rendszere
       </h6>

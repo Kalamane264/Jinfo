@@ -21,6 +21,6 @@ export class KnowledgeBaseComponent implements OnInit {
     this.knowledgeBaseService.getFolyamats().subscribe(folyamats => {
       this.folyamats = folyamats;
       console.log('diz folyamacc', this.folyamats);
-    })
+    });
   }
 }

@@ -6,7 +6,7 @@
     <p class="clockIcon">
       Legutóbb frissítve: 2018.01.21.
     </p>
-    <div [innerHTML]="folyamat.szoveg"></div>
+    <div [innerHTML]="folyamat.szoveg "></div>
     <!-- <ul>
       <li>
         A költségvetési rendelet, és az ezzel kapcsolatos kötelező tartalmi elemek, fogalmak.
@@ -19,7 +19,7 @@
       </li>
     </ul> -->
     <div class="openTopic">
-      <a class="arrorange" routerLink="/topic">
+      <a class="arrorange" routerLink="/topic/{{ folyamat.folyamatID }}">
         Téma megnyitása
       </a>
     </div>
