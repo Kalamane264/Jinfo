@@ -29,6 +29,8 @@ import { CourseComponent } from './components/course/course.component';
 import { LoginComponent } from './components/_core/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { CookieService } from 'ngx-cookie-service';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    NgxPageScrollCoreModule,
+    NgxPageScrollModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

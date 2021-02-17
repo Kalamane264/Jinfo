@@ -1,5 +1,7 @@
 import { logging } from 'protractor';
-import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { PageScrollService } from 'ngx-page-scroll-core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-navigation',
@@ -11,7 +13,7 @@ export class NavigationComponent implements OnInit {
   menuIsOpened = false;
   loginIsOpened = false;
 
-  constructor() { }
+  constructor(private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any) { }
 
   ngOnInit(): void {
   }
