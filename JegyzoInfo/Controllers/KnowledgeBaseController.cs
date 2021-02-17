@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 namespace JegyzoInfo.Controllers
 {
     [ApiController]
-    public class KnowledgeBase : Controller
+    public class KnowledgeBaseController : Controller
     {
         private IConfiguration _configuration;
 
-        public KnowledgeBase(IConfiguration configuration)
+        public KnowledgeBaseController(IConfiguration configuration)
         {
             this._configuration = configuration;
         }

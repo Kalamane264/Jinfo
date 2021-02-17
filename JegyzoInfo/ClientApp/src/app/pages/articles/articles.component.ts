@@ -1,3 +1,4 @@
+import { ArticleService } from './../../services/article.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticlesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit(): void {
+    this.getArticles();
+  }
+
+  getArticles(){
+    this.articleService.getArticles().subscribe(articles => {
+      console.log("Ertikülsz", articles);
+    });
   }
 
 }

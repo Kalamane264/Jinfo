@@ -64,7 +64,7 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
     BrowserAnimationsModule,
     NgbModule,
     FormsModule,
-    NgxPageScrollCoreModule,
+    NgxPageScrollCoreModule.forRoot({duration: 300}),
     NgxPageScrollModule
   ],
   providers: [CookieService],
