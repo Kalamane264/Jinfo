@@ -14,7 +14,7 @@ export class TopicComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("folycsi", this.folyamat);
+    // console.log("folycsi", this.folyamat);
   }
 
 }

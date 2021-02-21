@@ -32,5 +32,20 @@ namespace JegyzoInfo.Controllers
 
             return new JsonResult("");
         }
+
+        [Route("api/Article/GetArticle/{id}")]
+        public async Task<JsonResult> GetArticle(int id)
+        {
+            Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
+            Pwi2.CikkListBySiteFullResponse resp = await pwi2.CikkListBySiteFullAsync(id);
+
+            if (resp.Body.CikkListBySiteFullResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
+            {
+                var cikk = resp.Body.CikkListBySiteFullResult.List[0];
+                return new JsonResult(cikk);
+            }
+
+            return new JsonResult("");
+        }
     }
 }
