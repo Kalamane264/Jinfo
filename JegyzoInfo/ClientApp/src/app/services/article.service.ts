@@ -18,4 +18,8 @@ export class ArticleService {
   getArticle(id: number): Observable<Article>{
     return this.http.get<Article>("/api/Article/getArticle/" + id);
   }
+
+  getArticleBySeoUrl(seoUrl: string): Observable<Article>{
+    return this.http.get<Article>("/api/Article/getArticle/" + seoUrl);
+  }
 }

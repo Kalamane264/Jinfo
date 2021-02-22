@@ -10,7 +10,7 @@ import { ArticleService } from 'src/app/services/article.service';
 })
 export class ArticleComponent implements OnInit {
 
-  URLid: number = 0;
+  seoUrl = "";
   article: Article;
 
   constructor(
@@ -18,13 +18,12 @@ export class ArticleComponent implements OnInit {
     private articleService: ArticleService) { }
 
   ngOnInit(): void {
-    let id: string = this.route.snapshot.paramMap.get('id')!;
-    this.URLid = parseInt(id);
+    this.seoUrl = this.route.snapshot.paramMap.get('id')!;
     this.getArticle();
   }
 
   getArticle() {
-    this.articleService.getArticle(this.URLid).subscribe(article => {
+    this.articleService.getArticleBySeoUrl(this.seoUrl).subscribe(article => {
       this.article = article;
       console.log('article', article);
     });

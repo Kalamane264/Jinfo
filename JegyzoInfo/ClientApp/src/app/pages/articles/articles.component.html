@@ -32,53 +32,57 @@
       <div class="col-md-9">
         <div class="articlesList" *ngIf="articles">
           <ng-container *ngFor="let article of articles">
-            <article *ngIf="article.bevezetoKepUrl==''; else withPic">
-              <h5>
-                {{ article.cim }}
-              </h5>
-              <!-- <div class="labelsWrap">
-                <span>
-                  számviteli szabályzatok
-                </span>
-                <span>
-                  TB JÁRULÉK
-                </span>
-              </div> -->
-              <p>
-                {{ article.bevezeto }}
-              </p>
-              <div class="date">
-                <div class="clockIcon">
-                  {{ article.megjelenesDatum | date : 'YYYY-MM-dd' }}
-                </div>
-              </div>
-            </article>
-            <ng-template #withPic>
-              <article class="withPic">
-                <div class="leftSide" style="background-image: url('{{ article.bevezetoKepUrl }}');">
-                  <h5>
-                    {{ article.cim }}
-                  </h5>
-                </div>
-                <div class="rightSide">
-                  <!-- <div class="labelsWrap">
-                    <span>
-                      számviteli szabályzatok
-                    </span>
-                    <span>
-                      TB JÁRULÉK
-                    </span>
-                  </div> -->
-                  <p>
-                    {{ article.bevezeto }}
-                  </p>
-                  <div class="date">
-                    <div class="clockIcon">
-                      {{ article.megjelenesDatum | date : 'YYYY-MM-dd' }}
-                    </div>
+            <a *ngIf="article.bevezetoKepUrl==''; else withPic" routerLink="/cikk/{{ article.seoUrl }}">
+              <article>
+                <h5>
+                  {{ article.cim }}
+                </h5>
+                <!-- <div class="labelsWrap">
+                  <span>
+                    számviteli szabályzatok
+                  </span>
+                  <span>
+                    TB JÁRULÉK
+                  </span>
+                </div> -->
+                <p>
+                  {{ article.bevezeto }}
+                </p>
+                <div class="date">
+                  <div class="clockIcon">
+                    {{ article.megjelenesDatum | date : 'YYYY-MM-dd' }}
                   </div>
                 </div>
               </article>
+            </a>
+            <ng-template #withPic>
+              <a routerLink="/cikk/{{ article.seoUrl }}">
+                <article class="withPic">
+                  <div class="leftSide" style="background-image: url('{{ article.bevezetoKepUrl }}');">
+                    <h5>
+                      {{ article.cim }}
+                    </h5>
+                  </div>
+                  <div class="rightSide">
+                    <!-- <div class="labelsWrap">
+                      <span>
+                        számviteli szabályzatok
+                      </span>
+                      <span>
+                        TB JÁRULÉK
+                      </span>
+                    </div> -->
+                    <p>
+                      {{ article.bevezeto }}
+                    </p>
+                    <div class="date">
+                      <div class="clockIcon">
+                        {{ article.megjelenesDatum | date : 'YYYY-MM-dd' }}
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </a>
             </ng-template>
           </ng-container>
           <div class="buttonWrap">

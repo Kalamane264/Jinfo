@@ -7210,6 +7210,8 @@ namespace Pwi2
         
         private string BevezetoField;
         
+        private string SeoUrlField;
+        
         private System.Nullable<System.DateTime> MegjelenesDatumField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
@@ -7251,7 +7253,20 @@ namespace Pwi2
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string SeoUrl
+        {
+            get
+            {
+                return this.SeoUrlField;
+            }
+            set
+            {
+                this.SeoUrlField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
         public System.Nullable<System.DateTime> MegjelenesDatum
         {
             get
@@ -8346,6 +8361,9 @@ namespace Pwi2
         
         [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/CikkListBySiteFull", ReplyAction="*")]
         System.Threading.Tasks.Task<Pwi2.CikkListBySiteFullResponse> CikkListBySiteFullAsync(Pwi2.CikkListBySiteFullRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/CikkFullBySEOUrl", ReplyAction="*")]
+        System.Threading.Tasks.Task<Pwi2.CikkFullBySEOUrlResponse> CikkFullBySEOUrlAsync(Pwi2.CikkFullBySEOUrlRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/CikkListBySzakertoIdAndSiteID", ReplyAction="*")]
         System.Threading.Tasks.Task<Pwi2.CikkListBySzakertoIdAndSiteIDResponse> CikkListBySzakertoIdAndSiteIDAsync(Pwi2.CikkListBySzakertoIdAndSiteIDRequest request);
@@ -14402,6 +14420,86 @@ namespace Pwi2
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CikkFullBySEOUrlRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CikkFullBySEOUrl", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.CikkFullBySEOUrlRequestBody Body;
+        
+        public CikkFullBySEOUrlRequest()
+        {
+        }
+        
+        public CikkFullBySEOUrlRequest(Pwi2.CikkFullBySEOUrlRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class CikkFullBySEOUrlRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string seourl;
+        
+        public CikkFullBySEOUrlRequestBody()
+        {
+        }
+        
+        public CikkFullBySEOUrlRequestBody(string seourl)
+        {
+            this.seourl = seourl;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CikkFullBySEOUrlResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CikkFullBySEOUrlResponse", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.CikkFullBySEOUrlResponseBody Body;
+        
+        public CikkFullBySEOUrlResponse()
+        {
+        }
+        
+        public CikkFullBySEOUrlResponse(Pwi2.CikkFullBySEOUrlResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class CikkFullBySEOUrlResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Pwi2.WMWIListResultOfcikk CikkFullBySEOUrlResult;
+        
+        public CikkFullBySEOUrlResponseBody()
+        {
+        }
+        
+        public CikkFullBySEOUrlResponseBody(Pwi2.WMWIListResultOfcikk CikkFullBySEOUrlResult)
+        {
+            this.CikkFullBySEOUrlResult = CikkFullBySEOUrlResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CikkListBySzakertoIdAndSiteIDRequest
     {
         
@@ -16159,6 +16257,20 @@ namespace Pwi2
             inValue.Body = new Pwi2.CikkListBySiteFullRequestBody();
             inValue.Body.cikkid = cikkid;
             return ((Pwi2.WSSoap)(this)).CikkListBySiteFullAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Pwi2.CikkFullBySEOUrlResponse> Pwi2.WSSoap.CikkFullBySEOUrlAsync(Pwi2.CikkFullBySEOUrlRequest request)
+        {
+            return base.Channel.CikkFullBySEOUrlAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Pwi2.CikkFullBySEOUrlResponse> CikkFullBySEOUrlAsync(string seourl)
+        {
+            Pwi2.CikkFullBySEOUrlRequest inValue = new Pwi2.CikkFullBySEOUrlRequest();
+            inValue.Body = new Pwi2.CikkFullBySEOUrlRequestBody();
+            inValue.Body.seourl = seourl;
+            return ((Pwi2.WSSoap)(this)).CikkFullBySEOUrlAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

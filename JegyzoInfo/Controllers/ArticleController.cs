@@ -47,5 +47,20 @@ namespace JegyzoInfo.Controllers
 
             return new JsonResult("");
         }
+
+        [Route("api/Article/GetArticleBySeoUrl/{id}")]
+        public async Task<JsonResult> GetArticleBySeoUrl(string id)
+        {
+            Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
+            Pwi2.CikkFullBySEOUrlResponse resp = await pwi2.CikkFullBySEOUrlAsync(id);
+
+            if (resp.Body.CikkFullBySEOUrlResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
+            {
+                var cikk = resp.Body.CikkFullBySEOUrlResult.List[0];
+                return new JsonResult(cikk);
+            }
+
+            return new JsonResult("");
+        }
     }
 }
