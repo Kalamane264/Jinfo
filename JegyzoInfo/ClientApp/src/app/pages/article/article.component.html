@@ -1,40 +1,42 @@
-<div class="articleWrap">
+<div class="articleWrap" *ngIf="article && szaki">
   <div class="container">
     <app-back></app-back>
-    <div class="bigPicture">
+    <div class="bigPicture" *ngIf="article.bevezetoKepUrl !== ''; else nopic" style="background-image: url('{{ article.bevezetoKepUrl }}');">
       <div class="bottomStuff">
         <h1>
-          Térítési díj egészségügyi szolgáltatásra kötött megállapodásnál és érvénytelen TAJ szám esetén
+          {{ article.cim }}
         </h1>
-        <div class="labelsWrap">
+        <!-- <div class="labelsWrap">
           <span>
             számviteli szabályzatok
           </span>
           <span>
             TB JÁRULÉK
           </span>
-        </div>
+        </div> -->
       </div>
     </div>
     <article>
-      <h1>
-        Térítési díj egészségügyi szolgáltatásra kötött megállapodásnál és érvénytelen TAJ szám esetén
-      </h1>
-      <div class="labelsWrap">
-        <span>
-          számviteli szabályzatok
-        </span>
-        <span>
-          TB JÁRULÉK
-        </span>
-      </div>
+      <ng-template #nopic>
+        <h1>
+          {{ article.cim }}
+        </h1>
+        <!-- <div class="labelsWrap">
+          <span>
+            számviteli szabályzatok
+          </span>
+          <span>
+            TB JÁRULÉK
+          </span>
+        </div> -->
+      </ng-template>
       <div class="infosActions">
         <div class="leftSide">
           <span class="bold_700 delimSmallRight">
-            Szentkirályi Baltazár
+            {{ szaki.nev }}
           </span>
           <span class="clockIcon">
-            Legutóbb frissítve: 2018.01.21.
+            Legutóbb frissítve: {{ article.megjelenesDatum | date : 'YYYY.MM.dd.' }}
           </span>
         </div>
         <div class="rightSide">
@@ -43,7 +45,7 @@
           <img src="/assets/img/iconFacebook.svg" alt="" />
         </div>
       </div>
-      <div class="infoAlert">
+      <div class="infoAlert" *ngIf="article.kiegeszites">
         <img src="/assets/img/iconI.svg" alt="" />
         <p>
           Ezt a cikket frissítettük a legújabb információkkal!
@@ -63,9 +65,9 @@
         </p>
       </div>
       <div class="lead">
-        A munkáltatók jelentős része töri azon a fejét, hogy működési igényeihez igazodóan miként szervezze a munkaidőt, és ezzel szükségszerű összefüggésben hogyan ossza be az alkalmazottaik pihenőidejét. A közelmúlt híradásai ugyan a munkaerő-hiány problémájával vannak tele, de bizony előfordulhat, hogy a munkavállaló alól „fogy el a munka”, vagyis nincs szükség a foglalkoztatott teljes kapacitására.
+        {{ article.bevezeto }}
       </div>
-      <div class="text">
+      <div class="text" [innerHTML]="article.tartalom">
         <h4>
           Ha sok lenne a napi 8 óra (I.) - a részmunkaidő egy különös esete
         </h4>
@@ -105,22 +107,24 @@
           A részmunkaidő egyik különös esete - ahogyan mondjuk, atipikus munkaviszony - a munkavégzés behívás alapján. A törvényszöveg szerint legfeljebb napi hat óra tartamú részmunkaidőben foglalkoztatott munkavállaló munkaszerződés alapján a munkakörébe tartozó feladatok esedékességéhez igazodva teljesíti munkavégzési kötelezettségét. A munkáltatónak a munkavégzés időpontját legalább három nappal előre közölnie kell a munkavállalóval [Mt. 193. §] Miután a munkáltatónak a munkavégzés időpontját legalább három nappal előre közölnie kell a munkavállalóval, így annak munkavégzési kötelessége a feladatok esedékességéhez igazodik. Mindez a munkáltató kétségtelen előnye. Az Mt. szerint minimum 3 nappal korábban a munkáltató közli a munkavégzés időpontját, bár a törvény erről nem rendelkezik, a feleknek célszerű a munkaszerződésben megállapodniuk a foglalkoztatással nem járó időszakban a kapcsolattartás módjáról.
         </p>
       </div>
-      <div class="freshContent">
+      <div class="freshContent" *ngIf="article.kiegeszites">
         <h5>
           FRISSÍTETT TARTALOM!
         </h5>
-        <h5>
-          Ha sok lenne a napi 8 óra (I.) - a részmunkaidő egy különös esete
-        </h5>
-        <p>
-          A részmunkaidő egyik különös esete – ahogyan mondjuk, atipikus munkaviszony – a munkavégzés behívás alapján. A törvényszöveg szerint legfeljebb napi hat óra tartamú részmunkaidőben foglalkoztatott munkavállaló munkaszerződés alapján a munkakörébe tartozó feladatok esedékességéhez igazodva teljesíti munkavégzési kötelezettségét. A munkáltatónak a munkavégzés időpontját legalább három nappal előre közölnie kell a munkavállalóval [Mt. 193. §]
-        </p>
-        <h5>
-          Ha sok lenne a napi 8 óra (I.) - a részmunkaidő egy különös esete
-        </h5>
-        <p>
-          A részmunkaidő egyik különös esete – ahogyan mondjuk, atipikus munkaviszony – a munkavégzés behívás alapján. A törvényszöveg szerint legfeljebb napi hat óra tartamú részmunkaidőben foglalkoztatott munkavállaló munkaszerződés alapján a munkakörébe tartozó feladatok esedékességéhez igazodva teljesíti munkavégzési kötelezettségét. A munkáltatónak a munkavégzés időpontját legalább három nappal előre közölnie kell a munkavállalóval [Mt. 193. §]
-        </p>
+        <div [innerHTML]="article.kiegeszites">
+          <h5>
+            Ha sok lenne a napi 8 óra (I.) - a részmunkaidő egy különös esete
+          </h5>
+          <p>
+            A részmunkaidő egyik különös esete – ahogyan mondjuk, atipikus munkaviszony – a munkavégzés behívás alapján. A törvényszöveg szerint legfeljebb napi hat óra tartamú részmunkaidőben foglalkoztatott munkavállaló munkaszerződés alapján a munkakörébe tartozó feladatok esedékességéhez igazodva teljesíti munkavégzési kötelezettségét. A munkáltatónak a munkavégzés időpontját legalább három nappal előre közölnie kell a munkavállalóval [Mt. 193. §]
+          </p>
+          <h5>
+            Ha sok lenne a napi 8 óra (I.) - a részmunkaidő egy különös esete
+          </h5>
+          <p>
+            A részmunkaidő egyik különös esete – ahogyan mondjuk, atipikus munkaviszony – a munkavégzés behívás alapján. A törvényszöveg szerint legfeljebb napi hat óra tartamú részmunkaidőben foglalkoztatott munkavállaló munkaszerződés alapján a munkakörébe tartozó feladatok esedékességéhez igazodva teljesíti munkavégzési kötelezettségét. A munkáltatónak a munkavégzés időpontját legalább három nappal előre közölnie kell a munkavállalóval [Mt. 193. §]
+          </p>
+        </div>
       </div>
       <div class="related">
         <h5>

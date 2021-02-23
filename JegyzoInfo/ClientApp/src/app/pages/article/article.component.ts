@@ -12,6 +12,7 @@ export class ArticleComponent implements OnInit {
 
   seoUrl = "";
   article: Article;
+  szaki: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +27,14 @@ export class ArticleComponent implements OnInit {
     this.articleService.getArticleBySeoUrl(this.seoUrl).subscribe(article => {
       this.article = article;
       console.log('article', article);
+      this.getSzaki(article.szakertoID);
+    });
+  }
+
+  getSzaki(id: number) {
+    this.articleService.getSzakertoAdatokFullBySzakertoId(id).subscribe(szaki => {
+      this.szaki = szaki;
+      console.log('szaki', szaki)
     });
   }
 }

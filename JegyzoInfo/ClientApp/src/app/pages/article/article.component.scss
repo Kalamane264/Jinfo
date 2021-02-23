@@ -10,6 +10,8 @@
       position: relative;
       min-height: 545px;
       background-image: url("/assets/pic/artex.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
       padding: 0 150px;
       display: flex;
       flex-direction: row;
@@ -107,8 +109,8 @@
         font-weight: 700;
       }
       .text{
+        padding-top: 40px;
         h4{
-          margin-top: 40px;
         }
         p{
           margin-top: 20px;
@@ -174,7 +176,7 @@
         }
       }
       .related{
-        padding-top: 10px;
+        padding-top: 40px;
         h5{
           margin-bottom: 20px;
         }

@@ -20,6 +20,10 @@ export class ArticleService {
   }
 
   getArticleBySeoUrl(seoUrl: string): Observable<Article>{
-    return this.http.get<Article>("/api/Article/getArticle/" + seoUrl);
+    return this.http.get<Article>("/api/Article/GetArticleBySeoUrl/" + seoUrl);
+  }
+
+  getSzakertoAdatokFullBySzakertoId(id: number): Observable<Article>{
+    return this.http.get<Article>("api/Article/GetSzakertoAdatokFullBySzakertoId/" + id);
   }
 }
