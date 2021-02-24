@@ -1,7 +1,7 @@
 <div class="articleWrap" *ngIf="article && szaki">
   <div class="container">
     <app-back></app-back>
-    <div class="bigPicture" *ngIf="article.bevezetoKepUrl !== ''; else nopic" style="background-image: url('{{ article.bevezetoKepUrl }}');">
+    <div class="bigPicture" *ngIf="article.bevezetoKepUrl !== ''" style="background-image: url('{{ article.bevezetoKepUrl }}');">
       <div class="bottomStuff">
         <h1>
           {{ article.cim }}
@@ -17,7 +17,7 @@
       </div>
     </div>
     <article>
-      <ng-template #nopic>
+      <ng-container *ngIf="article.bevezetoKepUrl == ''">
         <h1>
           {{ article.cim }}
         </h1>
@@ -29,7 +29,7 @@
             TB JÁRULÉK
           </span>
         </div> -->
-      </ng-template>
+      </ng-container>
       <div class="infosActions">
         <div class="leftSide">
           <span class="bold_700 delimSmallRight">
@@ -54,16 +54,17 @@
           Olvassa el itt!
         </button>
       </div>
-      <div class="infoAlert">
+      <div class="infoAlert" *ngIf="latogatovezerloCikk">
         <img src="/assets/img/iconI.svg" alt="" />
         <p>
-          Ez a tartalom 1547 napja jelent meg, lehetséges, hogy az itt szereplő információk már nem aktuálisak.
+          Ez a tartalom {{ daysOld }} napja jelent meg, lehetséges, hogy az itt szereplő információk már nem aktuálisak.
           Olvassa a témában megjelent legfrissebb cikkünket:
-          <a href="#">
-            Az Országgyűlés előtt az új adócsomag
+          <a routerLink="/cikk/{{ latogatovezerloCikk.seoUrl }}">
+            {{ article.latogatovezerloUTM }}
           </a>
         </p>
       </div>
+      <a (click)="redirToNew('kinek-jar-az-iparuzesi-ado-felezese')">popp</a>
       <div class="lead">
         {{ article.bevezeto }}
       </div>
