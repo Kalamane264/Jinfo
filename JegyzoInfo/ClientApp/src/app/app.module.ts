@@ -31,6 +31,7 @@ import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { ViddurationPipe } from './pipes/vidduration.pipe';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
     VideosPageComponent,
     CoursesPageComponent,
     CourseComponent,
-    LoginComponent
+    LoginComponent,
+    ViddurationPipe
   ],
   imports: [
     BrowserModule,

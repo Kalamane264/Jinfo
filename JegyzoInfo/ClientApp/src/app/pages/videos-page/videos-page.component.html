@@ -2,92 +2,23 @@
   <app-back></app-back>
   <div class="videosWrap">
     <div class="row">
-      <div class="col-md-6">
+      <div *ngFor="let vid of videos" class="col-md-6">
         <section class="aVideo">
           <div class="video">
-            <img src="/assets/pic/vidinyo.jpg" alt="" />
+            <video [src]="vid.videoURL.replace('http://', 'https://')" controls="true" #vidi></video>
+            <!-- <img src="/assets/pic/vidinyo.jpg" alt="" /> -->
           </div>
           <div class="details">
             <h6>
-              Térítési díj egészségügyi szolgáltatásra kötött megállapodásnál és érvénytelen TAJ szám esetén
+              {{ vid.cim }}
             </h6>
             <p class="author">
-              Előadó: Dr. Tamás Ferenc adószakértő
+              <!-- {{ vid.szaki.nev }} -->
             </p>
             <p class="duration">
-              Lejátszási idő:  52 perc
-            </p>
-          </div>
-        </section>
-      </div>
-      <div class="col-md-6">
-        <section class="aVideo">
-          <div class="video">
-            <img src="/assets/pic/vidinyo.jpg" alt="" />
-          </div>
-          <div class="details">
-            <h6>
-              Térítési díj egészségügyi szolgáltatásra kötött megállapodásnál és érvénytelen TAJ szám esetén
-            </h6>
-            <p class="author">
-              Előadó: Dr. Tamás Ferenc adószakértő
-            </p>
-            <p class="duration">
-              Lejátszási idő:  54 perc
-            </p>
-          </div>
-        </section>
-      </div>
-      <div class="col-md-6">
-        <section class="aVideo">
-          <div class="video">
-            <img src="/assets/pic/vidinyo.jpg" alt="" />
-          </div>
-          <div class="details">
-            <h6>
-              Térítési díj egészségügyi szolgáltatásra kötött megállapodásnál és érvénytelen TAJ szám esetén
-            </h6>
-            <p class="author">
-              Előadó: Dr. Tamás Ferenc adószakértő
-            </p>
-            <p class="duration">
-              Lejátszási idő:  54 perc
-            </p>
-          </div>
-        </section>
-      </div>
-      <div class="col-md-6">
-        <section class="aVideo">
-          <div class="video">
-            <img src="/assets/pic/vidinyo.jpg" alt="" />
-          </div>
-          <div class="details">
-            <h6>
-              Térítési díj egészségügyi szolgáltatásra kötött megállapodásnál és érvénytelen TAJ szám esetén
-            </h6>
-            <p class="author">
-              Előadó: Dr. Tamás Ferenc adószakértő
-            </p>
-            <p class="duration">
-              Lejátszási idő:  54 perc
-            </p>
-          </div>
-        </section>
-      </div>
-      <div class="col-md-6">
-        <section class="aVideo">
-          <div class="video">
-            <img src="/assets/pic/vidinyo.jpg" alt="" />
-          </div>
-          <div class="details">
-            <h6>
-              Térítési díj egészségügyi szolgáltatásra kötött megállapodásnál és érvénytelen TAJ szám esetén
-            </h6>
-            <p class="author">
-              Előadó: Dr. Tamás Ferenc adószakértő
-            </p>
-            <p class="duration">
-              Lejátszási idő:  54 perc
+              Lejátszási idő:
+              {{ vidi | vidduration | async }}
+              perc
             </p>
           </div>
         </section>
