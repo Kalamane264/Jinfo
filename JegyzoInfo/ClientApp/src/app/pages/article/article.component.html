@@ -45,7 +45,7 @@
           <img src="/assets/img/iconFacebook.svg" alt="" />
         </div>
       </div>
-      <div class="infoAlert" *ngIf="article.kiegeszites">
+      <div class="infoAlert" *ngIf="article.kiegeszites" pageScroll href="#freshContent">
         <img src="/assets/img/iconI.svg" alt="" />
         <p>
           Ezt a cikket frissítettük a legújabb információkkal!
@@ -59,12 +59,11 @@
         <p>
           Ez a tartalom {{ daysOld }} napja jelent meg, lehetséges, hogy az itt szereplő információk már nem aktuálisak.
           Olvassa a témában megjelent legfrissebb cikkünket:
-          <a routerLink="/cikk/{{ latogatovezerloCikk.seoUrl }}">
+          <a (click)="redirToNew(latogatovezerloCikk.seoUrl)">
             {{ article.latogatovezerloUTM }}
           </a>
         </p>
       </div>
-      <a (click)="redirToNew('kinek-jar-az-iparuzesi-ado-felezese')">popp</a>
       <div class="lead">
         {{ article.bevezeto }}
       </div>
@@ -108,7 +107,7 @@
           A részmunkaidő egyik különös esete - ahogyan mondjuk, atipikus munkaviszony - a munkavégzés behívás alapján. A törvényszöveg szerint legfeljebb napi hat óra tartamú részmunkaidőben foglalkoztatott munkavállaló munkaszerződés alapján a munkakörébe tartozó feladatok esedékességéhez igazodva teljesíti munkavégzési kötelezettségét. A munkáltatónak a munkavégzés időpontját legalább három nappal előre közölnie kell a munkavállalóval [Mt. 193. §] Miután a munkáltatónak a munkavégzés időpontját legalább három nappal előre közölnie kell a munkavállalóval, így annak munkavégzési kötelessége a feladatok esedékességéhez igazodik. Mindez a munkáltató kétségtelen előnye. Az Mt. szerint minimum 3 nappal korábban a munkáltató közli a munkavégzés időpontját, bár a törvény erről nem rendelkezik, a feleknek célszerű a munkaszerződésben megállapodniuk a foglalkoztatással nem járó időszakban a kapcsolattartás módjáról.
         </p>
       </div>
-      <div class="freshContent" *ngIf="article.kiegeszites">
+      <div id="freshContent" class="freshContent" *ngIf="article.kiegeszites">
         <h5>
           FRISSÍTETT TARTALOM!
         </h5>

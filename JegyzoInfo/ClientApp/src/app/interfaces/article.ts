@@ -21,4 +21,5 @@ export interface Article{
   statuszID: number;
   szakertoID: number;
   tartalom: string;
+  olvasasiIdo: string;
 }

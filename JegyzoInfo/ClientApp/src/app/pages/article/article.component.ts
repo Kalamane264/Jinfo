@@ -27,6 +27,13 @@ export class ArticleComponent implements OnInit {
     this.getArticle();
   }
 
+  reset(){
+    this.article = {} as Article;
+    this.latogatovezerloCikk = {} as Article;
+    this.szaki = null;
+    this.daysOld = 0;
+  }
+
   getArticle() {
     this.articleService.getArticleBySeoUrl(this.seoUrl).subscribe(article => {
       this.article = article;
@@ -54,6 +61,7 @@ export class ArticleComponent implements OnInit {
   }
 
   redirToNew(target: string){
+    this.reset();
     this.router.navigate(['cikk', target]);
     this.seoUrl = target;
     console.log('redir', this.seoUrl);
