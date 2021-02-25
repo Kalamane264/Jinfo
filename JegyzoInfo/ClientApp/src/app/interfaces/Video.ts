@@ -8,8 +8,8 @@ export interface Video{
   seoTitle: string;
   seoUrl: string;
   statuszID: number;
-  szakertoID: number;
-  szaki: any;
+  szakertoIDs: number[];
+  szakis: any[];
   tartalom: string;
   videoID: number;
   videoURL: string;

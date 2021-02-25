@@ -1,14 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Pipe({
   name: 'vidduration'
 })
 export class ViddurationPipe implements PipeTransform {
 
-  transform(value: HTMLVideoElement, ...args: unknown[]): unknown {
+  transform(value: HTMLVideoElement, ...args: unknown[]): Subject<number> {
 
-    let subj = new Subject();
+    let subj = new Subject<number>();
     value.onloadedmetadata = function(){
        subj.next(Math.ceil(value.duration / 60));
     }

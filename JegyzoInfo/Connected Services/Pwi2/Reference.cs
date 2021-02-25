@@ -1187,6 +1187,7 @@ namespace Pwi2
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfSzakerto_hosszabb))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfszakerto_hosszabb))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.video))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfInt))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfVideo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfvideo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.folyamat))]
@@ -7511,7 +7512,7 @@ namespace Pwi2
         
         private string VideoURLField;
         
-        private int SzakertoIDField;
+        private Pwi2.ArrayOfInt SzakertoIDsField;
         
         private System.Nullable<int> StatuszIDField;
         
@@ -7658,16 +7659,16 @@ namespace Pwi2
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public int SzakertoID
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public Pwi2.ArrayOfInt SzakertoIDs
         {
             get
             {
-                return this.SzakertoIDField;
+                return this.SzakertoIDsField;
             }
             set
             {
-                this.SzakertoIDField = value;
+                this.SzakertoIDsField = value;
             }
         }
         
@@ -7683,6 +7684,13 @@ namespace Pwi2
                 this.StatuszIDField = value;
             }
         }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfInt", Namespace="http://pwi2.mpraxis.hu/", ItemName="int")]
+    public class ArrayOfInt : System.Collections.Generic.List<int>
+    {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

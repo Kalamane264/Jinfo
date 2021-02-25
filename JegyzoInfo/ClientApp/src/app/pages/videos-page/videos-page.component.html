@@ -12,8 +12,10 @@
             <h6>
               {{ vid.cim }}
             </h6>
-            <p class="author">
-              <!-- {{ vid.szaki.nev }} -->
+            <p class="author" *ngIf="vid.szakis">
+              Előadó:
+              {{ vid.szakis[0].nev }}
+              {{ vid.szakis[0].szakterulet }}
             </p>
             <p class="duration">
               Lejátszási idő:

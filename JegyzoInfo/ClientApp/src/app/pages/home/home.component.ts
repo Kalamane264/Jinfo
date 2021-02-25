@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
 
   getFolyamats(){
     this.knowledgeBaseService.getFolyamats().subscribe(folyamats => {
-      this.folyamats = folyamats;
+      this.folyamats = folyamats.slice(0, 3);
       // console.log('home folyamacc', this.folyamats);
     });
   }

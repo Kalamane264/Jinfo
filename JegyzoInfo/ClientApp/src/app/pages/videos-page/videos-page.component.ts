@@ -26,16 +26,22 @@ export class VideosPageComponent implements OnInit {
       this.videos = videos;
       console.log('vids', videos);
       videos.forEach(vid => {
-        this.getSzaki(vid);
+        if(vid.szakertoIDs.length > 0) {
+            this.getSzaki(vid);
+        }
       })
     });
   }
 
   getSzaki(vid: Video){
-    this.articleService.getSzakertoAdatokFullBySzakertoId(vid.szakertoID).subscribe(szaki => {
-      vid.szaki = szaki;
-      console.log('vids', vid);
-    });
+    vid.szakis = [];
+    vid.szakertoIDs.forEach(szakiid => {
+      this.articleService.getSzakertoAdatokFullBySzakertoId(szakiid).subscribe(szaki => {
+        vid.szakis.push(szaki);
+        console.log('vids', vid);
+      });
+    })
+
   }
 
 

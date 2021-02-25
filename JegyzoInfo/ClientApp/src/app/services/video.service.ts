@@ -11,6 +11,6 @@ export class VideoService {
   constructor(private http: HttpClient) { }
 
   GetLegfrissebbVideokBySiteID(max: number): Observable<Video[]>{
-    return this.http.get<Video[]>("/api/GetLegfrissebbVideokBySiteID/" + max);
+    return this.http.get<Video[]>("/api/Video/GetLegfrissebbVideokBySiteID/" + max);
   }
 }
