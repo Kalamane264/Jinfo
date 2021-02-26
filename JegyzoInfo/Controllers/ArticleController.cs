@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using JegyzoInfo.Managers;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -57,6 +58,8 @@ namespace JegyzoInfo.Controllers
             if (resp.Body.CikkFullBySEOUrlResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
             {
                 var cikk = resp.Body.CikkFullBySEOUrlResult.List[0];
+                var articlemanager = new ArticleManager();
+                cikk.Tartalom = await articlemanager.KapcsCikkReplace(cikk.Tartalom);
                 return new JsonResult(cikk);
             }
 

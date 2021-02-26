@@ -1,5 +1,5 @@
 import { Article } from './../../interfaces/article';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from 'src/app/services/article.service';
 import { Route } from '@angular/compiler/src/core';
@@ -7,12 +7,13 @@ import { Route } from '@angular/compiler/src/core';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  styleUrls: ['./article.component.scss']
+  styleUrls: ['./article.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ArticleComponent implements OnInit {
 
-  article: Article;
-  latogatovezerloCikk: Article;
+  article = new Article();
+  latogatovezerloCikk = new Article();
   seoUrl = "";
   szaki: any;
   daysOld = 0;
@@ -28,8 +29,8 @@ export class ArticleComponent implements OnInit {
   }
 
   reset(){
-    this.article = {} as Article;
-    this.latogatovezerloCikk = {} as Article;
+    this.article = new Article();
+    this.latogatovezerloCikk = new Article();
     this.szaki = null;
     this.daysOld = 0;
   }

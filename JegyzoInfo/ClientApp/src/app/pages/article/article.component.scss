@@ -111,13 +111,14 @@
       .text{
         padding-top: 40px;
         h4{
+          font-weight: 700;
         }
         p{
           margin-top: 20px;
           margin-bottom: 20px;
           color: $dark2;
         }
-        .quote{
+        blockquote{
           margin-left: 64px;
           border-left: 4px solid $orange;
           padding: 18px 40px 18px 0;
@@ -139,12 +140,16 @@
           }
         }
         .offer{
+          margin: 40px 0;
           .top{
             background-color: $darkBlue;
             color: white;
             padding: 6px 64px;
             display: flex;
             align-items: center;
+          }
+          p{
+            font-size: 14px;
           }
           .bottom{
             background-color: $lightGray;
@@ -239,6 +244,7 @@
         h5{
           color: $dark;
           margin-top: 20px;
+          padding-bottom: 30px;
           &:first-child{
             margin-top: 0;
             margin-bottom: 7px;
