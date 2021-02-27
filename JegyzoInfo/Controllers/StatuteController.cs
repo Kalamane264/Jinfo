@@ -17,8 +17,8 @@ namespace JegyzoInfo.Controllers
                 Pwi2.JogszabalySzovegJelenlegiDatumSzerintResponse resp = await pwi2.JogszabalySzovegJelenlegiDatumSzerintAsync(uid);
                 if (resp.Body.JogszabalySzovegJelenlegiDatumSzerintResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
                 {
-                    var videos = resp.Body.JogszabalySzovegJelenlegiDatumSzerintResult.List;
-                    return new JsonResult(videos);
+                    var jsz = resp.Body.JogszabalySzovegJelenlegiDatumSzerintResult.List;
+                    return new JsonResult(jsz);
                 }
             }
             catch (Exception e)

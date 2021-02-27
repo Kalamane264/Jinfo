@@ -9,6 +9,6 @@ export class StatuteService {
   constructor(private http: HttpClient) { }
 
   GetJogszabalySzovegJelenlegiDatumSzerint(uid: string){
-    return this.http.get<any>("/api/Article/getArticle/" + uid);
+    return this.http.get<any>("api/Statute/GetJogszabalySzovegJelenlegiDatumSzerint/" + uid);
   }
 }
