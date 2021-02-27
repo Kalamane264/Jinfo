@@ -19,9 +19,8 @@ namespace JegyzoInfo.Managers
 			Regex rx = new Regex(@"\[\*?KAPCS CIKK_ID=[*].+?[*] UTM=[*].+?[*] KAPCS\*?\]", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 			MatchCollection matches = rx.Matches(tartalom);
 			List<KapcsolodoCikk> kapcsolodoCikks = new List<KapcsolodoCikk>();
-			string szovegdoboz = "<div class='linkpreview bekezdes_utan'> <a href='*CIKKURL*' target='_self'> <div class='linkpreview_header'>Kapcsolódó</div> <div class='linkpreview_box '> <div class='linkpreview_box_imgcont'> <div class='linkpreview_box_imgcont_img'><img src='*KEPURL*'; alt='*KEPALTAG*'></div> </div> <div class='linkpreview_box_textcont'> <div class='linkpreview_box_textcont_text'> <h2 class='linkpreview_box_textcont_text_hl'><a href='*CIKKURL*' target='_self'> *SEOTITLE* </a></h2> <p class='linkpreview_box_textcont_text_lead'> *LEAD2* </p> </div> </div> </div> </a> </div>";
 
-			szovegdoboz =
+			string szovegdoboz =
 				"<a href='*CIKKURL*'>" +
 					"<div class=\"offer\">" +
 					  "<div class=\"top\">" +

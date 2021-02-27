@@ -24,7 +24,7 @@ const routes: Routes = [
     component: ArticlesComponent
   },
   {
-    path: "jogszabaly",
+    path: "jogszabaly/:uid",
     component: StatuteComponent
   },
   {

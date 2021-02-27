@@ -129,16 +129,13 @@
           </p>
         </div>
       </div>
-      <div class="related">
+      <div class="related" *ngIf="article.folyamats.length > 0">
         <h5>
           Kapcsolódó fejezetek a tudástárban
         </h5>
         <div class="chaptersWrap">
-          <div class="chapter">
-            Településképi eljárás
-          </div>
-          <div class="chapter">
-            Településképi eljárás Lorem ipsum dolor sit amet.
+          <div *ngFor="let folyamat of article.folyamats" class="chapter" [routerLink]="'/topic/' + folyamat.folyamatID">
+            {{ folyamat.nev }} lll
           </div>
         </div>
       </div>
@@ -147,16 +144,13 @@
           Érdekel az előfizetés
         </button>
       </div>
-      <div class="related">
+      <div class="related" *ngIf="article.jogszabalys.length > 0">
         <h5>
           Kapcsolódó jogszabályok
         </h5>
         <div class="chaptersWrap">
-          <div class="chapter chapterJsz" routerLink="/jogszabaly">
-            5/2003. (II. 19.) ESzCsM rendelet
-          </div>
-          <div class="chapter chapterJsz" routerLink="/jogszabaly">
-            2017. évi CLIII. törvény az adóhatóság által foganatosítandó végrehajtási eljárásokról
+          <div *ngFor="let jsz of article.jogszabalys" class="chapter chapterJsz" [routerLink]="'/jogszabaly/' + jsz.uid">
+            {{ jsz.nev }}
           </div>
         </div>
       </div>

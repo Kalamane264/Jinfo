@@ -1,3 +1,5 @@
+import { Folyamat } from './folyamat';
+import { Jogszabaly } from './jogszabaly';
 export class Article{
   alttag?:	string;
   bevezeto?: string;
@@ -9,7 +11,7 @@ export class Article{
   keredzhetoSzakertoID?: number;
   kiegeszites?: string;
   latogatovezerloCikkID?: number;
-  latogatovezerloUTM: string;
+  latogatovezerloUTM = "";
   lead2?: string;
 	letrehozasDatum?: Date;
   megjelenesDatum = new Date();
@@ -22,4 +24,6 @@ export class Article{
   szakertoID = 0;
   tartalom?: string;
   olvasasiIdo?: string;
+  jogszabalys: Jogszabaly[] = [];
+  folyamats: Folyamat[] = [];
 }

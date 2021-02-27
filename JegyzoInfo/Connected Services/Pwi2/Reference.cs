@@ -1173,6 +1173,10 @@ namespace Pwi2
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfUrl))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfurl))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.cikk))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfJszwithnameanduid))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.jszwithnameanduid))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfFolyamatnameandid))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.folyamatnameandid))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfCikk))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfcikk))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.kategoriaV2))]
@@ -6918,6 +6922,10 @@ namespace Pwi2
         
         private System.Nullable<int> KeredzhetoSzakertoIDField;
         
+        private Pwi2.ArrayOfJszwithnameanduid JogszabalysField;
+        
+        private Pwi2.ArrayOfFolyamatnameandid FolyamatsField;
+        
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int CikkID
         {
@@ -7214,6 +7222,120 @@ namespace Pwi2
             set
             {
                 this.KeredzhetoSzakertoIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=23)]
+        public Pwi2.ArrayOfJszwithnameanduid Jogszabalys
+        {
+            get
+            {
+                return this.JogszabalysField;
+            }
+            set
+            {
+                this.JogszabalysField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=24)]
+        public Pwi2.ArrayOfFolyamatnameandid Folyamats
+        {
+            get
+            {
+                return this.FolyamatsField;
+            }
+            set
+            {
+                this.FolyamatsField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfJszwithnameanduid", Namespace="http://pwi2.mpraxis.hu/", ItemName="jszwithnameanduid")]
+    public class ArrayOfJszwithnameanduid : System.Collections.Generic.List<Pwi2.jszwithnameanduid>
+    {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="jszwithnameanduid", Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class jszwithnameanduid : object
+    {
+        
+        private string nevField;
+        
+        private string uidField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string nev
+        {
+            get
+            {
+                return this.nevField;
+            }
+            set
+            {
+                this.nevField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string uid
+        {
+            get
+            {
+                return this.uidField;
+            }
+            set
+            {
+                this.uidField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfFolyamatnameandid", Namespace="http://pwi2.mpraxis.hu/", ItemName="folyamatnameandid")]
+    public class ArrayOfFolyamatnameandid : System.Collections.Generic.List<Pwi2.folyamatnameandid>
+    {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="folyamatnameandid", Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class folyamatnameandid : object
+    {
+        
+        private string nevField;
+        
+        private int folyamatidField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string nev
+        {
+            get
+            {
+                return this.nevField;
+            }
+            set
+            {
+                this.nevField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int folyamatid
+        {
+            get
+            {
+                return this.folyamatidField;
+            }
+            set
+            {
+                this.folyamatidField = value;
             }
         }
     }
