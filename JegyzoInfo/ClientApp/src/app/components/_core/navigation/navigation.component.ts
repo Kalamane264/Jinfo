@@ -1,7 +1,7 @@
-import { logging } from 'protractor';
-import { Component, Inject, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { PageScrollService } from 'ngx-page-scroll-core';
-import { DOCUMENT } from '@angular/common';
+import { LogoutDialogComponent } from './../../logout-dialog/logout-dialog.component';
+import { UserService } from './../../../services/user.service';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-navigation',
@@ -13,7 +13,9 @@ export class NavigationComponent implements OnInit {
   menuIsOpened = false;
   loginIsOpened = false;
 
-  constructor(private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any) { }
+  constructor(
+    public userService: UserService,
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -24,5 +26,25 @@ export class NavigationComponent implements OnInit {
 
   clickLogin(){
     this.loginIsOpened = !this.loginIsOpened;
+  }
+
+  clickLogout(){
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+    // dialogConfig.disableClose = true;
+
+    const dialogRef = this.dialog.open(LogoutDialogComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(msg => {
+      console.log('msg', msg);
+      if(msg == 'logout') {
+        this.userService.logout();
+      }
+    });
+  }
+
+  logSucc(e: string) {
+    console.log(e);
+    this.loginIsOpened = false;
   }
 }

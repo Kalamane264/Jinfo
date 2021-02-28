@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -32,6 +33,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { ViddurationPipe } from './pipes/vidduration.pipe';
+import { LogoutDialogComponent } from './components/logout-dialog/logout-dialog.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,11 @@ import { ViddurationPipe } from './pipes/vidduration.pipe';
     CoursesPageComponent,
     CourseComponent,
     LoginComponent,
-    ViddurationPipe
+    ViddurationPipe,
+    LogoutDialogComponent
+  ],
+  entryComponents: [
+    LogoutDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -66,10 +72,14 @@ import { ViddurationPipe } from './pipes/vidduration.pipe';
     BrowserAnimationsModule,
     NgbModule,
     FormsModule,
-    NgxPageScrollCoreModule.forRoot({duration: 300}),
-    NgxPageScrollModule
+    NgxPageScrollCoreModule.forRoot({duration: 300, scrollOffset: 100}),
+    NgxPageScrollModule,
+    MatDialogModule
   ],
-  providers: [CookieService],
+  providers: [
+    CookieService,
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

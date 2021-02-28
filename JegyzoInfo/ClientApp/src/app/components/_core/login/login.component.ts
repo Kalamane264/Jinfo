@@ -1,5 +1,6 @@
 import { UserService } from './../../../services/user.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   @Input() loginIsOpened = false;
+  @Output() loginSuccess: EventEmitter<string> = new EventEmitter();
 
   loginForm = {
     email: "hivessy@menedzserpraxis.hu",
@@ -23,8 +25,10 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    console.log("Loginy!");
-
-    this.userService.login(this.loginForm.email, this.loginForm.password);
+    this.userService.login(this.loginForm.email, this.loginForm.password).subscribe(user => {
+      if(user) {
+        this.loginSuccess.emit("fasz");
+      }
+    });
   }
 }

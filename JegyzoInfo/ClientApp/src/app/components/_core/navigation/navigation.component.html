@@ -31,11 +31,16 @@
           </a>
         </li>
         <li class="loginText">
-          <a (click)="clickLogin()">
+          <a (click)="clickLogin()" *ngIf="!userService.userLoggedIn; else logout">
             Bejelentkezés
           </a>
+          <ng-template #logout>
+            <a (click)="clickLogout()">
+              Kijelentkezés
+            </a>
+          </ng-template>
           <hr/>
-          <app-login [loginIsOpened]="loginIsOpened"></app-login>
+          <app-login [loginIsOpened]="loginIsOpened" (loginSuccess)="logSucc($event)"></app-login>
         </li>
       </ul>
       <ul class="mobileMenu">
