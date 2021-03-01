@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.loginForm.email, this.loginForm.password).subscribe(user => {
       if(user) {
         this.loginSuccess.emit("fasz");
+      } else {
+        alert("Hibás felhasználónév / jelszó!");
       }
     });
   }
