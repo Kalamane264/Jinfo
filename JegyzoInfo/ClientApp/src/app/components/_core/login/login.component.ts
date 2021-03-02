@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   login(){
     this.userService.login(this.loginForm.email, this.loginForm.password).subscribe(user => {
       if(user) {
-        this.loginSuccess.emit("fasz");
+        this.loginSuccess.emit("login success");
       } else {
         alert("Hibás felhasználónév / jelszó!");
       }

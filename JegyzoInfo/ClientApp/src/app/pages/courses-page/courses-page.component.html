@@ -47,8 +47,9 @@
     <h4>
       Képzéseink
     </h4>
-    <app-course></app-course>
-    <app-course></app-course>
+    <ng-container *ngIf="events.length > 0">
+      <app-course *ngFor="let item of events" [event]="item"></app-course>
+    </ng-container>
   </div>
 </div>
 

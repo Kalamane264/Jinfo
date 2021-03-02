@@ -10,9 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TopicPageComponent implements OnInit {
 
-  public folyamat: Folyamat | undefined;
-  public parentfolyamat: Folyamat | undefined;
-  folyamats: Folyamat[] = [];
+  public folyamat = new Folyamat();
   URLid: number = 0;
 
   constructor(private knowledgeBaseService: KnowledgeBaseService, private route: ActivatedRoute) { }
@@ -20,17 +18,13 @@ export class TopicPageComponent implements OnInit {
   ngOnInit(): void {
     let id: string = this.route.snapshot.paramMap.get('id')!;
     this.URLid = parseInt(id);
-    //alert(this.URLid);
-    this.getFolyamats();
+    this.getFolyamat(this.URLid);
   }
 
-  getFolyamats(){
-    this.knowledgeBaseService.getFolyamats().subscribe(folyamats => {
-      this.folyamats = folyamats;
-      console.log('Topic folyamacc', this.folyamats);
-
-      this.folyamat = this.knowledgeBaseService.folyamatFindById(folyamats, this.URLid);
-      console.log('Foundfolyamat', this.folyamat);
-    });
+  getFolyamat(id: number){
+    this.knowledgeBaseService.folyamatAgListazasaFoFolyamatIDSzerint(id).subscribe(folyamat => {
+      console.log('Folyamat resp', folyamat);
+      this.folyamat = folyamat;
+    })
   }
 }

@@ -1,10 +1,10 @@
 <div class="topicWrap">
-  <section class="topic new">
+  <section class="topic" [class.new]="itsnew">
     <h6>
       {{ folyamat.nev }}
     </h6>
     <p class="clockIcon">
-      Legutóbb frissítve: 2018.01.21.
+      Legutóbb frissítve: {{ folyamat.megjelenesDatum | date : 'YYYY.MM.dd.' }}
     </p>
     <div [innerHTML]="folyamat.szoveg "></div>
     <!-- <ul>

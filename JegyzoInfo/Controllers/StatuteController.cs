@@ -14,7 +14,7 @@ namespace JegyzoInfo.Controllers
             Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
             try
             {
-                Pwi2.JogszabalySzovegJelenlegiDatumSzerintResponse resp = await pwi2.JogszabalySzovegJelenlegiDatumSzerintAsync(uid);
+                Pwi2.JogszabalySzovegJelenlegiDatumSzerintResponse resp = await pwi2.JogszabalySzovegJelenlegiDatumSzerintAsync(uid, true);
                 if (resp.Body.JogszabalySzovegJelenlegiDatumSzerintResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
                 {
                     var jsz = resp.Body.JogszabalySzovegJelenlegiDatumSzerintResult.List;

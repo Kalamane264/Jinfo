@@ -1,5 +1,6 @@
 import { Folyamat } from './folyamat';
 import { Jogszabaly } from './jogszabaly';
+
 export class Article{
   alttag?:	string;
   bevezeto?: string;
@@ -25,5 +26,5 @@ export class Article{
   tartalom?: string;
   olvasasiIdo?: string;
   jogszabalys: Jogszabaly[] = [];
-  folyamats: Folyamat[] = [];
+  folyamats: any[] = [];
 }

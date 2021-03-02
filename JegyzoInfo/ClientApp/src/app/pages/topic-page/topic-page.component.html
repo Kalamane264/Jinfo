@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container" *ngIf="folyamat.folyamatID">
   <app-back></app-back>
   <div class="pagetitle">
     <h1>
-      {{ folyamat?.nev }}
+      {{ folyamat.nev }}
     </h1>
   </div>
-  <div *ngIf="folyamat" class="chaptersWrap">
-    <ng-container *ngFor="let folyamat of folyamat.folyamatok">
-      <app-chapter *ngIf="!folyamat.torolve" [folyamat]="folyamat" [parentFolyamat]="folyamat" [opened]="false"></app-chapter>
+  <div class="chaptersWrap">
+    <ng-container *ngFor="let item of folyamat.folyamatok; index as i;">
+      <app-chapter *ngIf="!item.torolve" [folyamat]="item" [opened]="false" [serial]="i"></app-chapter>
     </ng-container>
   </div>
 </div>

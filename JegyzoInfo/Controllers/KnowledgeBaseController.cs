@@ -33,5 +33,21 @@ namespace JegyzoInfo.Controllers
 
             return new JsonResult("");
         }
+
+        [Route("api/KnowledgeBase/FolyamatAgListazasaFoFolyamatIDSzerint/{id}")]
+        public async Task<JsonResult> FolyamatAgListazasaFoFolyamatIDSzerint(int id)
+        {
+
+            Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
+            Pwi2.FolyamatAgListazasaFoFolyamatIDSzerintResponse resp = await pwi2.FolyamatAgListazasaFoFolyamatIDSzerintAsync(id);
+
+            if (resp.Body.FolyamatAgListazasaFoFolyamatIDSzerintResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
+            {
+                var folyamatList = resp.Body.FolyamatAgListazasaFoFolyamatIDSzerintResult.List[0];
+                return new JsonResult(folyamatList);
+            }
+
+            return new JsonResult("");
+        }
     }
 }

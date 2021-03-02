@@ -1,3 +1,4 @@
+import { ExpertService } from './../../services/expert.service';
 import { Article } from './../../interfaces/article';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -21,6 +22,7 @@ export class ArticleComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private articleService: ArticleService,
+    private expertService: ExpertService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -55,7 +57,7 @@ export class ArticleComponent implements OnInit {
   }
 
   getSzaki(id: number) {
-    this.articleService.getSzakertoAdatokFullBySzakertoId(id).subscribe(szaki => {
+    this.expertService.getSzakertoAdatokFullBySzakertoId(id).subscribe(szaki => {
       this.szaki = szaki;
       console.log('szaki', szaki)
     });
@@ -72,11 +74,9 @@ export class ArticleComponent implements OnInit {
   countDaysOld(date: Date){
     date = new Date(date);
     let now = new Date();
-    // console.log('faísutzas', date);
 
     const diffTime = Math.abs(now.valueOf() - date.valueOf());
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    // console.log('diffdayz', diffDays);
     this.daysOld = diffDays;
   }
 }

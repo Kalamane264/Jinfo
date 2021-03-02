@@ -14,6 +14,10 @@ export class KnowledgeBaseService {
     return this.http.get<Folyamat[]>("/api/KnowledgeBase/GetFolyamats");
   }
 
+  folyamatAgListazasaFoFolyamatIDSzerint(id: number): Observable<Folyamat> {
+    return this.http.get<Folyamat>("/api/KnowledgeBase/FolyamatAgListazasaFoFolyamatIDSzerint/" + id);
+  }
+
   folyamatFindById(folyamats: Folyamat[], id: number): Folyamat | undefined{
 
     let found = folyamats.find(f => f.folyamatID == id);

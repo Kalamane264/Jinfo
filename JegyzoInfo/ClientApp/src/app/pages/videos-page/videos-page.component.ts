@@ -1,3 +1,4 @@
+import { ExpertService } from './../../services/expert.service';
 import { ArticleService } from './../../services/article.service';
 import { Video } from './../../interfaces/Video';
 import { VideoService } from './../../services/video.service';
@@ -14,7 +15,8 @@ export class VideosPageComponent implements OnInit {
 
   constructor(
     private videoService: VideoService,
-    private articleService: ArticleService
+    private articleService: ArticleService,
+    private expertService: ExpertService
     ) { }
 
   ngOnInit(): void {
@@ -36,7 +38,7 @@ export class VideosPageComponent implements OnInit {
   getSzaki(vid: Video){
     vid.szakis = [];
     vid.szakertoIDs.forEach(szakiid => {
-      this.articleService.getSzakertoAdatokFullBySzakertoId(szakiid).subscribe(szaki => {
+      this.expertService.getSzakertoAdatokFullBySzakertoId(szakiid).subscribe(szaki => {
         vid.szakis.push(szaki);
         console.log('vids', vid);
       });

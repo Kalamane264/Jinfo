@@ -10,8 +10,8 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 export class ChapterComponent implements OnInit {
 
   @Input() opened = false;
-  @Input() parentFolyamat: Folyamat;
-  @Input() folyamat: Folyamat;
+  @Input() folyamat = new Folyamat();
+  @Input() serial = 0;
 
   constructor() { }
 

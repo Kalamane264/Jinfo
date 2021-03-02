@@ -39,6 +39,7 @@ namespace Pwi2
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfKapcsolattartoLista))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfKoztJelleg))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfsp_ws_GetCustomerByHash_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfInterakciok))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfStreem))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfArchivumKategoria))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfArchivum))]
@@ -52,6 +53,7 @@ namespace Pwi2
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfcikk))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfkategoriaV2))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfcikk_rovidebb))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfesemeny))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfszakerto_rovidebb))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfszakerto_hosszabb))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfvideo))]
@@ -637,6 +639,28 @@ namespace Pwi2
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WMWIListResultOfInterakciok", Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class WMWIListResultOfInterakciok : Pwi2.WMWIResult
+    {
+        
+        private Pwi2.Interakciok[] ListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public Pwi2.Interakciok[] List
+        {
+            get
+            {
+                return this.ListField;
+            }
+            set
+            {
+                this.ListField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.Runtime.Serialization.DataContractAttribute(Name="WMWIListResultOfStreem", Namespace="http://pwi2.mpraxis.hu/")]
     public partial class WMWIListResultOfStreem : Pwi2.WMWIResult
     {
@@ -923,6 +947,28 @@ namespace Pwi2
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WMWIListResultOfesemeny", Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class WMWIListResultOfesemeny : Pwi2.WMWIResult
+    {
+        
+        private Pwi2.ArrayOfEsemeny ListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public Pwi2.ArrayOfEsemeny List
+        {
+            get
+            {
+                return this.ListField;
+            }
+            set
+            {
+                this.ListField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.Runtime.Serialization.DataContractAttribute(Name="WMWIListResultOfszakerto_rovidebb", Namespace="http://pwi2.mpraxis.hu/")]
     public partial class WMWIListResultOfszakerto_rovidebb : Pwi2.WMWIResult
     {
@@ -1125,6 +1171,7 @@ namespace Pwi2
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.FelhasznaloAdat[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfFelhasznaloAdat))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.FelhasznaloAdat2))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfDateTime))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.FelhasznaloAdat2[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfFelhasznaloAdat2))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.Beosztas))]
@@ -1142,6 +1189,9 @@ namespace Pwi2
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.sp_ws_GetCustomerByHash_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfSp_ws_GetCustomerByHash_Result))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfsp_ws_GetCustomerByHash_Result))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.Interakciok))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.Interakciok[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfInterakciok))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.Streem))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.Streem[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfStreem))]
@@ -1185,13 +1235,17 @@ namespace Pwi2
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.cikk_rovidebb))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfCikk_rovidebb))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfcikk_rovidebb))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.esemeny))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfInt))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfEsemeny))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfesemeny))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.szakerto_rovidebb))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfSzakerto_rovidebb))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfszakerto_rovidebb))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfSzakerto_hosszabb))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfszakerto_hosszabb))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.video))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfInt))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfInt1))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfVideo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfvideo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.folyamat))]
@@ -4800,7 +4854,9 @@ namespace Pwi2
         
         private int OlvasatlanErtesitekField;
         
-        private int ElofizetesStatuszField;
+        private Pwi2.ArrayOfT_ElofizetesAllByUserID ElofizetesekField;
+        
+        private Pwi2.ArrayOfDateTime IdopontFoglalasokField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int FelhasznaloID
@@ -5075,18 +5131,38 @@ namespace Pwi2
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
-        public int ElofizetesStatusz
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=21)]
+        public Pwi2.ArrayOfT_ElofizetesAllByUserID Elofizetesek
         {
             get
             {
-                return this.ElofizetesStatuszField;
+                return this.ElofizetesekField;
             }
             set
             {
-                this.ElofizetesStatuszField = value;
+                this.ElofizetesekField = value;
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=22)]
+        public Pwi2.ArrayOfDateTime IdopontFoglalasok
+        {
+            get
+            {
+                return this.IdopontFoglalasokField;
+            }
+            set
+            {
+                this.IdopontFoglalasokField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfDateTime", Namespace="http://pwi2.mpraxis.hu/", ItemName="dateTime")]
+    public class ArrayOfDateTime : System.Collections.Generic.List<System.DateTime>
+    {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5698,6 +5774,13 @@ namespace Pwi2
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfSp_ws_GetCustomerByHash_Result", Namespace="http://pwi2.mpraxis.hu/", ItemName="sp_ws_GetCustomerByHash_Result")]
     public class ArrayOfSp_ws_GetCustomerByHash_Result : System.Collections.Generic.List<Pwi2.sp_ws_GetCustomerByHash_Result>
+    {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Interakciok", Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class Interakciok : object
     {
     }
     
@@ -7309,9 +7392,26 @@ namespace Pwi2
     public partial class folyamatnameandid : object
     {
         
+        private int FolyamatParentIDField;
+        
         private string nevField;
         
         private int folyamatidField;
+        
+        private string seorulField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int FolyamatParentID
+        {
+            get
+            {
+                return this.FolyamatParentIDField;
+            }
+            set
+            {
+                this.FolyamatParentIDField = value;
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string nev
@@ -7326,7 +7426,7 @@ namespace Pwi2
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
         public int folyamatid
         {
             get
@@ -7336,6 +7436,19 @@ namespace Pwi2
             set
             {
                 this.folyamatidField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string seorul
+        {
+            get
+            {
+                return this.seorulField;
+            }
+            set
+            {
+                this.seorulField = value;
             }
         }
     }
@@ -7477,6 +7590,522 @@ namespace Pwi2
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfCikk_rovidebb", Namespace="http://pwi2.mpraxis.hu/", ItemName="cikk_rovidebb")]
     public class ArrayOfCikk_rovidebb : System.Collections.Generic.List<Pwi2.cikk_rovidebb>
+    {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="esemeny", Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class esemeny : object
+    {
+        
+        private int EsemenyIDField;
+        
+        private string NevField;
+        
+        private string HelyszinField;
+        
+        private System.Nullable<System.DateTime> KezdoIdopontField;
+        
+        private System.Nullable<System.DateTime> BefejezoIdopontField;
+        
+        private System.Nullable<System.DateTime> LetrehozasDatumField;
+        
+        private string ReszletekCimField;
+        
+        private string ReszletekBevezetoField;
+        
+        private string ReszletekTartalomField;
+        
+        private string SeoUrlField;
+        
+        private string SeoTitleField;
+        
+        private string SeoKeysField;
+        
+        private string SeoDescriptionField;
+        
+        private string EtkezesField;
+        
+        private string ParkolasField;
+        
+        private System.Nullable<bool> FizetosField;
+        
+        private string MPURLField;
+        
+        private System.Nullable<int> KreditField;
+        
+        private string VarosField;
+        
+        private string EsemenyKepUrlField;
+        
+        private System.Nullable<int> StatuszIDField;
+        
+        private string ArchivOsszefoglaloField;
+        
+        private string ArchivLinkField;
+        
+        private System.Nullable<int> OsszevontIDField;
+        
+        private System.Nullable<bool> KiemeltField;
+        
+        private string VideoUrlField;
+        
+        private string ElearningKepzesiIdoField;
+        
+        private string ElearningUtemezesField;
+        
+        private System.Nullable<int> EsemenyKreditpontoseIDField;
+        
+        private System.Nullable<int> EsemenyKreditpontosSzakteruletIDField;
+        
+        private System.Nullable<int> EsemenyKreditpontTipusIDField;
+        
+        private System.Nullable<int> KapcsolodoKreditpontosEsemenyIDField;
+        
+        private Pwi2.ArrayOfInt SzakertoIDsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int EsemenyID
+        {
+            get
+            {
+                return this.EsemenyIDField;
+            }
+            set
+            {
+                this.EsemenyIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nev
+        {
+            get
+            {
+                return this.NevField;
+            }
+            set
+            {
+                this.NevField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Helyszin
+        {
+            get
+            {
+                return this.HelyszinField;
+            }
+            set
+            {
+                this.HelyszinField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.Nullable<System.DateTime> KezdoIdopont
+        {
+            get
+            {
+                return this.KezdoIdopontField;
+            }
+            set
+            {
+                this.KezdoIdopontField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public System.Nullable<System.DateTime> BefejezoIdopont
+        {
+            get
+            {
+                return this.BefejezoIdopontField;
+            }
+            set
+            {
+                this.BefejezoIdopontField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.Nullable<System.DateTime> LetrehozasDatum
+        {
+            get
+            {
+                return this.LetrehozasDatumField;
+            }
+            set
+            {
+                this.LetrehozasDatumField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string ReszletekCim
+        {
+            get
+            {
+                return this.ReszletekCimField;
+            }
+            set
+            {
+                this.ReszletekCimField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string ReszletekBevezeto
+        {
+            get
+            {
+                return this.ReszletekBevezetoField;
+            }
+            set
+            {
+                this.ReszletekBevezetoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string ReszletekTartalom
+        {
+            get
+            {
+                return this.ReszletekTartalomField;
+            }
+            set
+            {
+                this.ReszletekTartalomField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string SeoUrl
+        {
+            get
+            {
+                return this.SeoUrlField;
+            }
+            set
+            {
+                this.SeoUrlField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public string SeoTitle
+        {
+            get
+            {
+                return this.SeoTitleField;
+            }
+            set
+            {
+                this.SeoTitleField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        public string SeoKeys
+        {
+            get
+            {
+                return this.SeoKeysField;
+            }
+            set
+            {
+                this.SeoKeysField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        public string SeoDescription
+        {
+            get
+            {
+                return this.SeoDescriptionField;
+            }
+            set
+            {
+                this.SeoDescriptionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
+        public string Etkezes
+        {
+            get
+            {
+                return this.EtkezesField;
+            }
+            set
+            {
+                this.EtkezesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public string Parkolas
+        {
+            get
+            {
+                return this.ParkolasField;
+            }
+            set
+            {
+                this.ParkolasField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
+        public System.Nullable<bool> Fizetos
+        {
+            get
+            {
+                return this.FizetosField;
+            }
+            set
+            {
+                this.FizetosField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        public string MPURL
+        {
+            get
+            {
+                return this.MPURLField;
+            }
+            set
+            {
+                this.MPURLField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        public System.Nullable<int> Kredit
+        {
+            get
+            {
+                return this.KreditField;
+            }
+            set
+            {
+                this.KreditField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
+        public string Varos
+        {
+            get
+            {
+                return this.VarosField;
+            }
+            set
+            {
+                this.VarosField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
+        public string EsemenyKepUrl
+        {
+            get
+            {
+                return this.EsemenyKepUrlField;
+            }
+            set
+            {
+                this.EsemenyKepUrlField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
+        public System.Nullable<int> StatuszID
+        {
+            get
+            {
+                return this.StatuszIDField;
+            }
+            set
+            {
+                this.StatuszIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=21)]
+        public string ArchivOsszefoglalo
+        {
+            get
+            {
+                return this.ArchivOsszefoglaloField;
+            }
+            set
+            {
+                this.ArchivOsszefoglaloField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=22)]
+        public string ArchivLink
+        {
+            get
+            {
+                return this.ArchivLinkField;
+            }
+            set
+            {
+                this.ArchivLinkField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=23)]
+        public System.Nullable<int> OsszevontID
+        {
+            get
+            {
+                return this.OsszevontIDField;
+            }
+            set
+            {
+                this.OsszevontIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=24)]
+        public System.Nullable<bool> Kiemelt
+        {
+            get
+            {
+                return this.KiemeltField;
+            }
+            set
+            {
+                this.KiemeltField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=25)]
+        public string VideoUrl
+        {
+            get
+            {
+                return this.VideoUrlField;
+            }
+            set
+            {
+                this.VideoUrlField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=26)]
+        public string ElearningKepzesiIdo
+        {
+            get
+            {
+                return this.ElearningKepzesiIdoField;
+            }
+            set
+            {
+                this.ElearningKepzesiIdoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=27)]
+        public string ElearningUtemezes
+        {
+            get
+            {
+                return this.ElearningUtemezesField;
+            }
+            set
+            {
+                this.ElearningUtemezesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=28)]
+        public System.Nullable<int> EsemenyKreditpontoseID
+        {
+            get
+            {
+                return this.EsemenyKreditpontoseIDField;
+            }
+            set
+            {
+                this.EsemenyKreditpontoseIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=29)]
+        public System.Nullable<int> EsemenyKreditpontosSzakteruletID
+        {
+            get
+            {
+                return this.EsemenyKreditpontosSzakteruletIDField;
+            }
+            set
+            {
+                this.EsemenyKreditpontosSzakteruletIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=30)]
+        public System.Nullable<int> EsemenyKreditpontTipusID
+        {
+            get
+            {
+                return this.EsemenyKreditpontTipusIDField;
+            }
+            set
+            {
+                this.EsemenyKreditpontTipusIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=31)]
+        public System.Nullable<int> KapcsolodoKreditpontosEsemenyID
+        {
+            get
+            {
+                return this.KapcsolodoKreditpontosEsemenyIDField;
+            }
+            set
+            {
+                this.KapcsolodoKreditpontosEsemenyIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=32)]
+        public Pwi2.ArrayOfInt SzakertoIDs
+        {
+            get
+            {
+                return this.SzakertoIDsField;
+            }
+            set
+            {
+                this.SzakertoIDsField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfInt", Namespace="http://pwi2.mpraxis.hu/", ItemName="int")]
+    public class ArrayOfInt : System.Collections.Generic.List<System.Nullable<int>>
+    {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfEsemeny", Namespace="http://pwi2.mpraxis.hu/", ItemName="esemeny")]
+    public class ArrayOfEsemeny : System.Collections.Generic.List<Pwi2.esemeny>
     {
     }
     
@@ -7634,7 +8263,7 @@ namespace Pwi2
         
         private string VideoURLField;
         
-        private Pwi2.ArrayOfInt SzakertoIDsField;
+        private Pwi2.ArrayOfInt1 SzakertoIDsField;
         
         private System.Nullable<int> StatuszIDField;
         
@@ -7782,7 +8411,7 @@ namespace Pwi2
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
-        public Pwi2.ArrayOfInt SzakertoIDs
+        public Pwi2.ArrayOfInt1 SzakertoIDs
         {
             get
             {
@@ -7810,8 +8439,8 @@ namespace Pwi2
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfInt", Namespace="http://pwi2.mpraxis.hu/", ItemName="int")]
-    public class ArrayOfInt : System.Collections.Generic.List<int>
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfInt1", Namespace="http://pwi2.mpraxis.hu/", ItemName="int")]
+    public class ArrayOfInt1 : System.Collections.Generic.List<int>
     {
     }
     
@@ -8460,11 +9089,11 @@ namespace Pwi2
         [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/FelhasznaloLogin", ReplyAction="*")]
         System.Threading.Tasks.Task<Pwi2.FelhasznaloLoginResponse> FelhasznaloLoginAsync(Pwi2.FelhasznaloLoginRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/FelhasznaloLogin2", ReplyAction="*")]
-        System.Threading.Tasks.Task<Pwi2.FelhasznaloLogin2Response> FelhasznaloLogin2Async(Pwi2.FelhasznaloLogin2Request request);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/FelhasznaloBySessionID", ReplyAction="*")]
         System.Threading.Tasks.Task<Pwi2.FelhasznaloBySessionIDResponse> FelhasznaloBySessionIDAsync(Pwi2.FelhasznaloBySessionIDRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/FelhasznaloBySessionID2", ReplyAction="*")]
+        System.Threading.Tasks.Task<Pwi2.FelhasznaloBySessionID2Response> FelhasznaloBySessionID2Async(Pwi2.FelhasznaloBySessionID2Request request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/FelhasznaloByID", ReplyAction="*")]
         System.Threading.Tasks.Task<Pwi2.FelhasznaloByIDResponse> FelhasznaloByIDAsync(Pwi2.FelhasznaloByIDRequest request);
@@ -8507,6 +9136,9 @@ namespace Pwi2
         
         [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/CustomerByHash", ReplyAction="*")]
         System.Threading.Tasks.Task<Pwi2.CustomerByHashResponse> CustomerByHashAsync(Pwi2.CustomerByHashRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/FelhasznaloInterakciok", ReplyAction="*")]
+        System.Threading.Tasks.Task<Pwi2.FelhasznaloInterakciokResponse> FelhasznaloInterakciokAsync(Pwi2.FelhasznaloInterakciokRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/KepzesOnlineStreemSelect", ReplyAction="*")]
         System.Threading.Tasks.Task<Pwi2.KepzesOnlineStreemSelectResponse> KepzesOnlineStreemSelectAsync(Pwi2.KepzesOnlineStreemSelectRequest request);
@@ -8556,6 +9188,9 @@ namespace Pwi2
         [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/CikkListBySiteId", ReplyAction="*")]
         System.Threading.Tasks.Task<Pwi2.CikkListBySiteIdResponse> CikkListBySiteIdAsync(Pwi2.CikkListBySiteIdRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/EsemenyListBySiteId", ReplyAction="*")]
+        System.Threading.Tasks.Task<Pwi2.EsemenyListBySiteIdResponse> EsemenyListBySiteIdAsync(Pwi2.EsemenyListBySiteIdRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/SzakertoListBySiteId", ReplyAction="*")]
         System.Threading.Tasks.Task<Pwi2.SzakertoListBySiteIdResponse> SzakertoListBySiteIdAsync(Pwi2.SzakertoListBySiteIdRequest request);
         
@@ -8585,6 +9220,9 @@ namespace Pwi2
         
         [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/FolyamatAgListazasaFoFolyamatIDSzerint", ReplyAction="*")]
         System.Threading.Tasks.Task<Pwi2.FolyamatAgListazasaFoFolyamatIDSzerintResponse> FolyamatAgListazasaFoFolyamatIDSzerintAsync(Pwi2.FolyamatAgListazasaFoFolyamatIDSzerintRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/FolyamatAgListazasaFoFolyamatSEOURLSzerint", ReplyAction="*")]
+        System.Threading.Tasks.Task<Pwi2.FolyamatAgListazasaFoFolyamatSEOURLSzerintResponse> FolyamatAgListazasaFoFolyamatSEOURLSzerintAsync(Pwi2.FolyamatAgListazasaFoFolyamatSEOURLSzerintRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/JogszabalySzovegJelenlegiDatumSzerint", ReplyAction="*")]
         System.Threading.Tasks.Task<Pwi2.JogszabalySzovegJelenlegiDatumSzerintResponse> JogszabalySzovegJelenlegiDatumSzerintAsync(Pwi2.JogszabalySzovegJelenlegiDatumSzerintRequest request);
@@ -11365,8 +12003,8 @@ namespace Pwi2
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
         public int FelhasznaloId;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string Kuldo;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int SiteId;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
         public int SzakertoId;
@@ -11381,10 +12019,10 @@ namespace Pwi2
         {
         }
         
-        public SzakertoiIdopontfoglalasRequestBody(int FelhasznaloId, string Kuldo, int SzakertoId, System.DateTime Nap, byte Ora)
+        public SzakertoiIdopontfoglalasRequestBody(int FelhasznaloId, int SiteId, int SzakertoId, System.DateTime Nap, byte Ora)
         {
             this.FelhasznaloId = FelhasznaloId;
-            this.Kuldo = Kuldo;
+            this.SiteId = SiteId;
             this.SzakertoId = SzakertoId;
             this.Nap = Nap;
             this.Ora = Ora;
@@ -11549,17 +12187,17 @@ namespace Pwi2
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
         public int SzakertoId;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string Alkalmazas;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int SiteId;
         
         public SzakertoiWebElerhetosegRequestBody()
         {
         }
         
-        public SzakertoiWebElerhetosegRequestBody(int SzakertoId, string Alkalmazas)
+        public SzakertoiWebElerhetosegRequestBody(int SzakertoId, int SiteId)
         {
             this.SzakertoId = SzakertoId;
-            this.Alkalmazas = Alkalmazas;
+            this.SiteId = SiteId;
         }
     }
     
@@ -11695,94 +12333,6 @@ namespace Pwi2
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class FelhasznaloLogin2Request
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="FelhasznaloLogin2", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
-        public Pwi2.FelhasznaloLogin2RequestBody Body;
-        
-        public FelhasznaloLogin2Request()
-        {
-        }
-        
-        public FelhasznaloLogin2Request(Pwi2.FelhasznaloLogin2RequestBody Body)
-        {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
-    public partial class FelhasznaloLogin2RequestBody
-    {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string belepokod;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string jelszo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string alkalmazas;
-        
-        public FelhasznaloLogin2RequestBody()
-        {
-        }
-        
-        public FelhasznaloLogin2RequestBody(string belepokod, string jelszo, string alkalmazas)
-        {
-            this.belepokod = belepokod;
-            this.jelszo = jelszo;
-            this.alkalmazas = alkalmazas;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class FelhasznaloLogin2Response
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="FelhasznaloLogin2Response", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
-        public Pwi2.FelhasznaloLogin2ResponseBody Body;
-        
-        public FelhasznaloLogin2Response()
-        {
-        }
-        
-        public FelhasznaloLogin2Response(Pwi2.FelhasznaloLogin2ResponseBody Body)
-        {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
-    public partial class FelhasznaloLogin2ResponseBody
-    {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Pwi2.WMWIListResultOfFelhasznaloAdat2 FelhasznaloLogin2Result;
-        
-        public FelhasznaloLogin2ResponseBody()
-        {
-        }
-        
-        public FelhasznaloLogin2ResponseBody(Pwi2.WMWIListResultOfFelhasznaloAdat2 FelhasznaloLogin2Result)
-        {
-            this.FelhasznaloLogin2Result = FelhasznaloLogin2Result;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FelhasznaloBySessionIDRequest
     {
         
@@ -11856,6 +12406,90 @@ namespace Pwi2
         public FelhasznaloBySessionIDResponseBody(Pwi2.WMWIListResultOfFelhasznaloAdat FelhasznaloBySessionIDResult)
         {
             this.FelhasznaloBySessionIDResult = FelhasznaloBySessionIDResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FelhasznaloBySessionID2Request
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FelhasznaloBySessionID2", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.FelhasznaloBySessionID2RequestBody Body;
+        
+        public FelhasznaloBySessionID2Request()
+        {
+        }
+        
+        public FelhasznaloBySessionID2Request(Pwi2.FelhasznaloBySessionID2RequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class FelhasznaloBySessionID2RequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string SessionId;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int SiteId;
+        
+        public FelhasznaloBySessionID2RequestBody()
+        {
+        }
+        
+        public FelhasznaloBySessionID2RequestBody(string SessionId, int SiteId)
+        {
+            this.SessionId = SessionId;
+            this.SiteId = SiteId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FelhasznaloBySessionID2Response
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FelhasznaloBySessionID2Response", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.FelhasznaloBySessionID2ResponseBody Body;
+        
+        public FelhasznaloBySessionID2Response()
+        {
+        }
+        
+        public FelhasznaloBySessionID2Response(Pwi2.FelhasznaloBySessionID2ResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class FelhasznaloBySessionID2ResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Pwi2.WMWIListResultOfFelhasznaloAdat2 FelhasznaloBySessionID2Result;
+        
+        public FelhasznaloBySessionID2ResponseBody()
+        {
+        }
+        
+        public FelhasznaloBySessionID2ResponseBody(Pwi2.WMWIListResultOfFelhasznaloAdat2 FelhasznaloBySessionID2Result)
+        {
+            this.FelhasznaloBySessionID2Result = FelhasznaloBySessionID2Result;
         }
     }
     
@@ -13124,6 +13758,90 @@ namespace Pwi2
         public CustomerByHashResponseBody(Pwi2.WMWIListResultOfsp_ws_GetCustomerByHash_Result CustomerByHashResult)
         {
             this.CustomerByHashResult = CustomerByHashResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FelhasznaloInterakciokRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FelhasznaloInterakciok", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.FelhasznaloInterakciokRequestBody Body;
+        
+        public FelhasznaloInterakciokRequest()
+        {
+        }
+        
+        public FelhasznaloInterakciokRequest(Pwi2.FelhasznaloInterakciokRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class FelhasznaloInterakciokRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int uid;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int siteid;
+        
+        public FelhasznaloInterakciokRequestBody()
+        {
+        }
+        
+        public FelhasznaloInterakciokRequestBody(int uid, int siteid)
+        {
+            this.uid = uid;
+            this.siteid = siteid;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FelhasznaloInterakciokResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FelhasznaloInterakciokResponse", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.FelhasznaloInterakciokResponseBody Body;
+        
+        public FelhasznaloInterakciokResponse()
+        {
+        }
+        
+        public FelhasznaloInterakciokResponse(Pwi2.FelhasznaloInterakciokResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class FelhasznaloInterakciokResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Pwi2.WMWIListResultOfInterakciok FelhasznaloInterakciokResult;
+        
+        public FelhasznaloInterakciokResponseBody()
+        {
+        }
+        
+        public FelhasznaloInterakciokResponseBody(Pwi2.WMWIListResultOfInterakciok FelhasznaloInterakciokResult)
+        {
+            this.FelhasznaloInterakciokResult = FelhasznaloInterakciokResult;
         }
     }
     
@@ -14467,6 +15185,86 @@ namespace Pwi2
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class EsemenyListBySiteIdRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EsemenyListBySiteId", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.EsemenyListBySiteIdRequestBody Body;
+        
+        public EsemenyListBySiteIdRequest()
+        {
+        }
+        
+        public EsemenyListBySiteIdRequest(Pwi2.EsemenyListBySiteIdRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class EsemenyListBySiteIdRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int siteid;
+        
+        public EsemenyListBySiteIdRequestBody()
+        {
+        }
+        
+        public EsemenyListBySiteIdRequestBody(int siteid)
+        {
+            this.siteid = siteid;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class EsemenyListBySiteIdResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EsemenyListBySiteIdResponse", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.EsemenyListBySiteIdResponseBody Body;
+        
+        public EsemenyListBySiteIdResponse()
+        {
+        }
+        
+        public EsemenyListBySiteIdResponse(Pwi2.EsemenyListBySiteIdResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class EsemenyListBySiteIdResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Pwi2.WMWIListResultOfesemeny EsemenyListBySiteIdResult;
+        
+        public EsemenyListBySiteIdResponseBody()
+        {
+        }
+        
+        public EsemenyListBySiteIdResponseBody(Pwi2.WMWIListResultOfesemeny EsemenyListBySiteIdResult)
+        {
+            this.EsemenyListBySiteIdResult = EsemenyListBySiteIdResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SzakertoListBySiteIdRequest
     {
         
@@ -15279,6 +16077,86 @@ namespace Pwi2
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FolyamatAgListazasaFoFolyamatSEOURLSzerintRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FolyamatAgListazasaFoFolyamatSEOURLSzerint", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.FolyamatAgListazasaFoFolyamatSEOURLSzerintRequestBody Body;
+        
+        public FolyamatAgListazasaFoFolyamatSEOURLSzerintRequest()
+        {
+        }
+        
+        public FolyamatAgListazasaFoFolyamatSEOURLSzerintRequest(Pwi2.FolyamatAgListazasaFoFolyamatSEOURLSzerintRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class FolyamatAgListazasaFoFolyamatSEOURLSzerintRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string seourl;
+        
+        public FolyamatAgListazasaFoFolyamatSEOURLSzerintRequestBody()
+        {
+        }
+        
+        public FolyamatAgListazasaFoFolyamatSEOURLSzerintRequestBody(string seourl)
+        {
+            this.seourl = seourl;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FolyamatAgListazasaFoFolyamatSEOURLSzerintResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FolyamatAgListazasaFoFolyamatSEOURLSzerintResponse", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.FolyamatAgListazasaFoFolyamatSEOURLSzerintResponseBody Body;
+        
+        public FolyamatAgListazasaFoFolyamatSEOURLSzerintResponse()
+        {
+        }
+        
+        public FolyamatAgListazasaFoFolyamatSEOURLSzerintResponse(Pwi2.FolyamatAgListazasaFoFolyamatSEOURLSzerintResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class FolyamatAgListazasaFoFolyamatSEOURLSzerintResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Pwi2.WMWIListResultOffolyamat FolyamatAgListazasaFoFolyamatSEOURLSzerintResult;
+        
+        public FolyamatAgListazasaFoFolyamatSEOURLSzerintResponseBody()
+        {
+        }
+        
+        public FolyamatAgListazasaFoFolyamatSEOURLSzerintResponseBody(Pwi2.WMWIListResultOffolyamat FolyamatAgListazasaFoFolyamatSEOURLSzerintResult)
+        {
+            this.FolyamatAgListazasaFoFolyamatSEOURLSzerintResult = FolyamatAgListazasaFoFolyamatSEOURLSzerintResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class JogszabalySzovegJelenlegiDatumSzerintRequest
     {
         
@@ -15305,13 +16183,17 @@ namespace Pwi2
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public string Jogszabaly_UID;
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public bool HTML;
+        
         public JogszabalySzovegJelenlegiDatumSzerintRequestBody()
         {
         }
         
-        public JogszabalySzovegJelenlegiDatumSzerintRequestBody(string Jogszabaly_UID)
+        public JogszabalySzovegJelenlegiDatumSzerintRequestBody(string Jogszabaly_UID, bool HTML)
         {
             this.Jogszabaly_UID = Jogszabaly_UID;
+            this.HTML = HTML;
         }
     }
     
@@ -15955,12 +16837,12 @@ namespace Pwi2
             return base.Channel.SzakertoiIdopontfoglalasAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Pwi2.SzakertoiIdopontfoglalasResponse> SzakertoiIdopontfoglalasAsync(int FelhasznaloId, string Kuldo, int SzakertoId, System.DateTime Nap, byte Ora)
+        public System.Threading.Tasks.Task<Pwi2.SzakertoiIdopontfoglalasResponse> SzakertoiIdopontfoglalasAsync(int FelhasznaloId, int SiteId, int SzakertoId, System.DateTime Nap, byte Ora)
         {
             Pwi2.SzakertoiIdopontfoglalasRequest inValue = new Pwi2.SzakertoiIdopontfoglalasRequest();
             inValue.Body = new Pwi2.SzakertoiIdopontfoglalasRequestBody();
             inValue.Body.FelhasznaloId = FelhasznaloId;
-            inValue.Body.Kuldo = Kuldo;
+            inValue.Body.SiteId = SiteId;
             inValue.Body.SzakertoId = SzakertoId;
             inValue.Body.Nap = Nap;
             inValue.Body.Ora = Ora;
@@ -15989,12 +16871,12 @@ namespace Pwi2
             return base.Channel.SzakertoiWebElerhetosegAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Pwi2.SzakertoiWebElerhetosegResponse> SzakertoiWebElerhetosegAsync(int SzakertoId, string Alkalmazas)
+        public System.Threading.Tasks.Task<Pwi2.SzakertoiWebElerhetosegResponse> SzakertoiWebElerhetosegAsync(int SzakertoId, int SiteId)
         {
             Pwi2.SzakertoiWebElerhetosegRequest inValue = new Pwi2.SzakertoiWebElerhetosegRequest();
             inValue.Body = new Pwi2.SzakertoiWebElerhetosegRequestBody();
             inValue.Body.SzakertoId = SzakertoId;
-            inValue.Body.Alkalmazas = Alkalmazas;
+            inValue.Body.SiteId = SiteId;
             return ((Pwi2.WSSoap)(this)).SzakertoiWebElerhetosegAsync(inValue);
         }
         
@@ -16015,22 +16897,6 @@ namespace Pwi2
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Pwi2.FelhasznaloLogin2Response> Pwi2.WSSoap.FelhasznaloLogin2Async(Pwi2.FelhasznaloLogin2Request request)
-        {
-            return base.Channel.FelhasznaloLogin2Async(request);
-        }
-        
-        public System.Threading.Tasks.Task<Pwi2.FelhasznaloLogin2Response> FelhasznaloLogin2Async(string belepokod, string jelszo, string alkalmazas)
-        {
-            Pwi2.FelhasznaloLogin2Request inValue = new Pwi2.FelhasznaloLogin2Request();
-            inValue.Body = new Pwi2.FelhasznaloLogin2RequestBody();
-            inValue.Body.belepokod = belepokod;
-            inValue.Body.jelszo = jelszo;
-            inValue.Body.alkalmazas = alkalmazas;
-            return ((Pwi2.WSSoap)(this)).FelhasznaloLogin2Async(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<Pwi2.FelhasznaloBySessionIDResponse> Pwi2.WSSoap.FelhasznaloBySessionIDAsync(Pwi2.FelhasznaloBySessionIDRequest request)
         {
             return base.Channel.FelhasznaloBySessionIDAsync(request);
@@ -16042,6 +16908,21 @@ namespace Pwi2
             inValue.Body = new Pwi2.FelhasznaloBySessionIDRequestBody();
             inValue.Body.sessionid = sessionid;
             return ((Pwi2.WSSoap)(this)).FelhasznaloBySessionIDAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Pwi2.FelhasznaloBySessionID2Response> Pwi2.WSSoap.FelhasznaloBySessionID2Async(Pwi2.FelhasznaloBySessionID2Request request)
+        {
+            return base.Channel.FelhasznaloBySessionID2Async(request);
+        }
+        
+        public System.Threading.Tasks.Task<Pwi2.FelhasznaloBySessionID2Response> FelhasznaloBySessionID2Async(string SessionId, int SiteId)
+        {
+            Pwi2.FelhasznaloBySessionID2Request inValue = new Pwi2.FelhasznaloBySessionID2Request();
+            inValue.Body = new Pwi2.FelhasznaloBySessionID2RequestBody();
+            inValue.Body.SessionId = SessionId;
+            inValue.Body.SiteId = SiteId;
+            return ((Pwi2.WSSoap)(this)).FelhasznaloBySessionID2Async(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -16277,6 +17158,21 @@ namespace Pwi2
             inValue.Body = new Pwi2.CustomerByHashRequestBody();
             inValue.Body.F1 = F1;
             return ((Pwi2.WSSoap)(this)).CustomerByHashAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Pwi2.FelhasznaloInterakciokResponse> Pwi2.WSSoap.FelhasznaloInterakciokAsync(Pwi2.FelhasznaloInterakciokRequest request)
+        {
+            return base.Channel.FelhasznaloInterakciokAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Pwi2.FelhasznaloInterakciokResponse> FelhasznaloInterakciokAsync(int uid, int siteid)
+        {
+            Pwi2.FelhasznaloInterakciokRequest inValue = new Pwi2.FelhasznaloInterakciokRequest();
+            inValue.Body = new Pwi2.FelhasznaloInterakciokRequestBody();
+            inValue.Body.uid = uid;
+            inValue.Body.siteid = siteid;
+            return ((Pwi2.WSSoap)(this)).FelhasznaloInterakciokAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -16520,6 +17416,20 @@ namespace Pwi2
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Pwi2.EsemenyListBySiteIdResponse> Pwi2.WSSoap.EsemenyListBySiteIdAsync(Pwi2.EsemenyListBySiteIdRequest request)
+        {
+            return base.Channel.EsemenyListBySiteIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Pwi2.EsemenyListBySiteIdResponse> EsemenyListBySiteIdAsync(int siteid)
+        {
+            Pwi2.EsemenyListBySiteIdRequest inValue = new Pwi2.EsemenyListBySiteIdRequest();
+            inValue.Body = new Pwi2.EsemenyListBySiteIdRequestBody();
+            inValue.Body.siteid = siteid;
+            return ((Pwi2.WSSoap)(this)).EsemenyListBySiteIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<Pwi2.SzakertoListBySiteIdResponse> Pwi2.WSSoap.SzakertoListBySiteIdAsync(Pwi2.SzakertoListBySiteIdRequest request)
         {
             return base.Channel.SzakertoListBySiteIdAsync(request);
@@ -16663,16 +17573,31 @@ namespace Pwi2
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Pwi2.FolyamatAgListazasaFoFolyamatSEOURLSzerintResponse> Pwi2.WSSoap.FolyamatAgListazasaFoFolyamatSEOURLSzerintAsync(Pwi2.FolyamatAgListazasaFoFolyamatSEOURLSzerintRequest request)
+        {
+            return base.Channel.FolyamatAgListazasaFoFolyamatSEOURLSzerintAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Pwi2.FolyamatAgListazasaFoFolyamatSEOURLSzerintResponse> FolyamatAgListazasaFoFolyamatSEOURLSzerintAsync(string seourl)
+        {
+            Pwi2.FolyamatAgListazasaFoFolyamatSEOURLSzerintRequest inValue = new Pwi2.FolyamatAgListazasaFoFolyamatSEOURLSzerintRequest();
+            inValue.Body = new Pwi2.FolyamatAgListazasaFoFolyamatSEOURLSzerintRequestBody();
+            inValue.Body.seourl = seourl;
+            return ((Pwi2.WSSoap)(this)).FolyamatAgListazasaFoFolyamatSEOURLSzerintAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<Pwi2.JogszabalySzovegJelenlegiDatumSzerintResponse> Pwi2.WSSoap.JogszabalySzovegJelenlegiDatumSzerintAsync(Pwi2.JogszabalySzovegJelenlegiDatumSzerintRequest request)
         {
             return base.Channel.JogszabalySzovegJelenlegiDatumSzerintAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Pwi2.JogszabalySzovegJelenlegiDatumSzerintResponse> JogszabalySzovegJelenlegiDatumSzerintAsync(string Jogszabaly_UID)
+        public System.Threading.Tasks.Task<Pwi2.JogszabalySzovegJelenlegiDatumSzerintResponse> JogszabalySzovegJelenlegiDatumSzerintAsync(string Jogszabaly_UID, bool HTML)
         {
             Pwi2.JogszabalySzovegJelenlegiDatumSzerintRequest inValue = new Pwi2.JogszabalySzovegJelenlegiDatumSzerintRequest();
             inValue.Body = new Pwi2.JogszabalySzovegJelenlegiDatumSzerintRequestBody();
             inValue.Body.Jogszabaly_UID = Jogszabaly_UID;
+            inValue.Body.HTML = HTML;
             return ((Pwi2.WSSoap)(this)).JogszabalySzovegJelenlegiDatumSzerintAsync(inValue);
         }
         
