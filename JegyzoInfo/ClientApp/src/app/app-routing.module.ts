@@ -33,7 +33,7 @@ const routes: Routes = [
     component: KnowledgeBaseComponent
   },
   {
-    path: "topic/:id",
+    path: "topic/:seourl",
     component: TopicPageComponent
   },
   {

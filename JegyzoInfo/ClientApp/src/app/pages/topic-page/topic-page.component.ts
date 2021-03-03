@@ -11,18 +11,17 @@ import { ActivatedRoute } from '@angular/router';
 export class TopicPageComponent implements OnInit {
 
   public folyamat = new Folyamat();
-  URLid: number = 0;
 
   constructor(private knowledgeBaseService: KnowledgeBaseService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    let id: string = this.route.snapshot.paramMap.get('id')!;
-    this.URLid = parseInt(id);
-    this.getFolyamat(this.URLid);
+    let seoUrl: string = this.route.snapshot.paramMap.get('seourl')!;
+    this.getFolyamat(seoUrl);
   }
 
-  getFolyamat(id: number){
-    this.knowledgeBaseService.folyamatAgListazasaFoFolyamatIDSzerint(id).subscribe(folyamat => {
+  getFolyamat(seoUrl: string){
+    // this.knowledgeBaseService.folyamatAgListazasaFoFolyamatIDSzerint(id).subscribe(folyamat => {
+    this.knowledgeBaseService.folyamatAgListazasaFoFolyamatSEOURLSzerint(seoUrl).subscribe(folyamat => {
       console.log('Folyamat resp', folyamat);
       this.folyamat = folyamat;
     })
