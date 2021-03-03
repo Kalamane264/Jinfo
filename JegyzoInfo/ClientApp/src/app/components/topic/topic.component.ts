@@ -15,7 +15,6 @@ export class TopicComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log("folycsi", this.folyamat);
     if(!this.folyamat.megjelenesDatum){
       this.folyamat.megjelenesDatum = new Date();
     }
