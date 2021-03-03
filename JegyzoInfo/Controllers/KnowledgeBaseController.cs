@@ -22,13 +22,20 @@ namespace JegyzoInfo.Controllers
         {
             var siteIDForAdmiral = _configuration["SiteIDForAdmiral"];
 
-            Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
-            Pwi2.FolyamatBySiteIDResponse resp = await pwi2.FolyamatBySiteIDAsync(Convert.ToInt32(siteIDForAdmiral));
-
-            if (resp.Body.FolyamatBySiteIDResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
+            try
             {
-                var folyamatList = resp.Body.FolyamatBySiteIDResult.List;
-                return new JsonResult(folyamatList);
+                Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
+                Pwi2.FolyamatBySiteIDResponse resp = await pwi2.FolyamatBySiteIDAsync(Convert.ToInt32(siteIDForAdmiral));
+
+                if (resp.Body.FolyamatBySiteIDResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
+                {
+                    var folyamatList = resp.Body.FolyamatBySiteIDResult.List;
+                    return new JsonResult(folyamatList);
+                }
+            }
+            catch (Exception e)
+            {
+                throw (new Exception(e.ToString()));
             }
 
             return new JsonResult("");

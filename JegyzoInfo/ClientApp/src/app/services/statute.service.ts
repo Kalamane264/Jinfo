@@ -8,7 +8,11 @@ export class StatuteService {
 
   constructor(private http: HttpClient) { }
 
-  GetJogszabalySzovegJelenlegiDatumSzerint(uid: string){
+  getJogszabalySzovegJelenlegiDatumSzerint(uid: string){
     return this.http.get<any>("api/Statute/GetJogszabalySzovegJelenlegiDatumSzerint/" + uid);
+  }
+
+  getJogszabalySzovegHTMLJelenlegiDatumSzerint(uid: string){
+    return this.http.get<any>("api/Statute/GetJogszabalySzovegHTMLJelenlegiDatumSzerint/" + uid);
   }
 }

@@ -1,0 +1,24 @@
+﻿body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.jszakasz{}
+.kommentar{}
+.jszakaszSzoveg{margin-bottom: 60px;}
+
+.jszakaszSzoveg .szam{float: left; margin-right: 25px;}
+.jszakaszSzoveg .lpJogszakasz{margin-bottom: 15px; overflow: auto;}
+.jszakaszSzoveg .lpJogszakasz.bek{margin-bottom: 0;}
+.jszakaszSzoveg .lpJogszakasz.pont{margin-bottom: 0;}
+.jszakaszSzoveg .lpJogszakasz.nev{font-weight: bold;}
+.jszakaszSzoveg .lpJogszakasz.cim{font-weight: bold; text-align: center; margin-top: 30px;}
+.jszakaszSzoveg .lpJogszakasz.fejezet{font-weight: bold; text-align: center; margin-top: 30px;}
+.jszakaszSzoveg .lpJogszakasz.resz{font-weight: bold; text-align: center; margin-top: 30px;}
+
+.lpJogszakasz .bold {font-weight: bold;}
+.lpJogszakasz .italic{font-style: italic;}
+.lpJogszakasz .strike-through{text-decoration: line-through;}
+.lpJogszakasz .small-caps{font-variant: small-caps;}
+.lpJogszakasz .superscript{font-size: 5px; line-height: -6px;}
+.lpJogszakasz .subscript{font-size: 5px; line-height: 6px;}
+.lpJogszakasz .underline{text-decoration: underline;}
+.lpJogszakasz .uppercase{text-transform: uppercase;}

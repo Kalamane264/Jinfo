@@ -12,7 +12,7 @@ import { KnowledgeBaseService } from 'src/app/services/knowledge-base.service';
 export class HomeComponent implements OnInit {
 
   folyamats: Folyamat[] = [];
-  article: Article;
+  article: Article = new Article();
 
   constructor(
     private knowledgeBaseService: KnowledgeBaseService,

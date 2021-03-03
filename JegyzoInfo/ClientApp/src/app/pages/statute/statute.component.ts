@@ -1,15 +1,20 @@
 import { StatuteService } from './../../services/statute.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-statute',
   templateUrl: './statute.component.html',
-  styleUrls: ['./statute.component.scss']
+  styleUrls: [
+    './statute.component.scss',
+    './site.css'
+  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class StatuteComponent implements OnInit {
 
   uid = "";
+  jsz = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,8 +27,9 @@ export class StatuteComponent implements OnInit {
   }
 
   getJsz(uid: string){
-    this.statuteService.GetJogszabalySzovegJelenlegiDatumSzerint(uid).subscribe(jsz => {
-      console.log("jsz", jsz);
+    this.statuteService.getJogszabalySzovegHTMLJelenlegiDatumSzerint(uid).subscribe(jsz => {
+      this.jsz = jsz;
+      console.log("this.jsz", this.jsz);
     })
   }
 

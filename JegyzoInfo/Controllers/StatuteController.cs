@@ -28,5 +28,26 @@ namespace JegyzoInfo.Controllers
 
             return new JsonResult("");
         }
+
+        [Route("api/Statute/GetJogszabalySzovegHTMLJelenlegiDatumSzerint/{uid}")]
+        public async Task<JsonResult> GetJogszabalySzovegHTMLJelenlegiDatumSzerint(string uid)
+        {
+            Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
+            try
+            {
+                Pwi2.JogszabalySzovegHTMLJelenlegiDatumSzerintResponse resp = await pwi2.JogszabalySzovegHTMLJelenlegiDatumSzerintAsync(uid);
+                if (resp.Body.JogszabalySzovegHTMLJelenlegiDatumSzerintResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
+                {
+                    var jsz = resp.Body.JogszabalySzovegHTMLJelenlegiDatumSzerintResult.List[0];
+                    return new JsonResult(jsz);
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return new JsonResult("");
+        }
     }
 }
