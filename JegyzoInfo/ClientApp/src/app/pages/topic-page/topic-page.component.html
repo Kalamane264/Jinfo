@@ -7,7 +7,7 @@
   </div>
   <div class="chaptersWrap">
     <ng-container *ngFor="let item of folyamat.folyamatok; index as i;">
-      <app-chapter *ngIf="!item.torolve" [folyamat]="item" [opened]="false" [serial]="i"></app-chapter>
+      <app-chapter *ngIf="!item.torolve" [folyamat]="item" [opened]="false" [serial]="item.sorszam"></app-chapter>
     </ng-container>
   </div>
 </div>

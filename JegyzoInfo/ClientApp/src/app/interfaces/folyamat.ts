@@ -16,4 +16,5 @@ export class Folyamat{
 	folyamatok: Folyamat[] = [];
   torolve: boolean = false;
   megjelenesDatum: Date = new Date();
+  olvasasiIdo = "";
 };

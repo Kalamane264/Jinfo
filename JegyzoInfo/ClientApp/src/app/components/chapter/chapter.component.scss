@@ -117,7 +117,10 @@
             bottom: -7px;
           }
         }
-        span{
+        span.clockIcon{
+          span{
+            margin-left: 6px;
+          }
           color: $darkBlue;
         }
       }

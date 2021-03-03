@@ -3,7 +3,7 @@
     <div class="leftSide">
       <div class="number" [class.opened]="opened" [class.empty]="imAlone">
         <div *ngIf="!imAlone">
-          {{ (serial + 1) }}
+          {{ serial }}
         </div>
       </div>
       <div class="title" [class.opened]="opened">
@@ -21,24 +21,15 @@
           Erről lesz szó ebben a fejezetben
         </h6>
         <span class="clockIcon">
-          Olvasási idő idő:  54 perc
+          Olvasási idő idő:
+          <span>
+            {{ folyamat.olvasasiIdo }}
+          </span>
         </span>
       </div>
-      <ul>
-        <li>
-          A helyi építési szabályozás rendszere
-        </li>
-        <li>
-          Miért is nem érdekli a közszférát a kockázatfelmérés és -kezelés?
-        </li>
-        <li>
-          Nyerési /elutasító értesítő
-        </li>
-        <li>
-          Mikor kezdhető el az igazi munka?
-        </li>
-        <li>
-          Miért is nem érdekli a közszférát a kockázatfelmérés és -kezelés?
+      <ul *ngIf="aboutList.length">
+        <li *ngFor="let textOfLi of aboutList">
+          {{ textOfLi }}
         </li>
       </ul>
     </section>

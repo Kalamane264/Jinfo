@@ -14,9 +14,22 @@ export class ChapterComponent implements OnInit {
   @Input() serial = 0;
   @Input() imAlone = false;
 
+  aboutList: string[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
+    if(this.folyamat.lead) {
+      this.makeAboutList(this.folyamat.lead);
+    }
+  }
+
+  makeAboutList(lead: string) {
+    let aboutList = lead.split('|');
+    this.aboutList = aboutList.map(val => {
+      return val.trim();
+    }).filter(val => val !== "");
+    // console.log('aboutList', this.aboutList);
   }
 
   open(){
