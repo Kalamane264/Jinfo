@@ -12,6 +12,7 @@ export class ChapterComponent implements OnInit {
   @Input() opened = false;
   @Input() folyamat = new Folyamat();
   @Input() serial = 0;
+  @Input() imAlone = false;
 
   constructor() { }
 

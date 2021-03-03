@@ -1,8 +1,8 @@
 <div class="chapterWrap">
   <div class="firstRow" (click)="open()">
     <div class="leftSide">
-      <div class="number" [class.opened]="opened">
-        <div>
+      <div class="number" [class.opened]="opened" [class.empty]="imAlone">
+        <div *ngIf="!imAlone">
           {{ (serial + 1) }}
         </div>
       </div>
@@ -12,7 +12,7 @@
         </h5>
       </div>
     </div>
-    <div class="rightSide" [class.opened]="opened"></div>
+    <div class="rightSide" [class.opened]="opened" *ngIf="!imAlone"></div>
   </div>
   <div class="content" [class.opened]="opened">
     <section class="about">

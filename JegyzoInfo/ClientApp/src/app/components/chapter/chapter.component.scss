@@ -44,6 +44,11 @@
             top: -12px;
           }
         }
+        &.empty{
+          &::before{
+            content: none;
+          }
+        }
         > div{
           transition: .2s linear;
           position: relative;

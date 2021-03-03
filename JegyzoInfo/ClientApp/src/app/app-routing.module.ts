@@ -1,3 +1,4 @@
+import { ChapterPageComponent } from './pages/chapter-page/chapter-page.component';
 import { CoursesPageComponent } from './pages/courses-page/courses-page.component';
 import { VideosPageComponent } from './pages/videos-page/videos-page.component';
 import { VideosComponent } from './components/videos/videos.component';
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: "topic/:id",
     component: TopicPageComponent
+  },
+  {
+    path: "chapter/:seourl",
+    component: ChapterPageComponent
   },
   {
     path: "videos",

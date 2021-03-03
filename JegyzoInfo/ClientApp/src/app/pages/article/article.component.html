@@ -134,11 +134,11 @@
           Kapcsolódó fejezetek a tudástárban
         </h5>
         <div class="chaptersWrap">
-          <div *ngFor="let folyamat of article.folyamats" class="chapter" [routerLink]="'/topic/' + folyamat.folyamatid">
+          <div *ngFor="let folyamat of article.folyamats" class="chapter" [routerLink]="'/chapter/' + folyamat.seorul">
             <span>
               {{ folyamat.nev }}
             </span>
-            <a class="arrorange">Téma megnyitása</a>
+            <a class="arrorange" [routerLink]="'/chapter/' + folyamat.seorul">Fejezet megnyitása</a>
           </div>
         </div>
       </div>

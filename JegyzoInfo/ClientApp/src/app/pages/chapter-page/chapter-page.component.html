@@ -1,0 +1,16 @@
+<div class="container" *ngIf="folyamat.folyamatID">
+  <app-back></app-back>
+  <div class="pagetitle">
+    <h1>
+      {{ folyamat.nev }}
+    </h1>
+  </div>
+  <div class="chaptersWrap">
+    <app-chapter [folyamat]="folyamat" [opened]="true" [serial]="folyamat.sorszam" [imAlone]="true"></app-chapter>
+  </div>
+  <div class="buttWrap" *ngIf="parentFolyamat.folyamatID">
+    <button class="defaultBlue" [routerLink]="'/topic/' + parentFolyamat.folyamatID">
+      Tovább a téma összes fejezetéhez
+    </button>
+  </div>
+</div>
