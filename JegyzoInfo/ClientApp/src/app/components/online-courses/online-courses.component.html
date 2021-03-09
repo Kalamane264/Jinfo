@@ -5,31 +5,30 @@
         Online képzéseink
       </h1>
       <ngb-carousel #ngcarousel>
-        <ng-template ngbSlide>
+        <ng-template ngbSlide *ngFor="let event of events">
           <div class="picsum-img-wrapper">
             <div class="courseBox">
               <div class="side leftSide">
                 <h5>
-                  Önkormányzati adatvédelmi tisztviselő <br/>(DPO) képzés
+                  {{ event.nev }}
                 </h5>
                 <div class="infos">
                   <p>
                     Képzési idő:
                   </p>
                   <p>
-                    40 óra (4x10 óra)
+                    {{ event.elearningKepzesiIdo }}
+                    ({{ event.elearningUtemezes }})
                   </p>
                   <p>
                     Oktatónk:
                   </p>
-                  <p>
+                  <p *ngIf="event.szakis.length > 0">
                     <span class="bold_700">
-                      Dr. Miklós Péter
+                      {{ event.szakis[0].nev }}
                     </span>
                     <br/>
-                    jogász
-                    <br/>
-                    adatvédelmi szakértő
+                    {{ event.szakis[0].szakterulet }}
                   </p>
                 </div>
               </div>
@@ -42,44 +41,6 @@
             </button>
           </div>
         </ng-template>
-        <ng-template ngbSlide>
-          <div class="picsum-img-wrapper">
-            <div class="courseBox">
-              <div class="side leftSide">
-                <h5>
-                  Önkormányzati adatvédelmi tisztviselő <br/>(DPO) képzés
-                </h5>
-                <div class="infos">
-                  <p>
-                    Képzési idő:
-                  </p>
-                  <p>
-                    40 óra (4x10 óra)
-                  </p>
-                  <p>
-                    Oktatónk:
-                  </p>
-                  <p>
-                    <span class="bold_700">
-                      Dr. Miklós Péter
-                    </span>
-                    <br/>
-                    jogász
-                    <br/>
-                    adatvédelmi szakértő
-                  </p>
-                </div>
-              </div>
-              <div class="side rightSide"></div>
-            </div>
-          </div>
-          <div class="buttonWrap">
-            <button class="hollow" routerLink="/courses">
-              Megnézem a részleteket
-            </button>
-          </div>
-        </ng-template>
-
       </ngb-carousel>
     </div>
   </div>

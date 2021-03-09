@@ -17,4 +17,5 @@ export class Folyamat{
   torolve: boolean = false;
   megjelenesDatum: Date = new Date();
   olvasasiIdo = "";
+  csatolmanyEntitasok: any[] = [];
 };

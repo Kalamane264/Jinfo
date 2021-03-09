@@ -1,6 +1,6 @@
 import { ExpertService } from './../../services/expert.service';
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { Event } from 'src/app/interfaces/event';
+import { Esemeny } from 'src/app/interfaces/esemeny';
 import { Expert } from 'src/app/interfaces/expert';
 
 @Component({
@@ -11,7 +11,7 @@ import { Expert } from 'src/app/interfaces/expert';
 })
 export class CourseComponent implements OnInit {
 
-  @Input() event = new Event();
+  @Input() event = new Esemeny();
 
   szakis: Expert[] = [];
 

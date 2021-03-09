@@ -3,6 +3,8 @@ import { ArticleService } from './../../services/article.service';
 import { Component, OnInit } from '@angular/core';
 import { Folyamat } from 'src/app/interfaces/folyamat';
 import { KnowledgeBaseService } from 'src/app/services/knowledge-base.service';
+import { Esemeny } from 'src/app/interfaces/esemeny';
+import { CourseService } from 'src/app/services/course.service';
 
 @Component({
   selector: 'app-home',
@@ -11,12 +13,12 @@ import { KnowledgeBaseService } from 'src/app/services/knowledge-base.service';
 })
 export class HomeComponent implements OnInit {
 
-  folyamats: Folyamat[] = [];
   article: Article = new Article();
+  folyamats: Folyamat[] = [];
 
   constructor(
     private knowledgeBaseService: KnowledgeBaseService,
-    private articleService: ArticleService
+    private articleService: ArticleService,
     ) { }
 
   ngOnInit(): void {
@@ -39,18 +41,6 @@ export class HomeComponent implements OnInit {
       if (articles.length > 0) {
         this.article = articles[0];
       }
-
-     /*  if (articles.length > 0){
-        this.articleService.getArticle(articles[0].cikkID).subscribe(article => {
-          console.log('cikk', article);
-        });
-      } */
-
-     /*  articles.forEach(article => {
-        this.articleService.getArticle(article.cikkID).subscribe(article => {
-          console.log('cikk', article);
-        });
-      }); */
-    })
+    });
   }
 }

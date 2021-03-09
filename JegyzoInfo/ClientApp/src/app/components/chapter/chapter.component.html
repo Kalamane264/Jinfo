@@ -71,8 +71,9 @@
       <h5>
         Letölthető iratminták
       </h5>
-      <app-document-sample></app-document-sample>
-      <app-document-sample></app-document-sample>
+      <ng-container *ngIf="folyamat.csatolmanyEntitasok.length > 0">
+        <app-document-sample *ngFor="let csati of folyamat.csatolmanyEntitasok" [nev]="csati.nev" [url]="csati.urlEleres"></app-document-sample>
+      </ng-container>
     </div>
   </div>
   <div class="content test" [class.opened]="opened">

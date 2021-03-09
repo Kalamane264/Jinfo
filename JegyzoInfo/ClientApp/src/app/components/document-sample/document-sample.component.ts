@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-document-sample',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./document-sample.component.scss']
 })
 export class DocumentSampleComponent implements OnInit {
+
+  @Input() nev = "";
+  @Input() url = "";
 
   constructor() { }
 

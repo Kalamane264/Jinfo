@@ -1,4 +1,4 @@
-export class Event{
+export class Esemeny{
   archivLink = "";
   archivOsszefoglalo = "";
   befejezoIdopont = new Date();
@@ -32,4 +32,6 @@ export class Event{
   szakertoIDs: number[] = [];
   varos = "";
   videoUrl = "";
+
+  szakis: any[] = new Array();
 }

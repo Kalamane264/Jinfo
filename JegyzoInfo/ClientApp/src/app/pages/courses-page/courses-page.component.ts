@@ -1,6 +1,6 @@
 import { CourseService } from './../../services/course.service';
 import { Component, OnInit } from '@angular/core';
-import { Event } from 'src/app/interfaces/event';
+import { Esemeny } from 'src/app/interfaces/esemeny';
 
 @Component({
   selector: 'app-courses-page',
@@ -9,9 +9,11 @@ import { Event } from 'src/app/interfaces/event';
 })
 export class CoursesPageComponent implements OnInit {
 
-  events: Event[] = [];
+  events: Esemeny[] = [];
 
-  constructor(private courseService: CourseService) { }
+  constructor(
+    private courseService: CourseService
+    ) { }
 
   ngOnInit(): void {
     this.getEsemenyList();
