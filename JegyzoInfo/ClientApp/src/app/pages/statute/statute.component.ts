@@ -16,6 +16,8 @@ export class StatuteComponent implements OnInit {
   uid = "";
   jsz = null;
 
+  searchTerm = "";
+
   constructor(
     private route: ActivatedRoute,
     private statuteService: StatuteService) { }
@@ -31,6 +33,43 @@ export class StatuteComponent implements OnInit {
       this.jsz = jsz;
       console.log("this.jsz", this.jsz);
     })
+  }
+
+  search() {
+    //alert(this.searchTerm);
+    if(this.searchTerm.length < 2) {
+      alert('A kereséshez minimum 2 karakter hosszúságú szövegrészt írjon be!');
+      return;
+    }
+
+    this.searchReset();
+    let cumo = Array.from(document.getElementsByClassName("jszakaszSzoveg"));
+    //console.log('cumo', cumo);
+
+    cumo.forEach(element => {
+      let slices = element.innerHTML.split(this.searchTerm);
+      if(slices.length > 1) {
+        let innerHtmlResult = "";
+        slices.forEach((slice, index) => {
+          if(index > 0) {
+            innerHtmlResult += '<span class="searchFound">' + this.searchTerm + '</span>';
+          }
+          innerHtmlResult += slice;
+        });
+        element.innerHTML = innerHtmlResult;
+      }
+    });
+  }
+
+  searchReset() {
+    let cumo = Array.from(document.getElementsByClassName("searchFound"));
+    console.log('resetcumo', cumo);
+
+    cumo.forEach(element => {
+      console.log('outer', element.outerHTML);
+      console.log('inner', element.innerHTML);
+      element.outerHTML = element.innerHTML;
+    });
   }
 
 }
