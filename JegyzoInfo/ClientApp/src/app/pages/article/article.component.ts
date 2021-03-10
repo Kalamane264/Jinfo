@@ -1,9 +1,12 @@
+import { UserService } from './../../services/user.service';
+import { MoreInfoComponent } from './../../components/more-info/more-info.component';
 import { ExpertService } from './../../services/expert.service';
 import { Article } from './../../interfaces/article';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from 'src/app/services/article.service';
 import { Route } from '@angular/compiler/src/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-article',
@@ -23,7 +26,9 @@ export class ArticleComponent implements OnInit {
     private route: ActivatedRoute,
     private articleService: ArticleService,
     private expertService: ExpertService,
-    private router: Router) { }
+    private router: Router,
+    private dialog: MatDialog,
+    public userService: UserService) { }
 
   ngOnInit(): void {
     this.seoUrl = this.route.snapshot.paramMap.get('id')!;
@@ -78,5 +83,13 @@ export class ArticleComponent implements OnInit {
     const diffTime = Math.abs(now.valueOf() - date.valueOf());
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     this.daysOld = diffDays;
+  }
+
+  clickMoreInfo() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    // dialogConfig.disableClose = true;
+
+    const dialogRef = this.dialog.open(MoreInfoComponent, dialogConfig);
   }
 }

@@ -12,18 +12,12 @@ namespace JegyzoInfo.Controllers
         public async Task<JsonResult> GetJogszabalySzovegJelenlegiDatumSzerint(string uid)
         {
             Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
-            try
+            
+            Pwi2.JogszabalySzovegJelenlegiDatumSzerintResponse resp = await pwi2.JogszabalySzovegJelenlegiDatumSzerintAsync(uid, true);
+            if (resp.Body.JogszabalySzovegJelenlegiDatumSzerintResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
             {
-                Pwi2.JogszabalySzovegJelenlegiDatumSzerintResponse resp = await pwi2.JogszabalySzovegJelenlegiDatumSzerintAsync(uid, true);
-                if (resp.Body.JogszabalySzovegJelenlegiDatumSzerintResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
-                {
-                    var jsz = resp.Body.JogszabalySzovegJelenlegiDatumSzerintResult.List;
-                    return new JsonResult(jsz);
-                }
-            }
-            catch (Exception e)
-            {
-
+                var jsz = resp.Body.JogszabalySzovegJelenlegiDatumSzerintResult.List;
+                return new JsonResult(jsz);
             }
 
             return new JsonResult("");
@@ -33,18 +27,12 @@ namespace JegyzoInfo.Controllers
         public async Task<JsonResult> GetJogszabalySzovegHTMLJelenlegiDatumSzerint(string uid)
         {
             Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
-            try
+            
+            Pwi2.JogszabalySzovegHTMLJelenlegiDatumSzerintResponse resp = await pwi2.JogszabalySzovegHTMLJelenlegiDatumSzerintAsync(uid);
+            if (resp.Body.JogszabalySzovegHTMLJelenlegiDatumSzerintResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
             {
-                Pwi2.JogszabalySzovegHTMLJelenlegiDatumSzerintResponse resp = await pwi2.JogszabalySzovegHTMLJelenlegiDatumSzerintAsync(uid);
-                if (resp.Body.JogszabalySzovegHTMLJelenlegiDatumSzerintResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
-                {
-                    var jsz = resp.Body.JogszabalySzovegHTMLJelenlegiDatumSzerintResult.List[0];
-                    return new JsonResult(jsz);
-                }
-            }
-            catch (Exception e)
-            {
-
+                var jsz = resp.Body.JogszabalySzovegHTMLJelenlegiDatumSzerintResult.List[0];
+                return new JsonResult(jsz);
             }
 
             return new JsonResult("");

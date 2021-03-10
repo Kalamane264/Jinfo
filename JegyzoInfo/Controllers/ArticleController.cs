@@ -10,7 +10,7 @@ namespace JegyzoInfo.Controllers
 {
     public class ArticleController : Controller
     {
-        private IConfiguration _configuration;
+        private readonly IConfiguration _configuration;
 
         public ArticleController(IConfiguration configuration)
         {

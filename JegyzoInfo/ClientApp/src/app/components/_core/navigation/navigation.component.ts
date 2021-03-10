@@ -30,7 +30,6 @@ export class NavigationComponent implements OnInit {
 
   clickLogout(){
     const dialogConfig = new MatDialogConfig();
-
     dialogConfig.autoFocus = true;
     // dialogConfig.disableClose = true;
 

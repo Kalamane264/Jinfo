@@ -142,8 +142,8 @@
           </div>
         </div>
       </div>
-      <div class="ctaWrap">
-        <button class="orange">
+      <div class="ctaWrap" *ngIf="!userService.userLoggedIn">
+        <button class="orange" (click)="clickMoreInfo()">
           Érdekel az előfizetés
         </button>
       </div>

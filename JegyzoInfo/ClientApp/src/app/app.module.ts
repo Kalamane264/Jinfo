@@ -35,6 +35,7 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { ViddurationPipe } from './pipes/vidduration.pipe';
 import { LogoutDialogComponent } from './components/logout-dialog/logout-dialog.component';
 import { ChapterPageComponent } from './pages/chapter-page/chapter-page.component';
+import { MoreInfoComponent } from './components/more-info/more-info.component';
 
 @NgModule({
   declarations: [
@@ -62,10 +63,12 @@ import { ChapterPageComponent } from './pages/chapter-page/chapter-page.componen
     LoginComponent,
     ViddurationPipe,
     LogoutDialogComponent,
-    ChapterPageComponent
+    ChapterPageComponent,
+    MoreInfoComponent
   ],
   entryComponents: [
-    LogoutDialogComponent
+    LogoutDialogComponent,
+    MoreInfoComponent
   ],
   imports: [
     BrowserModule,

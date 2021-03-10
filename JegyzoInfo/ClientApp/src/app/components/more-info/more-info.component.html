@@ -1,0 +1,52 @@
+<div class="dialogBox">
+  <div class="closerX" (click)="close()"></div>
+  <h4>
+    Kérjen további tájékoztatást tanácsadónktól!
+  </h4>
+  <p class="firstP">
+    A Jegyzőinfo éves előfizetése
+    <br/>
+    - a Tudástár és a Videótár korlátlan használatával,
+    <br/>
+    - továbbá az önkormányzat bármely munkatársának biztosított online képzésekkel mindössze bruttó <span class="bold_700">4500 Ft</span>, havi lebontásban.
+  </p>
+  <p class="secondP">
+    Használja ki a teljes szolgáltatási csomagot! Kérjen részletes tájékoztatást szakértő tanácsadónktól, az alábbi űrlap kitöltésével.
+  </p>
+  <div class="formWrap">
+    <form name="contactForm">
+      <div class="formRow">
+        <p>
+          Az Ön neve
+        </p>
+        <input type="text" placeholder="Teljes név" name="Name" [(ngModel)]="form.Name"/>
+      </div>
+      <div class="formRow">
+        <p>
+          Beosztása
+        </p>
+        <input type="text" placeholder="pl. jegyző, hivatalvezető" name="Position" [(ngModel)]="form.Position"/>
+      </div>
+      <div class="formRow">
+        <p>
+          Település
+        </p>
+        <input type="text" placeholder="Község vagy város neve" name="Settlement" [(ngModel)]="form.Settlement"/>
+      </div>
+      <div class="formRow">
+        <p>
+          Telefonos elérhetőség
+        </p>
+        <input type="text" placeholder="pl. +36 30 234 4567" name="Phone" [(ngModel)]="form.Phone"/>
+      </div>
+    </form>
+  </div>
+  <div class="buttWrap">
+    <button class="orange" (click)="submit()">
+      Visszahívást kérek!
+    </button>
+    <button class="blueBorder" (click)="close()">
+      Mégse
+    </button>
+  </div>
+</div>

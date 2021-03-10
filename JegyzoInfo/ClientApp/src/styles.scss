@@ -94,6 +94,10 @@ button, button:focus{
     padding: 2px 22px;
     background-color: transparent;
   }
+  &.blueBorder{
+    border: 1px solid #0257fd;
+    margin-left: 15px;
+  }
 }
 
 .clockIcon{

@@ -10,7 +10,7 @@ namespace JegyzoInfo.Controllers
     [ApiController]
     public class KnowledgeBaseController : Controller
     {
-        private IConfiguration _configuration;
+        private readonly IConfiguration _configuration;
 
         public KnowledgeBaseController(IConfiguration configuration)
         {
