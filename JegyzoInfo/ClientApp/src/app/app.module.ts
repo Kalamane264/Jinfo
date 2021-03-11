@@ -1,3 +1,4 @@
+import { DemoMaterialModule } from './material-module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -35,7 +36,8 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { ViddurationPipe } from './pipes/vidduration.pipe';
 import { LogoutDialogComponent } from './components/logout-dialog/logout-dialog.component';
 import { ChapterPageComponent } from './pages/chapter-page/chapter-page.component';
-import { MoreInfoComponent } from './components/more-info/more-info.component';
+import { MoreInfoDialogComponent } from './components/more-info-dialog/more-info-dialog.component';
+import { RegistrationDialogComponent } from './components/registration-dialog/registration-dialog.component';
 
 @NgModule({
   declarations: [
@@ -64,11 +66,13 @@ import { MoreInfoComponent } from './components/more-info/more-info.component';
     ViddurationPipe,
     LogoutDialogComponent,
     ChapterPageComponent,
-    MoreInfoComponent
+    MoreInfoDialogComponent,
+    RegistrationDialogComponent
   ],
   entryComponents: [
     LogoutDialogComponent,
-    MoreInfoComponent
+    MoreInfoDialogComponent,
+    RegistrationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +83,7 @@ import { MoreInfoComponent } from './components/more-info/more-info.component';
     FormsModule,
     NgxPageScrollCoreModule.forRoot({duration: 300, scrollOffset: 100}),
     NgxPageScrollModule,
-    MatDialogModule
+    DemoMaterialModule
   ],
   providers: [
     CookieService,

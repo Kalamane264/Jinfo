@@ -4,10 +4,10 @@ import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-more-info',
-  templateUrl: './more-info.component.html',
-  styleUrls: ['./more-info.component.scss']
+  templateUrl: './more-info-dialog.component.html',
+  styleUrls: ['./more-info-dialog.component.scss']
 })
-export class MoreInfoComponent implements OnInit {
+export class MoreInfoDialogComponent implements OnInit {
 
   form = {
     Name: "Varga Kálmán",
@@ -17,7 +17,7 @@ export class MoreInfoComponent implements OnInit {
   };
 
   constructor(
-    private dialogRef: MatDialogRef<MoreInfoComponent>,
+    private dialogRef: MatDialogRef<MoreInfoDialogComponent>,
     private contactService: ContactService
   ) { }
 
@@ -39,3 +39,4 @@ export class MoreInfoComponent implements OnInit {
   }
 
 }
+

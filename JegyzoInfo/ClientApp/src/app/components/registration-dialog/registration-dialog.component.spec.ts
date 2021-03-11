@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MoreInfoComponent } from './more-info.component';
+import { RegistrationDialogComponent } from './registration-dialog.component';
 
-describe('MoreInfoComponent', () => {
-  let component: MoreInfoComponent;
-  let fixture: ComponentFixture<MoreInfoComponent>;
+describe('RegistrationDialogComponent', () => {
+  let component: RegistrationDialogComponent;
+  let fixture: ComponentFixture<RegistrationDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MoreInfoComponent ]
+      declarations: [ RegistrationDialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MoreInfoComponent);
+    fixture = TestBed.createComponent(RegistrationDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

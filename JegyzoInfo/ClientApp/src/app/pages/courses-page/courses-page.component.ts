@@ -12,7 +12,7 @@ export class CoursesPageComponent implements OnInit {
   events: Esemeny[] = [];
 
   constructor(
-    private courseService: CourseService
+    private courseService: CourseService,
     ) { }
 
   ngOnInit(): void {

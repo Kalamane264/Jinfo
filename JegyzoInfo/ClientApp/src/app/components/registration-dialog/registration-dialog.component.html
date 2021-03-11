@@ -1,0 +1,126 @@
+<div class="dialogBox">
+  <div class="closerX" (click)="close()"></div>
+  <h4>
+    Jelentkező adatainak megadása
+  </h4>
+  <mat-dialog-content>
+    <div class="formWrap">
+      <form name="registrationForm">
+        <div class="formRow">
+          <p>
+            Viselt név
+          </p>
+          <input type="text" name="Name" [(ngModel)]="form.Name"/>
+        </div>
+        <div class="formRow">
+          <p>
+            Születési név
+          </p>
+          <input type="text" name="NameBirth" [(ngModel)]="form.NameBirth"/>
+        </div>
+        <div class="formRow">
+          <p>
+            Anyja neve
+          </p>
+          <input type="text" name="MothersName" [(ngModel)]="form.MothersName"/>
+        </div>
+        <div class="formRow">
+          <p>
+            Születési hely (település)
+          </p>
+          <input type="text" name="SettlementOfBirth" [(ngModel)]="form.SettlementOfBirth"/>
+        </div>
+        <div class="formRow">
+          <input id="chkForeignBirth" type="checkbox" class="myCheckbox" />
+          <label class="colored-background" for="chkForeignBirth">
+            Külföldi születési hely
+          </label>
+        </div>
+        <div class="formRow">
+          <p>
+            Születési ország
+          </p>
+          <input type="text" name="CountryOfBirth" [(ngModel)]="form.CountryOfBirth"/>
+        </div>
+        <div class="formRow flex">
+          <mat-form-field appearance="fill">
+            <mat-label>Születési év</mat-label>
+            <mat-select>
+              <mat-option [value]="1950">
+                1950
+              </mat-option>
+              <mat-option [value]="1951">
+                1951
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>hónap</mat-label>
+            <mat-select>
+              <mat-option [value]="1">
+                Január
+              </mat-option>
+              <mat-option [value]="2">
+                Február
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>nap</mat-label>
+            <mat-select>
+              <mat-option [value]="1">
+                01.
+              </mat-option>
+              <mat-option [value]="2">
+                02.
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="formRow">
+          <p>
+            Adóazonosító jel
+          </p>
+          <input type="text" name="TaxNumber" [(ngModel)]="form.TaxNumber" class="halfWidth"/>
+        </div>
+        <div class="formRow flex">
+          <div class="formCol">
+            <p>
+              E-mail cím
+            </p>
+            <input type="text" name="Email" [(ngModel)]="form.Email" placeholder="@"/>
+          </div>
+          <div class="formCol">
+            <p>
+              Telefonszám
+            </p>
+            <input type="text" name="Phone" [(ngModel)]="form.Phone"/>
+          </div>
+        </div>
+        <div class="formRow">
+          <div class="form-field-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Legmagasabb iskolai végzettség</mat-label>
+              <mat-select>
+                <mat-option [value]="1">
+                  01.
+                </mat-option>
+                <mat-option [value]="2">
+                  02.
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+    </div>
+  </mat-dialog-content>
+  <div class="buttWrap">
+    <button class="orange" (click)="submit()">
+      Visszahívást kérek!
+    </button>
+    <button class="blueBorder" (click)="close()">
+      Mégse
+    </button>
+  </div>
+</div>

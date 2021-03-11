@@ -1,5 +1,4 @@
 import { UserService } from './../../services/user.service';
-import { MoreInfoComponent } from './../../components/more-info/more-info.component';
 import { ExpertService } from './../../services/expert.service';
 import { Article } from './../../interfaces/article';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
@@ -7,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from 'src/app/services/article.service';
 import { Route } from '@angular/compiler/src/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MoreInfoDialogComponent } from 'src/app/components/more-info-dialog/more-info-dialog.component';
 
 @Component({
   selector: 'app-article',
@@ -90,6 +90,6 @@ export class ArticleComponent implements OnInit {
     dialogConfig.autoFocus = true;
     // dialogConfig.disableClose = true;
 
-    const dialogRef = this.dialog.open(MoreInfoComponent, dialogConfig);
+    const dialogRef = this.dialog.open(MoreInfoDialogComponent, dialogConfig);
   }
 }

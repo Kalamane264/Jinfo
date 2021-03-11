@@ -2,6 +2,8 @@ import { ExpertService } from './../../services/expert.service';
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Esemeny } from 'src/app/interfaces/esemeny';
 import { Expert } from 'src/app/interfaces/expert';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { RegistrationDialogComponent } from '../registration-dialog/registration-dialog.component';
 
 @Component({
   selector: 'app-course',
@@ -16,7 +18,8 @@ export class CourseComponent implements OnInit {
   szakis: Expert[] = [];
 
   constructor(
-    private expertService: ExpertService
+    private expertService: ExpertService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -32,5 +35,13 @@ export class CourseComponent implements OnInit {
         });
       });
     }
+  }
+
+  clickRegistration() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    // dialogConfig.disableClose = true;
+
+    const dialogRef = this.dialog.open(RegistrationDialogComponent, dialogConfig);
   }
 }

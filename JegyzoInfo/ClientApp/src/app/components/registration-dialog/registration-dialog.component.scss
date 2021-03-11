@@ -1,0 +1,75 @@
+@import "../../../varsAndMixins.scss";
+
+.dialogBox{
+  width: 752px;
+  position: relative;
+  background-color: white;
+  padding-top: 40px;
+  padding-bottom: 66px;
+  padding-left: 126px;
+  padding-right: 126px;
+
+  .closerX{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background-image: url("/assets/img/close.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  h4{
+    font-weight: 700;
+  }
+
+  .formWrap{
+    margin-top: 48px;
+    .formRow{
+      margin-bottom: 18px;
+      &.flex{
+        display: flex;
+        justify-content: space-between;
+        .formCol{
+          width: 48%;
+        }
+      }
+      input{
+        border: 1px solid #A3B2B7;
+        padding: 8px 20px;
+        width: 100%;
+        &.halfWidth{
+          width: 50%;
+        }
+        &::placeholder{
+          color: $slateLight;
+        }
+      }
+      .form-field-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .form-field-label {
+          white-space: nowrap;
+        }
+        .form-field-label + mat-form-field {
+         margin-left: 10px;
+        }
+        mat-form-field {
+          width:100%;
+        }
+      }
+    }
+  }
+
+  .buttWrap{
+    margin-top: 50px;
+    button.blueBorder{
+      padding-left: 54px;
+      padding-right: 54px;
+
+    }
+  }
+}
