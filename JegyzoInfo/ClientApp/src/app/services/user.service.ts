@@ -1,3 +1,4 @@
+import { Diak } from './../interfaces/diak';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../interfaces/user';
@@ -48,11 +49,23 @@ export class UserService {
     if(userStringified !== null && userStringified !== undefined && userStringified !== '')
     {
       let usi = JSON.parse(userStringified) as User;
-      this.user = new User(usi.FelhasznaloID, usi.Email, usi.Nev);
+      this.user = new User(usi.felhasznaloID, usi.email, usi.nev);
 
       if(this.user instanceof User) {
         this.userLoggedIn = true;
       }
     }
+  }
+
+  passwordReminder(email: string): Observable<boolean> {
+    return this.http.get<boolean>('/api/User/passwordReminder/' + email );
+  }
+
+  getDiakByUserID(userId: number): Observable<any> {
+    return this.http.get<any>('/api/User/GetDiakByUserID/' + userId );
+  }
+
+  felhasznalohozKapcsolodoDiakok(userId: number): Observable<Diak[]> {
+    return this.http.get<Diak[]>('/api/User/FelhasznalohozKapcsolodoDiakok/' + userId );
   }
 }

@@ -8,71 +8,74 @@
       <form name="registrationForm">
         <div class="formRow">
           <p>
-            Viselt név
+            Előnév
           </p>
-          <input type="text" name="Name" [(ngModel)]="form.Name"/>
+          <input type="text" name="elonev" [(ngModel)]="form.elonev"/>
+        </div>
+        <div class="formRow">
+          <p>
+            Vezetéknév
+          </p>
+          <input type="text" name="vezeteknev" [(ngModel)]="form.vezeteknev"/>
+        </div>
+        <div class="formRow">
+          <p>
+            Keresztnév
+          </p>
+          <input type="text" name="keresztnev" [(ngModel)]="form.keresztnev"/>
         </div>
         <div class="formRow">
           <p>
             Születési név
           </p>
-          <input type="text" name="NameBirth" [(ngModel)]="form.NameBirth"/>
+          <input type="text" name="szuletesinev" [(ngModel)]="form.szuletesinev"/>
         </div>
         <div class="formRow">
           <p>
             Anyja neve
           </p>
-          <input type="text" name="MothersName" [(ngModel)]="form.MothersName"/>
+          <input type="text" name="anyjaneve" [(ngModel)]="form.anyjaneve"/>
         </div>
         <div class="formRow">
           <p>
-            Születési hely (település)
+            Állampolgárság
           </p>
-          <input type="text" name="SettlementOfBirth" [(ngModel)]="form.SettlementOfBirth"/>
+          <input type="text" name="allampolgarsag" [(ngModel)]="form.allampolgarsag"/>
         </div>
-        <div class="formRow">
+        <!-- <div class="formRow">
           <input id="chkForeignBirth" type="checkbox" class="myCheckbox" />
           <label class="colored-background" for="chkForeignBirth">
             Külföldi születési hely
           </label>
-        </div>
+        </div> -->
         <div class="formRow">
           <p>
-            Születési ország
+            Születési hely
           </p>
-          <input type="text" name="CountryOfBirth" [(ngModel)]="form.CountryOfBirth"/>
+          <input type="text" name="CountryOfBirth" [(ngModel)]="form.szulhely"/>
         </div>
         <div class="formRow flex">
           <mat-form-field appearance="fill">
             <mat-label>Születési év</mat-label>
-            <mat-select>
-              <mat-option [value]="1950">
-                1950
-              </mat-option>
-              <mat-option [value]="1951">
-                1951
+            <mat-select [(value)]="form.szulEv" (selectionChange)="reFillDays()">
+              <mat-option *ngFor="let year of years" [value]="year">
+                {{ year }}
               </mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>hónap</mat-label>
-            <mat-select>
-              <mat-option [value]="1">
-                Január
-              </mat-option>
-              <mat-option [value]="2">
-                Február
+            <mat-select [(value)]="form.szulHonap" (selectionChange)="reFillDays()">
+              <mat-option *ngFor="let month of months; let index = index" [value]="index">
+                {{ month }}
               </mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>nap</mat-label>
-            <mat-select>
-              <mat-option [value]="1">
-                01.
-              </mat-option>
-              <mat-option [value]="2">
-                02.
+            <mat-select [(value)]="form.szulNap">
+              <mat-option *ngFor="let day of days; let index = index" [value]="index">
+                {{ day }}.
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -81,23 +84,29 @@
           <p>
             Adóazonosító jel
           </p>
-          <input type="text" name="TaxNumber" [(ngModel)]="form.TaxNumber" class="halfWidth"/>
+          <input type="text" name="adoszam" [(ngModel)]="form.adoszam" class="halfWidth"/>
         </div>
         <div class="formRow flex">
           <div class="formCol">
             <p>
               E-mail cím
             </p>
-            <input type="text" name="Email" [(ngModel)]="form.Email" placeholder="@"/>
+            <input type="text" name="email" [(ngModel)]="form.email" placeholder="@"/>
           </div>
           <div class="formCol">
             <p>
               Telefonszám
             </p>
-            <input type="text" name="Phone" [(ngModel)]="form.Phone"/>
+            <input type="text" name="telefoN1" [(ngModel)]="form.telefoN1"/>
           </div>
         </div>
         <div class="formRow">
+          <p>
+            Legmagasabb iskolai végzettség
+          </p>
+          <input type="text" name="vegzettseg" [(ngModel)]="form.vegzettseg"/>
+        </div>
+       <!--  <div class="formRow">
           <div class="form-field-group">
             <mat-form-field appearance="fill">
               <mat-label>Legmagasabb iskolai végzettség</mat-label>
@@ -111,7 +120,7 @@
               </mat-select>
             </mat-form-field>
           </div>
-        </div>
+        </div> -->
       </form>
     </div>
   </mat-dialog-content>

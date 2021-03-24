@@ -42,9 +42,47 @@ namespace JegyzoInfo.Controllers
             return null;
         }
 
-        //public void storeUserInCookie(User user)
-        //{ 
-        //    Sess
-        //}
+        [Route("api/User/PasswordReminder/{email}")]
+        public async Task<bool> PasswordReminder(string email)
+        {
+            Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
+
+            Pwi2.JelszoEmlekeztetoResponse resp = await pwi2.JelszoEmlekeztetoAsync(email, "NO");
+            if (resp.Body.JelszoEmlekeztetoResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        [Route("api/User/GetDiakByUserID/{userId}")]
+        public async Task<JsonResult> GetDiakByUserID(int userId)
+        {
+            PWI1.PWIServiceSoapClient pwi = new PWI1.PWIServiceSoapClient(PWI1.PWIServiceSoapClient.EndpointConfiguration.PWIServiceSoap12);
+
+            PWI1.GetDiakByUserIDResponse resp = await pwi.GetDiakByUserIDAsync(userId);
+            if (resp.Body.GetDiakByUserIDResult.ErrorCode == PWI1.PWIErrorCode.NoError)
+            {
+                var diak = resp.Body.GetDiakByUserIDResult.Params;
+                return new JsonResult(diak);
+            }
+            return new JsonResult(false);
+        }
+
+        [Route("api/User/FelhasznalohozKapcsolodoDiakok/{userId}")]
+        public async Task<JsonResult> FolyamatAgListazasaFoFolyamatSEOURLSzerint(int userId)
+        {
+
+            Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
+            Pwi2.FelhasznalohozKapcsolodoDiakokResponse resp = await pwi2.FelhasznalohozKapcsolodoDiakokAsync(userId);
+
+            if (resp.Body.FelhasznalohozKapcsolodoDiakokResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
+            {
+                var diakok = resp.Body.FelhasznalohozKapcsolodoDiakokResult.List;
+                return new JsonResult(diakok);
+            }
+
+            return new JsonResult(false);
+        }
     }
 }

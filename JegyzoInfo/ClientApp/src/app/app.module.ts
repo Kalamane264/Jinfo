@@ -29,7 +29,7 @@ import { VideosPageComponent } from './pages/videos-page/videos-page.component';
 import { CoursesPageComponent } from './pages/courses-page/courses-page.component';
 import { CourseComponent } from './components/course/course.component';
 import { LoginComponent } from './components/_core/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
@@ -38,6 +38,10 @@ import { LogoutDialogComponent } from './components/logout-dialog/logout-dialog.
 import { ChapterPageComponent } from './pages/chapter-page/chapter-page.component';
 import { MoreInfoDialogComponent } from './components/more-info-dialog/more-info-dialog.component';
 import { RegistrationDialogComponent } from './components/registration-dialog/registration-dialog.component';
+import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
+import { CommonModule } from '@angular/common';
+import { ForgotPassDialogComponent } from './components/forgot-pass-dialog/forgot-pass-dialog.component';
+import { ThxDialogComponent } from './components/thx-dialog/thx-dialog.component';
 
 @NgModule({
   declarations: [
@@ -67,14 +71,22 @@ import { RegistrationDialogComponent } from './components/registration-dialog/re
     LogoutDialogComponent,
     ChapterPageComponent,
     MoreInfoDialogComponent,
-    RegistrationDialogComponent
+    RegistrationDialogComponent,
+    LoginDialogComponent,
+    ForgotPassDialogComponent,
+    ThxDialogComponent
   ],
   entryComponents: [
     LogoutDialogComponent,
     MoreInfoDialogComponent,
-    RegistrationDialogComponent
+    RegistrationDialogComponent,
+    LoginDialogComponent,
+    ForgotPassDialogComponent,
+    ThxDialogComponent
   ],
   imports: [
+    CommonModule,
+    ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,

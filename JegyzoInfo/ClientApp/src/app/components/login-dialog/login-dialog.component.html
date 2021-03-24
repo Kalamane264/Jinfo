@@ -1,0 +1,27 @@
+<div class="dialogBox">
+  <div class="closerX" (click)="close()"></div>
+  <h4>
+    Bejelentkezés
+  </h4>
+  <div class="formWrap">
+    <form name="contactForm">
+      <div class="formRow">
+        <input type="text" placeholder="E-mail cím" name="Email" [(ngModel)]="form.Email"/>
+      </div>
+      <div class="formRow">
+        <input [type]="pwHide ? 'password' : 'text'" placeholder="Jelszó" name="Password" [(ngModel)]="form.Password"/>
+        <mat-icon matSuffix (click)="pwHide = !pwHide">{{pwHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </div>
+    </form>
+  </div>
+  <div class="buttWrap">
+    <button class="orange" (click)="submit()">
+      Bejelentkezés
+    </button>
+  </div>
+  <div class="forgot">
+    <a (click)="clickForgot()">
+      Elfelejtette jelszavát?
+    </a>
+  </div>
+</div>

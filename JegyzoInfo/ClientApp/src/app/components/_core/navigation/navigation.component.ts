@@ -1,3 +1,4 @@
+import { LoginDialogComponent } from './../../login-dialog/login-dialog.component';
 import { LogoutDialogComponent } from './../../logout-dialog/logout-dialog.component';
 import { UserService } from './../../../services/user.service';
 import { Component, OnInit } from '@angular/core';
@@ -15,7 +16,8 @@ export class NavigationComponent implements OnInit {
 
   constructor(
     public userService: UserService,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog
+    ) { }
 
   ngOnInit(): void {
   }
@@ -25,7 +27,11 @@ export class NavigationComponent implements OnInit {
   }
 
   clickLogin(){
-    this.loginIsOpened = !this.loginIsOpened;
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    // dialogConfig.disableClose = true;
+
+    const dialogRef = this.dialog.open(LoginDialogComponent, dialogConfig);
   }
 
   clickLogout(){

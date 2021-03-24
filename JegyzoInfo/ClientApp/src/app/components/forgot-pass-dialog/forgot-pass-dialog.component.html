@@ -1,0 +1,21 @@
+<div class="dialogBox">
+  <div class="closerX" (click)="close()"></div>
+  <h4>
+    Jelszóemlékeztető
+  </h4>
+  <p>
+    Kérjük, írja be előfizetéséhez tartozó e-mail címét, ahová elküldjük Önnek jelszavát!
+  </p>
+  <div class="formWrap">
+    <form name="contactForm">
+      <div class="formRow">
+        <input type="text" placeholder="E-mail cím" name="Email" [(ngModel)]="form.Email"/>
+      </div>
+    </form>
+  </div>
+  <div class="buttWrap">
+    <button class="orange" (click)="submit()">
+      Küldés
+    </button>
+  </div>
+</div>

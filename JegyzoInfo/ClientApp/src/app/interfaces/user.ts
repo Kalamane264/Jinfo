@@ -1,11 +1,11 @@
 export class User{
-  FelhasznaloID?: number = 0;
-  Email?: string = "";
-  Nev?: string = "";
+  felhasznaloID?: number = 0;
+  email?: string = "";
+  nev?: string = "";
 
   constructor(felhasznaloID?: number, email?: string, nev?: string){
-    this.FelhasznaloID = felhasznaloID;
-    this.Email = email;
-    this.Nev = nev;
+    this.felhasznaloID = felhasznaloID;
+    this.email = email;
+    this.nev = nev;
   }
 }

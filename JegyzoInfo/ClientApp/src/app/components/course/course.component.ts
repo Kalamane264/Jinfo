@@ -1,3 +1,6 @@
+import { RegistrationDialogData } from './../../interfaces/registration-dialog-data';
+import { Diak } from './../../interfaces/diak';
+import { UserService } from './../../services/user.service';
 import { ExpertService } from './../../services/expert.service';
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Esemeny } from 'src/app/interfaces/esemeny';
@@ -14,12 +17,14 @@ import { RegistrationDialogComponent } from '../registration-dialog/registration
 export class CourseComponent implements OnInit {
 
   @Input() event = new Esemeny();
+  @Input() diaks: Diak[] = [];
 
   szakis: Expert[] = [];
 
   constructor(
     private expertService: ExpertService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
@@ -31,16 +36,42 @@ export class CourseComponent implements OnInit {
       this.event.szakertoIDs.forEach(szakiId => {
         this.expertService.getSzakertoAdatokFullBySzakertoId(szakiId).subscribe(szaki => {
           this.szakis.push(szaki);
-          console.log('szakis', this.szakis);
+          // console.log('szakis', this.szakis);
         });
       });
     }
   }
 
-  clickRegistration() {
+  clickRegistrationMe() {
+    if(!this.userService.userLoggedIn) {
+      alert('A jelentkezéshez, kérem, lépjen be!');
+      return;
+    }
+
+    let data = new RegistrationDialogData();
+    data.diakMe = this.diaks.find(d => d.elsodleges === "Y")!;
+    data.itsme = true;
+
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    // dialogConfig.disableClose = true;
+    dialogConfig.data = data;
+
+    const dialogRef = this.dialog.open(RegistrationDialogComponent, dialogConfig);
+  }
+
+  clickRegistration() {
+    if(!this.userService.userLoggedIn) {
+      alert('A jelentkezéshez, kérem, lépjen be!');
+      return;
+    }
+
+    let data = new RegistrationDialogData();
+    data.diakOthers = this.diaks.filter(d => d.elsodleges === "N")!;
+    data.itsme = false;
+
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = data;
 
     const dialogRef = this.dialog.open(RegistrationDialogComponent, dialogConfig);
   }

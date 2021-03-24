@@ -1,0 +1,73 @@
+@import "../../../varsAndMixins.scss";
+
+.dialogBox{
+  width: 552px;
+  position: relative;
+  background-color: white;
+  padding-top: 40px;
+  padding-bottom: 66px;
+  padding-left: 100px;
+  padding-right: 100px;
+
+  .closerX{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background-image: url("/assets/img/close.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  h4{
+    font-weight: 700;
+  }
+
+  p{
+    &.firstP{
+      margin-top: 40px;
+    }
+    &.secondP{
+      margin-top: 10px;
+    }
+  }
+
+  .formWrap{
+    margin-top: 48px;
+    .formRow{
+      margin-bottom: 15px;
+      position: relative;
+      input{
+        border: 1px solid #A3B2B7;
+        padding: 8px 20px;
+        width: 100%;
+        &::placeholder{
+          color: $slateLight;
+        }
+      }
+      .mat-icon{
+        display: inline;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .buttWrap{
+    margin-top: 50px;
+    button{
+      width: 100%;
+    }
+  }
+  .forgot{
+    font-size: 14px;
+    margin-top: 5px;
+    a{
+      cursor: pointer;
+    }
+  }
+}
