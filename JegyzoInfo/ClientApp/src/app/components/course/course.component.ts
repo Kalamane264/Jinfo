@@ -49,6 +49,7 @@ export class CourseComponent implements OnInit {
     }
 
     let data = new RegistrationDialogData();
+    data.kepzesId = parseInt(this.event.mpurl);
     data.diakMe = this.diaks.find(d => d.elsodleges === "Y")!;
     data.itsme = true;
 
@@ -66,6 +67,7 @@ export class CourseComponent implements OnInit {
     }
 
     let data = new RegistrationDialogData();
+    data.kepzesId = parseInt(this.event.mpurl);
     data.diakOthers = this.diaks.filter(d => d.elsodleges === "N")!;
     data.itsme = false;
 

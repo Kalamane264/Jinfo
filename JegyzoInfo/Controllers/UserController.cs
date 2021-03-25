@@ -84,5 +84,38 @@ namespace JegyzoInfo.Controllers
 
             return new JsonResult(false);
         }
+
+        [HttpPost]
+        [Route("api/User/KepzesJelentkezes")]
+        public async Task<bool> KepzesJelentkezes(JelentkezesVM jelentkezes)
+        {
+            Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
+
+            Pwi2.KepzesJelentkezesResponse resp = await pwi2.KepzesJelentkezesAsync(
+                jelentkezes.felhasznaloID,
+                jelentkezes.iD_DIAK,
+                jelentkezes.kepzesId,
+                true,
+                jelentkezes.elonev,
+                jelentkezes.vezeteknev,
+                jelentkezes.keresztnev,
+                jelentkezes.szuletesinev,
+                jelentkezes.anyjaneve,
+                jelentkezes.szulhely,
+                jelentkezes.szulEv,
+                jelentkezes.szulHonap,
+                jelentkezes.szulNap,
+                jelentkezes.adoszam,
+                jelentkezes.email,
+                jelentkezes.telefoN1,
+                jelentkezes.vegzettseg
+                );
+
+            if (resp.Body.KepzesJelentkezesResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

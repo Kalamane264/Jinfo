@@ -1,3 +1,4 @@
+import { UserService } from 'src/app/services/user.service';
 import { Diak } from './../../interfaces/diak';
 import { RegistrationDialogData } from './../../interfaces/registration-dialog-data';
 import { Component, Inject, OnInit } from '@angular/core';
@@ -13,6 +14,8 @@ import { RegisteredMessage } from '@angular/cdk/a11y';
 export class RegistrationDialogComponent implements OnInit {
 
   form = {
+    kepzesId: 0,
+    felhasznaloID: 0,
     iD_DIAK: 0,
     elonev: "",
     vezeteknev: "",
@@ -54,6 +57,7 @@ export class RegistrationDialogComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<RegistrationDialogComponent>,
     private contactService: ContactService,
+    private userService: UserService,
     @Inject(MAT_DIALOG_DATA) data: RegistrationDialogData) {
       this.data = data;
   }
@@ -62,6 +66,8 @@ export class RegistrationDialogComponent implements OnInit {
     console.log('data', this.data);
     this.fillYears();
     this.reFillDays();
+    this.form.felhasznaloID = this.userService.user.felhasznaloID!;
+    this.form.kepzesId = this.data.kepzesId;
 
     if(this.data.itsme) {
       this.setFormValuesByDiak(this.data.diakMe);
