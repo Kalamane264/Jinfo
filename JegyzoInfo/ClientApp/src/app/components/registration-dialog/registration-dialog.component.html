@@ -108,7 +108,7 @@
           <mat-form-field appearance="fill">
             <mat-label>hónap</mat-label>
             <mat-select [(value)]="form.szulHonap" (selectionChange)="reFillDays()">
-              <mat-option *ngFor="let month of months; let index = index" [value]="index">
+              <mat-option *ngFor="let month of months; let index = index" [value]="index + 1">
                 {{ month }}
               </mat-option>
             </mat-select>
@@ -116,7 +116,7 @@
           <mat-form-field appearance="fill">
             <mat-label>nap</mat-label>
             <mat-select [(value)]="form.szulNap">
-              <mat-option *ngFor="let day of days; let index = index" [value]="index">
+              <mat-option *ngFor="let day of days; let index = index" [value]="index + 1">
                 {{ day }}.
               </mat-option>
             </mat-select>

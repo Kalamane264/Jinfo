@@ -1,12 +1,13 @@
 import { ThxDialogData } from './../../interfaces/thx-dialog-data';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 
 @Component({
   selector: 'app-thx-dialog',
   templateUrl: './thx-dialog.component.html',
-  styleUrls: ['./thx-dialog.component.scss']
+  styleUrls: ['./thx-dialog.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ThxDialogComponent implements OnInit {
 

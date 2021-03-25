@@ -91,9 +91,9 @@ export class RegistrationDialogComponent implements OnInit {
     this.form.szulhely = diak.szulhely;
     let szulido = new Date(diak.szulido);
     this.form.szulEv = szulido.getFullYear();
-    this.form.szulHonap = szulido.getMonth();
+    this.form.szulHonap = szulido.getMonth() + 1;
     this.fillDays(this.form.szulEv, this.form.szulHonap);
-    this.form.szulNap = szulido.getDate() - 1;
+    this.form.szulNap = szulido.getDate();
     this.form.telefoN1 = diak.telefoN1;
     this.form.vegzettseg = diak.vegzettseg;
     this.form.vezeteknev = diak.vezeteknev;
@@ -118,7 +118,8 @@ export class RegistrationDialogComponent implements OnInit {
   fillDays(year: number, month: number) {
     this.days = [];
 
-    let endDate = new Date(year, (month + 1), 0);
+    let endDate = new Date(year, month, 0);
+    console.log("endDate", endDate);
     let end = endDate.getDate();
 
     for(let i = 1; i<= end; i++) {
@@ -148,16 +149,21 @@ export class RegistrationDialogComponent implements OnInit {
   }
 
   submit() {
-    /* console.log("Submit form:", this.form );
+    console.log("Submit form:", this.form );
     this.userService.kepzesJelentkezes(this.form).subscribe(resp => {
       if(resp) {
-
+        this.thx();
+        this.close();
+      } else {
+        alert('A jelentkezés során hiba történt.');
       }
     },
     error => {
       console.log('Oops', error);
-    }); */
-    this.thx();
+      alert(error.error);
+    });
+    /* this.thx();
+    this.close(); */
   }
 
   thx(){
@@ -165,7 +171,7 @@ export class RegistrationDialogComponent implements OnInit {
     dialogConfig.autoFocus = true;
     let data = new ThxDialogData();
     data.textH4 = 'Köszönjük jelentkezését!';
-    data.textP = 'Most átirányítjuk a Moodle e-learning rendszerbe, ahol tájékoztatjuk a képzéshez kapcsolódó további információkról.';
+    data.textP = 'Most átirányítjuk a <img class="moodle" src="/assets/img/moodle.svg" alt="" /> e-learning rendszerbe, ahol tájékoztatjuk a képzéshez kapcsolódó további információkról.';
     data.buttText = "Tovább";
     dialogConfig.data = data;
 

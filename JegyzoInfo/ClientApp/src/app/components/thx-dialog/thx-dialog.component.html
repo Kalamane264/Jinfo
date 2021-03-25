@@ -6,9 +6,7 @@
   <h4>
     {{ data.textH4 }}
   </h4>
-  <p>
-    {{ data.textP }}
-  </p>
+  <p [innerHTML]="data.textP"></p>
   <div class="buttWrap">
     <button *ngIf="data.closeAndLogin; else defaultButton" class="defaultBlue" (click)="closeAndLogin()">
       Vissza a belépéshez

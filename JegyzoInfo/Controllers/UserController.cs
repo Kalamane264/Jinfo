@@ -115,7 +115,10 @@ namespace JegyzoInfo.Controllers
             {
                 return true;
             }
-            return false;
+            else
+            {
+                throw new Exception(resp.Body.KepzesJelentkezesResult.ErrorText);
+            }
         }
     }
 }
