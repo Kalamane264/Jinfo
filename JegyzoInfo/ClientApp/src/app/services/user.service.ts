@@ -68,4 +68,8 @@ export class UserService {
   felhasznalohozKapcsolodoDiakok(userId: number): Observable<Diak[]> {
     return this.http.get<Diak[]>('/api/User/FelhasznalohozKapcsolodoDiakok/' + userId );
   }
+
+  kepzesJelentkezes(form: any): Observable<User>{
+    return this.http.post<User>('/api/User/KepzesJelentkezes', form);
+  }
 }

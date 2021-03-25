@@ -4,14 +4,19 @@
     <img src="/assets/img/success.svg" alt="">
   </div>
   <h4>
-    Köszönjük!
+    {{ data.textH4 }}
   </h4>
   <p>
-    Jelszavát továbbítottuk megadott e-mail címére.
+    {{ data.textP }}
   </p>
   <div class="buttWrap">
-    <button class="defaultBlue" (click)="close()">
+    <button *ngIf="data.closeAndLogin; else defaultButton" class="defaultBlue" (click)="closeAndLogin()">
       Vissza a belépéshez
     </button>
+    <ng-template #defaultButton>
+      <button class="defaultBlue" (click)="close()">
+        {{ data.buttText }}
+      </button>
+    </ng-template>
   </div>
 </div>

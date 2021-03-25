@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+import { ThxDialogData } from './../../interfaces/thx-dialog-data';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 
 @Component({
@@ -9,15 +10,24 @@ import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 })
 export class ThxDialogComponent implements OnInit {
 
+  data: ThxDialogData;
+
   constructor(
     private dialogRef: MatDialogRef<ThxDialogComponent>,
-    private dialog: MatDialog
-  ) { }
+    private dialog: MatDialog,
+    @Inject(MAT_DIALOG_DATA) data: ThxDialogData)
+    {
+      this.data = data;
+    }
 
   ngOnInit(): void {
   }
 
-  close() {
+  close(){
+    this.dialogRef.close();
+  }
+
+  closeAndLogin() {
     this.login();
     this.dialogRef.close();
   }

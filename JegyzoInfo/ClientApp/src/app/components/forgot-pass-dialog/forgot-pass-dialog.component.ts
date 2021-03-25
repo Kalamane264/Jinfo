@@ -1,3 +1,4 @@
+import { ThxDialogData } from './../../interfaces/thx-dialog-data';
 import { ThxDialogComponent } from './../thx-dialog/thx-dialog.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
@@ -45,7 +46,11 @@ export class ForgotPassDialogComponent implements OnInit {
   thx(){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    // dialogConfig.disableClose = true;
+    let data = new ThxDialogData();
+    data.textH4 = 'Köszönjük!';
+    data.textP = 'Jelszavát továbbítottuk megadott e-mail címére.';
+    data.closeAndLogin = true;
+    dialogConfig.data = data;
 
     const dialogRef = this.dialog.open(ThxDialogComponent, dialogConfig);
   }

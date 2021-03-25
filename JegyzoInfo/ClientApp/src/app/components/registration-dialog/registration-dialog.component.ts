@@ -2,9 +2,10 @@ import { UserService } from 'src/app/services/user.service';
 import { Diak } from './../../interfaces/diak';
 import { RegistrationDialogData } from './../../interfaces/registration-dialog-data';
 import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ContactService } from 'src/app/services/contact.service';
-import { RegisteredMessage } from '@angular/cdk/a11y';
+import { ThxDialogData } from 'src/app/interfaces/thx-dialog-data';
+import { ThxDialogComponent } from '../thx-dialog/thx-dialog.component';
 
 @Component({
   selector: 'app-registration-dialog',
@@ -58,6 +59,7 @@ export class RegistrationDialogComponent implements OnInit {
     private dialogRef: MatDialogRef<RegistrationDialogComponent>,
     private contactService: ContactService,
     private userService: UserService,
+    private dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) data: RegistrationDialogData) {
       this.data = data;
   }
@@ -146,12 +148,27 @@ export class RegistrationDialogComponent implements OnInit {
   }
 
   submit() {
-    console.log("Submit");
-    /* this.contactService.saveContactForm(this.form).subscribe(resp => {
-      if(resp === true) {
-        alert("Köszönjük érdeklődését!");
-        this.dialogRef.close();
+    /* console.log("Submit form:", this.form );
+    this.userService.kepzesJelentkezes(this.form).subscribe(resp => {
+      if(resp) {
+
       }
+    },
+    error => {
+      console.log('Oops', error);
     }); */
+    this.thx();
+  }
+
+  thx(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    let data = new ThxDialogData();
+    data.textH4 = 'Köszönjük jelentkezését!';
+    data.textP = 'Most átirányítjuk a Moodle e-learning rendszerbe, ahol tájékoztatjuk a képzéshez kapcsolódó további információkról.';
+    data.buttText = "Tovább";
+    dialogConfig.data = data;
+
+    const dialogRef = this.dialog.open(ThxDialogComponent, dialogConfig);
   }
 }
