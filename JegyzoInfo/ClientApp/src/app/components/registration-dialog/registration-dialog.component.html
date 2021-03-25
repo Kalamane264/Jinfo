@@ -6,7 +6,49 @@
   <mat-dialog-content>
     <div class="formWrap">
       <form name="registrationForm">
-        <div class="formRow">
+        <div *ngIf="!data.itsme">
+          <div class="formRow flex">
+            <div class="formCol">
+              <input id="chkForFromList" type="checkbox" class="myCheckbox" [checked]="!newColleague" (change)="newOrList()" />
+              <label class="colored-background" for="chkForFromList">
+                Kiválasztom a listából
+              </label>
+            </div>
+            <div class="formCol">
+              <input id="chkForNew" type="checkbox" class="myCheckbox" [checked]="newColleague" (change)="newOrList()" />
+              <label class="colored-background" for="chkForNew">
+                Új munkatársat adok meg
+              </label>
+            </div>
+          </div>
+          <div class="formRow">
+            <div class="form-field-group">
+              <mat-form-field appearance="fill">
+                <mat-label>Korábban rögzített kollégák</mat-label>
+                <mat-select [disabled]="newColleague" [(value)]="selectedColleague" (selectionChange)="selectColleaGue()">
+                  <mat-option *ngFor="let diak of data.diakOthers; let index = index" [value]="index">
+                    {{ diak.vezeteknev }} {{ diak.keresztnev }} [{{ diak.email }}]
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="formRow flex">
+          <div class="formCol">
+            <p>
+              Előnév
+            </p>
+            <input type="text" name="elonev" [(ngModel)]="form.elonev"/>
+          </div>
+          <div class="formCol">
+            <p>
+              Vezetéknév
+            </p>
+            <input type="text" name="vezeteknev" [(ngModel)]="form.vezeteknev"/>
+          </div>
+        </div>
+        <!-- <div class="formRow">
           <p>
             Előnév
           </p>
@@ -17,7 +59,7 @@
             Vezetéknév
           </p>
           <input type="text" name="vezeteknev" [(ngModel)]="form.vezeteknev"/>
-        </div>
+        </div> -->
         <div class="formRow">
           <p>
             Keresztnév
@@ -126,7 +168,7 @@
   </mat-dialog-content>
   <div class="buttWrap">
     <button class="orange" (click)="submit()">
-      Visszahívást kérek!
+      Elküldöm a regisztrációt
     </button>
     <button class="blueBorder" (click)="close()">
       Mégse

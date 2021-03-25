@@ -47,8 +47,9 @@ export class RegistrationDialogComponent implements OnInit {
     "december"
   ];
   public days: number[] = [];
-
   public data: RegistrationDialogData;
+  public newColleague = false;
+  public selectedColleague = -1;
 
   constructor(
     private dialogRef: MatDialogRef<RegistrationDialogComponent>,
@@ -60,9 +61,17 @@ export class RegistrationDialogComponent implements OnInit {
   ngOnInit(): void {
     console.log('data', this.data);
     this.fillYears();
+    this.reFillDays();
+
+    if(this.data.itsme) {
+      this.setFormValuesByDiak(this.data.diakMe);
+      console.log('diakMe', this.data.diakMe);
+    } else {
+      console.log('diakOthers', this.data.diakOthers);
+    }
   }
 
-  formValuesByDiak(diak: Diak) {
+  setFormValuesByDiak(diak: Diak) {
     this.form.adoszam = diak.adoszam;
     this.form.allampolgarsag = diak.allampolgarsag;
     this.form.anyjaneve = diak.anyjaneve;
@@ -76,7 +85,7 @@ export class RegistrationDialogComponent implements OnInit {
     this.form.szulEv = szulido.getFullYear();
     this.form.szulHonap = szulido.getMonth();
     this.fillDays(this.form.szulEv, this.form.szulHonap);
-    this.form.szulNap = szulido.getDate();
+    this.form.szulNap = szulido.getDate() - 1;
     this.form.telefoN1 = diak.telefoN1;
     this.form.vegzettseg = diak.vegzettseg;
     this.form.vezeteknev = diak.vezeteknev;
@@ -101,10 +110,33 @@ export class RegistrationDialogComponent implements OnInit {
   fillDays(year: number, month: number) {
     this.days = [];
 
-    let end = new Date(year, month, 0).getDate();
-    for(let i = 1; i< end; i++) {
+    let endDate = new Date(year, (month + 1), 0);
+    let end = endDate.getDate();
+
+    for(let i = 1; i<= end; i++) {
       this.days.push(i);
     }
+  }
+
+  newOrList() {
+    this.newColleague = !this.newColleague
+    if(this.newColleague) {
+      this.resetForm();
+    }
+  }
+
+  resetForm() {
+    this.selectedColleague = -1;
+    let dummyDiak = new Diak();
+    this.setFormValuesByDiak(dummyDiak);
+
+    console.log('form', this.form);
+  }
+
+  selectColleaGue() {
+    // let diak = this.data.diakOthers[this.selectedColleague];
+    this.setFormValuesByDiak(this.data.diakOthers[this.selectedColleague]);
+    console.log('form', this.form);
   }
 
   submit() {
