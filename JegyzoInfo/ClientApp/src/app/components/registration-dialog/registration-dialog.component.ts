@@ -137,6 +137,7 @@ export class RegistrationDialogComponent implements OnInit {
   resetForm() {
     this.selectedColleague = -1;
     let dummyDiak = new Diak();
+    dummyDiak.szulido = new Date(1970, 0, 1);
     this.setFormValuesByDiak(dummyDiak);
 
     console.log('form', this.form);

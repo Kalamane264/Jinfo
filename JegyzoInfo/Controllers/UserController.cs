@@ -91,11 +91,13 @@ namespace JegyzoInfo.Controllers
         {
             Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
 
+            var modositas = jelentkezes.iD_DIAK > 0 ? true : false;
+
             Pwi2.KepzesJelentkezesResponse resp = await pwi2.KepzesJelentkezesAsync(
                 jelentkezes.felhasznaloID,
                 jelentkezes.iD_DIAK,
                 jelentkezes.kepzesId,
-                true,
+                modositas,
                 jelentkezes.elonev,
                 jelentkezes.vezeteknev,
                 jelentkezes.keresztnev,
