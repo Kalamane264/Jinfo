@@ -25,20 +25,26 @@ export class CoursesPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEsemenyList();
-    this.getDiaks();
+
+    if(this.userService.user.felhasznaloID) {
+      this.getDiaks();
+    }
+    else {
+      this.userService.loginHappened.subscribe(x => {
+        this.getDiaks();
+      });
+    }
   }
 
   getDiaks() {
-    if(this.userService.user.felhasznaloID) {
-      this.userService.felhasznalohozKapcsolodoDiakok(this.userService.user.felhasznaloID!).subscribe(diaks => {
-        this.diaks = diaks;
-        this.diaksHere = true;
-        console.log('diaks:', this.diaks);
-      },
-      error => {
-        console.log('Oops', error);
-      });
-    }
+    this.userService.felhasznalohozKapcsolodoDiakok(this.userService.user.felhasznaloID!).subscribe(diaks => {
+      this.diaks = diaks;
+      this.diaksHere = true;
+      console.log('diaks:', this.diaks);
+    },
+    error => {
+      console.log('Oops', error);
+    });
   }
 
   getEsemenyList(){
@@ -51,7 +57,6 @@ export class CoursesPageComponent implements OnInit {
   clickMoreInfo(){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    // dialogConfig.disableClose = true;
 
     const dialogRef = this.dialog.open(MoreInfoDialogComponent, dialogConfig);
   }

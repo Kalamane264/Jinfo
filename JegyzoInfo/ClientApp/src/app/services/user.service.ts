@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../interfaces/user';
 import { CookieService } from 'ngx-cookie-service';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,7 @@ export class UserService {
 
   userLoggedIn = false;
   user = new User();
+  loginHappened = new BehaviorSubject(true);
 
   constructor(private http: HttpClient, private cookieService: CookieService) {
 
@@ -27,6 +28,7 @@ export class UserService {
         this.storeUserInCookie(user);
         this.user = user;
         this.userLoggedIn = true;
+        this.loginHappened.next(true);
       }
     });
     return $login;

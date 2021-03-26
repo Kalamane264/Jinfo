@@ -36,7 +36,6 @@ export class LoginDialogComponent implements OnInit {
     this.userService.login(this.form.Email, this.form.Password).subscribe(user => {
       if(user) {
         this.dialogRef.close();
-        this.router.navigate(['/']);
       } else {
         alert("Hibás felhasználónév / jelszó!");
       }
