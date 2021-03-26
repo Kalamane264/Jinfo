@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ForgotPassDialogComponent } from './../forgot-pass-dialog/forgot-pass-dialog.component';
 import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
@@ -20,7 +21,8 @@ export class LoginDialogComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<LoginDialogComponent>,
     private userService: UserService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -34,6 +36,7 @@ export class LoginDialogComponent implements OnInit {
     this.userService.login(this.form.Email, this.form.Password).subscribe(user => {
       if(user) {
         this.dialogRef.close();
+        this.router.navigate(['/']);
       } else {
         alert("Hibás felhasználónév / jelszó!");
       }

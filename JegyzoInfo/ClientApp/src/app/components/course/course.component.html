@@ -48,7 +48,7 @@
       </div>
     </div>
   </ng-container>
-  <div class="buttWrap">
+  <div class="buttWrap" *ngIf="userService.userLoggedIn">
     <button class="orange" (click)="clickRegistrationMe()">
       Szeretnék jelentkezni a képzésre
     </button>

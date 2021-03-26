@@ -47,9 +47,14 @@
     <h4>
       Képzéseink
     </h4>
-    <ng-container *ngIf="events.length > 0 && diaksHere">
+    <ng-container *ngIf="events.length > 0">
       <app-course *ngFor="let item of events" [event]="item" [diaks]="diaks"></app-course>
     </ng-container>
+  </div>
+  <div class="ctaWrap" *ngIf="!userService.userLoggedIn">
+    <button class="orange" (click)="clickMoreInfo()">
+      Érdekel az előfizetés
+    </button>
   </div>
 </div>
 

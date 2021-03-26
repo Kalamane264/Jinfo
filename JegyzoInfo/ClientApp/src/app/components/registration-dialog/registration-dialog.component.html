@@ -5,19 +5,19 @@
   </h4>
   <mat-dialog-content>
     <div class="formWrap">
-      <form name="registrationForm">
+      <form name="registrationForm" onsubmit="return false;">
         <div *ngIf="!data.itsme">
           <div class="formRow flex">
-            <div class="formCol">
-              <input id="chkForFromList" type="checkbox" class="myCheckbox" [checked]="!newColleague" (change)="newOrList()" />
-              <label class="colored-background" for="chkForFromList">
-                Kiválasztom a listából
-              </label>
-            </div>
             <div class="formCol">
               <input id="chkForNew" type="checkbox" class="myCheckbox" [checked]="newColleague" (change)="newOrList()" />
               <label class="colored-background" for="chkForNew">
                 Új munkatársat adok meg
+              </label>
+            </div>
+            <div class="formCol">
+              <input id="chkForFromList" type="checkbox" class="myCheckbox" [checked]="!newColleague" (change)="newOrList()" />
+              <label class="colored-background" for="chkForFromList">
+                Kiválasztom a listából
               </label>
             </div>
           </div>
@@ -45,38 +45,38 @@
             <p>
               Vezetéknév
             </p>
-            <input type="text" name="vezeteknev" [(ngModel)]="form.vezeteknev"/>
+            <input required #vezeteknev="ngModel" type="text" name="vezeteknev" [(ngModel)]="form.vezeteknev"/>
+            <div class="validity" *ngIf="vezeteknev.touched && !vezeteknev.valid">
+              Kötelező mező!
+            </div>
           </div>
         </div>
-        <!-- <div class="formRow">
-          <p>
-            Előnév
-          </p>
-          <input type="text" name="elonev" [(ngModel)]="form.elonev"/>
-        </div>
-        <div class="formRow">
-          <p>
-            Vezetéknév
-          </p>
-          <input type="text" name="vezeteknev" [(ngModel)]="form.vezeteknev"/>
-        </div> -->
         <div class="formRow">
           <p>
             Keresztnév
           </p>
-          <input type="text" name="keresztnev" [(ngModel)]="form.keresztnev"/>
+          <input required #keresztnev="ngModel" type="text" name="keresztnev" [(ngModel)]="form.keresztnev"/>
+          <div class="validity" *ngIf="keresztnev.touched && !keresztnev.valid">
+            Kötelező mező!
+          </div>
         </div>
         <div class="formRow">
           <p>
             Születési név
           </p>
-          <input type="text" name="szuletesinev" [(ngModel)]="form.szuletesinev"/>
+          <input required #szuletesinev="ngModel" type="text" name="szuletesinev" [(ngModel)]="form.szuletesinev"/>
+          <div class="validity" *ngIf="szuletesinev.touched && !szuletesinev.valid">
+            Kötelező mező!
+          </div>
         </div>
         <div class="formRow">
           <p>
             Anyja neve
           </p>
-          <input type="text" name="anyjaneve" [(ngModel)]="form.anyjaneve"/>
+          <input required #anyjaneve="ngModel"  type="text" name="anyjaneve" [(ngModel)]="form.anyjaneve"/>
+          <div class="validity" *ngIf="anyjaneve.touched && !anyjaneve.valid">
+            Kötelező mező!
+          </div>
         </div>
         <div class="formRow">
           <p>
@@ -94,7 +94,10 @@
           <p>
             Születési hely
           </p>
-          <input type="text" name="CountryOfBirth" [(ngModel)]="form.szulhely"/>
+          <input required #szulhely="ngModel" type="text" name="CountryOfBirth" [(ngModel)]="form.szulhely"/>
+          <div class="validity" *ngIf="szulhely.touched && !szulhely.valid">
+            Kötelező mező!
+          </div>
         </div>
         <div class="formRow flex">
           <mat-form-field appearance="fill">
@@ -126,52 +129,50 @@
           <p>
             Adóazonosító jel
           </p>
-          <input type="text" name="adoszam" [(ngModel)]="form.adoszam" class="halfWidth"/>
+          <input required #adoszam="ngModel" type="text" name="adoszam" [(ngModel)]="form.adoszam" class="halfWidth"/>
+          <div class="validity" *ngIf="adoszam.touched && !adoszam.valid">
+            Kötelező mező!
+          </div>
         </div>
         <div class="formRow flex">
           <div class="formCol">
             <p>
               E-mail cím
             </p>
-            <input type="text" name="email" [(ngModel)]="form.email" placeholder="@"/>
+            <input required #email="ngModel" type="text" name="email" [(ngModel)]="form.email" placeholder="@"/>
+            <div class="validity" *ngIf="email.touched && !email.valid">
+              Kötelező mező!
+            </div>
           </div>
           <div class="formCol">
             <p>
               Telefonszám
             </p>
-            <input type="text" name="telefoN1" [(ngModel)]="form.telefoN1"/>
+            <input required #telefoN1="ngModel" type="text" name="telefoN1" [(ngModel)]="form.telefoN1"/>
+            <div class="validity" *ngIf="telefoN1.touched && !telefoN1.valid">
+              Kötelező mező!
+            </div>
           </div>
         </div>
         <div class="formRow">
           <p>
             Legmagasabb iskolai végzettség
           </p>
-          <input type="text" name="vegzettseg" [(ngModel)]="form.vegzettseg"/>
-        </div>
-       <!--  <div class="formRow">
-          <div class="form-field-group">
-            <mat-form-field appearance="fill">
-              <mat-label>Legmagasabb iskolai végzettség</mat-label>
-              <mat-select>
-                <mat-option [value]="1">
-                  01.
-                </mat-option>
-                <mat-option [value]="2">
-                  02.
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
+          <input required #vegzettseg="ngModel" type="text" name="vegzettseg" [(ngModel)]="form.vegzettseg"/>
+          <div class="validity" *ngIf="vegzettseg.touched && !vegzettseg.valid">
+            Kötelező mező!
           </div>
-        </div> -->
+        </div>
+        <div class="buttWrap">
+          <button class="orange" (click)="submit()" type="submit">
+            Elküldöm a regisztrációt
+          </button>
+          <button class="hollow" (click)="close()">
+            Mégse
+          </button>
+        </div>
       </form>
     </div>
   </mat-dialog-content>
-  <div class="buttWrap">
-    <button class="orange" (click)="submit()">
-      Elküldöm a regisztrációt
-    </button>
-    <button class="blueBorder" (click)="close()">
-      Mégse
-    </button>
-  </div>
+
 </div>

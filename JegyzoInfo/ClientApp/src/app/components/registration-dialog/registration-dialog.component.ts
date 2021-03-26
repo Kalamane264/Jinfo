@@ -52,7 +52,7 @@ export class RegistrationDialogComponent implements OnInit {
   ];
   public days: number[] = [];
   public data: RegistrationDialogData;
-  public newColleague = false;
+  public newColleague = true;
   public selectedColleague = -1;
 
   constructor(
@@ -151,7 +151,10 @@ export class RegistrationDialogComponent implements OnInit {
 
   submit() {
     console.log("Submit form:", this.form );
-    this.userService.kepzesJelentkezes(this.form).subscribe(resp => {
+
+
+
+    /* this.userService.kepzesJelentkezes(this.form).subscribe(resp => {
       if(resp) {
         this.thx();
         this.close();
@@ -162,9 +165,7 @@ export class RegistrationDialogComponent implements OnInit {
     error => {
       console.log('Oops', error);
       alert(error.error);
-    });
-    /* this.thx();
-    this.close(); */
+    }); */
   }
 
   thx(){

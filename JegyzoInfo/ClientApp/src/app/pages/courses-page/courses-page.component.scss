@@ -1,5 +1,9 @@
 @import "../../../varsAndMixins.scss";
 
+.container{
+  padding-bottom: 200px;
+}
+
 .shadowedBoxWhite{
   padding-left: 60px;
   padding-bottom: 60px;
@@ -51,10 +55,14 @@
 }
 
 .coursesWrap{
-  margin-bottom: 100px;
+  padding-bottom: 50px;
   h4{
     margin-top: 68px;
     margin-bottom: 27px;
     font-weight: 700;
   }
+}
+
+.ctaWrap{
+  text-align: center;
 }

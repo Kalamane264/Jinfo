@@ -24,7 +24,7 @@ export class CourseComponent implements OnInit {
   constructor(
     private expertService: ExpertService,
     private dialog: MatDialog,
-    private userService: UserService
+    public userService: UserService
   ) { }
 
   ngOnInit(): void {

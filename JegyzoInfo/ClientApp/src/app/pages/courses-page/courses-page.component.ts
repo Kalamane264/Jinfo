@@ -17,7 +17,7 @@ export class CoursesPageComponent implements OnInit {
 
   constructor(
     private courseService: CourseService,
-    private userService: UserService
+    public userService: UserService
     ) { }
 
   ngOnInit(): void {
@@ -34,8 +34,7 @@ export class CoursesPageComponent implements OnInit {
       },
       error => {
         console.log('Oops', error);
-      }
-      );
+      });
     }
   }
 
@@ -44,5 +43,9 @@ export class CoursesPageComponent implements OnInit {
       this.events = events;
       // console.log("events", events);
     });
+  }
+
+  clickMoreInfo(){
+
   }
 }

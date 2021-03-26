@@ -62,15 +62,19 @@
           width:100%;
         }
       }
+      .validity{
+        color: red;
+        font-size: 12px;
+      }
     }
   }
 
   .buttWrap{
     margin-top: 50px;
-    button.blueBorder{
+    button.hollow{
       padding-left: 54px;
       padding-right: 54px;
-
+      border: 0;
     }
   }
 }
