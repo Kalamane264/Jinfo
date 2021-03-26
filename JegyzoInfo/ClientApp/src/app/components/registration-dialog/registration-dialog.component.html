@@ -5,7 +5,7 @@
   </h4>
   <mat-dialog-content>
     <div class="formWrap">
-      <form name="registrationForm" onsubmit="return false;">
+      <form name="registrationForm" #registrationForm="ngForm">
         <div *ngIf="!data.itsme">
           <div class="formRow flex">
             <div class="formCol">
@@ -139,9 +139,9 @@
             <p>
               E-mail cím
             </p>
-            <input required #email="ngModel" type="text" name="email" [(ngModel)]="form.email" placeholder="@"/>
+            <input required email="true" #email="ngModel" type="email" name="email" [(ngModel)]="form.email" placeholder="@"/>
             <div class="validity" *ngIf="email.touched && !email.valid">
-              Kötelező mező!
+              Az e-mail cím nem megfelelő!
             </div>
           </div>
           <div class="formCol">
@@ -164,7 +164,7 @@
           </div>
         </div>
         <div class="buttWrap">
-          <button class="orange" (click)="submit()" type="submit">
+          <button class="orange" (click)="submit()" type="submit" [disabled]="!registrationForm.valid">
             Elküldöm a regisztrációt
           </button>
           <button class="hollow" (click)="close()">

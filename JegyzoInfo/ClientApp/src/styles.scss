@@ -49,6 +49,9 @@ button, button:focus{
   padding: 11px 35px;
   font-size: 16px;
   outline: none;
+  &:disabled{
+    opacity: .4;
+  }
   &.defaultBlue{
     border: 0;
     background-color: $blue;
