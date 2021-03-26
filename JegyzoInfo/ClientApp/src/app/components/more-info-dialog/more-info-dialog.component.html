@@ -14,35 +14,47 @@
     Használja ki a teljes szolgáltatási csomagot! Kérjen részletes tájékoztatást szakértő tanácsadónktól, az alábbi űrlap kitöltésével.
   </p>
   <div class="formWrap">
-    <form name="contactForm">
+    <form name="contactForm" #contactForm="ngForm">
       <div class="formRow">
         <p>
           Az Ön neve
         </p>
-        <input type="text" placeholder="Teljes név" name="Name" [(ngModel)]="form.Name"/>
+        <input required #Name="ngModel" type="text" placeholder="Teljes név" name="Name" [(ngModel)]="form.Name"/>
+        <div class="validity" *ngIf="Name.touched && !Name.valid">
+          Kötelező mező!
+        </div>
       </div>
       <div class="formRow">
         <p>
           Beosztása
         </p>
-        <input type="text" placeholder="pl. jegyző, hivatalvezető" name="Position" [(ngModel)]="form.Position"/>
+        <input required #Position="ngModel"  type="text" placeholder="pl. jegyző, hivatalvezető" name="Position" [(ngModel)]="form.Position"/>
+        <div class="validity" *ngIf="Position.touched && !Position.valid">
+          Kötelező mező!
+        </div>
       </div>
       <div class="formRow">
         <p>
           Település
         </p>
-        <input type="text" placeholder="Község vagy város neve" name="Settlement" [(ngModel)]="form.Settlement"/>
+        <input required #Settlement="ngModel" type="text" placeholder="Község vagy város neve" name="Settlement" [(ngModel)]="form.Settlement"/>
+        <div class="validity" *ngIf="Settlement.touched && !Settlement.valid">
+          Kötelező mező!
+        </div>
       </div>
       <div class="formRow">
         <p>
           Telefonos elérhetőség
         </p>
-        <input type="text" placeholder="pl. +36 30 234 4567" name="Phone" [(ngModel)]="form.Phone"/>
+        <input required #Phone="ngModel" type="text" placeholder="pl. +36 30 234 4567" name="Phone" [(ngModel)]="form.Phone"/>
+        <div class="validity" *ngIf="Phone.touched && !Phone.valid">
+          Kötelező mező!
+        </div>
       </div>
     </form>
   </div>
   <div class="buttWrap">
-    <button class="orange" (click)="submit()">
+    <button class="orange" (click)="submit()" [disabled]="!contactForm.valid">
       Visszahívást kérek!
     </button>
     <button class="blueBorder" (click)="close()">

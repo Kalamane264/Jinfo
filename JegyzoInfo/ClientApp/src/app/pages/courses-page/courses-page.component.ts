@@ -3,6 +3,8 @@ import { UserService } from 'src/app/services/user.service';
 import { CourseService } from './../../services/course.service';
 import { Component, OnInit } from '@angular/core';
 import { Esemeny } from 'src/app/interfaces/esemeny';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MoreInfoDialogComponent } from 'src/app/components/more-info-dialog/more-info-dialog.component';
 
 @Component({
   selector: 'app-courses-page',
@@ -17,7 +19,8 @@ export class CoursesPageComponent implements OnInit {
 
   constructor(
     private courseService: CourseService,
-    public userService: UserService
+    public userService: UserService,
+    private dialog: MatDialog
     ) { }
 
   ngOnInit(): void {
@@ -46,6 +49,10 @@ export class CoursesPageComponent implements OnInit {
   }
 
   clickMoreInfo(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    // dialogConfig.disableClose = true;
 
+    const dialogRef = this.dialog.open(MoreInfoDialogComponent, dialogConfig);
   }
 }

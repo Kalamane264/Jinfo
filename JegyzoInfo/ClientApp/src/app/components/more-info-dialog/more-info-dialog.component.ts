@@ -10,10 +10,10 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class MoreInfoDialogComponent implements OnInit {
 
   form = {
-    Name: "Varga Kálmán",
-    Position: "fejvesztő",
-    Settlement: "Pécs",
-    Phone: "+36702759141"
+    Name: "",
+    Position: "",
+    Settlement: "",
+    Phone: ""
   };
 
   constructor(
