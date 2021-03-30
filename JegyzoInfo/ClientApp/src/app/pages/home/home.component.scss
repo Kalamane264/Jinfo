@@ -120,9 +120,16 @@ header{
   padding-bottom: 220px;
 }
 
-.howItWorks{
-  background-color: white;
-  padding: 82px 0 160px 0;
+.howItWorksWrap{
+  @media(max-width: 991px) {
+    /* width: 100%;
+    overflow-x: scroll; */
+  }
+  .howItWorks{
+    background-color: white;
+    padding: 82px 0 160px 0;
+    // min-width: 920px;
+  }
 }
 
 @media(max-width: 1199px){

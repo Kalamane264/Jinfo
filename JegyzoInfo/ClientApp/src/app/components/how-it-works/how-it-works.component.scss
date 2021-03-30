@@ -3,6 +3,10 @@
 $solidBorderColor: #A3B2B7;
 
 .howItWorksWrap{
+  .content{
+    // width: 1000px;
+    margin: auto;
+  }
   .title{
     text-align: center;
     hr{
@@ -31,6 +35,9 @@ $solidBorderColor: #A3B2B7;
   padding: 30px;
   padding-bottom: 0;
   display: flex;
+  @media(max-width: 991px){
+    display: none;
+  }
 
   > div{
     width: 50%;
@@ -46,10 +53,22 @@ $solidBorderColor: #A3B2B7;
       top: 60px;
       right: 0;
     }
+    &::before{
+      content: url('/assets/img/howitworksman.svg');
+      position: absolute;
+      top: 120px;
+      right: 350px;
+    }
     img{
       position: relative;
       top: -90px;
       right: -120px;
+      @media(max-width: 1199px) {
+        right: -35px;
+      }
+      @media(max-width: 991px) {
+        right: 85px;
+      }
     }
   }
 
@@ -225,6 +244,9 @@ $solidBorderColor: #A3B2B7;
     height: 83px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    @media(max-width: 991px){
+      opacity: 0;
+    }
     .side{
       &.leftSide{
         display: grid;
@@ -283,6 +305,9 @@ $solidBorderColor: #A3B2B7;
   .bottomDivs{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    @media(max-width: 991px){
+      display: block;
+    }
     img{
       width: 100%;
     }
@@ -294,4 +319,8 @@ $solidBorderColor: #A3B2B7;
   min-height: 124px;
   display: flex;
   align-items: center;
+}
+
+img{
+  max-width: 100%;
 }
