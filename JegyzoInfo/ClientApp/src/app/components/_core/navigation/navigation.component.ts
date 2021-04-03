@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { LoginDialogComponent } from './../../login-dialog/login-dialog.component';
 import { LogoutDialogComponent } from './../../logout-dialog/logout-dialog.component';
 import { UserService } from './../../../services/user.service';
@@ -16,10 +17,18 @@ export class NavigationComponent implements OnInit {
 
   constructor(
     public userService: UserService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
+  }
+
+  gotoVideotar(){
+    this.router.navigate(["/"]).then(() => {
+      let scrollTarget = document.getElementById('scrollVideos');
+      scrollTarget?.scrollIntoView({behavior: "smooth", block: "center"});
+    });
   }
 
   clickSandvichMenu(){

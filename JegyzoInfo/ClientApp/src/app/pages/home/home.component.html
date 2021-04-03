@@ -72,7 +72,7 @@
       KIEMELT TÉMÁINK
     </h1>
     <app-topics [folyamats]="folyamats"></app-topics>
-    <div class="buttonWrap">
+    <div class="buttonWrap" *ngIf="userService.loginHappened.value">
       <button class="hollow" routerLink="/tudastar">
         Tovább a tudástár teljes tartalmához
       </button>
@@ -88,8 +88,8 @@
   <app-online-courses></app-online-courses>
 </div>
 
-<div class="howItWorksWrap">
-  <div class="howItWorks" id="scrollHowItWorks">
+<div class="howItWorks" id="scrollHowItWorks">
+  <div class="container">
     <app-how-it-works></app-how-it-works>
   </div>
 </div>

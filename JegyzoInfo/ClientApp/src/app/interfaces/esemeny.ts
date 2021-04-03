@@ -33,5 +33,5 @@ export class Esemeny{
   varos = "";
   videoUrl = "";
 
-  szakis: any[] = new Array();
+  szakis: any[] = [];
 }

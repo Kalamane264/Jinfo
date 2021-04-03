@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user.service';
 import { Folyamat } from './../../interfaces/folyamat';
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
@@ -12,7 +13,7 @@ export class TopicComponent implements OnInit {
   @Input() folyamat: Folyamat = new Folyamat();
   itsnew = false;
 
-  constructor() { }
+  constructor(public userService: UserService) { }
 
   ngOnInit(): void {
     if(!this.folyamat.megjelenesDatum){

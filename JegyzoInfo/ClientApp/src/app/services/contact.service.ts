@@ -1,3 +1,4 @@
+import { SpinnerService } from './spinner.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -6,9 +7,17 @@ import { Injectable } from '@angular/core';
 })
 export class ContactService {
 
-  constructor(private http: HttpClient) { }
+  constructor (
+    private http: HttpClient,
+    private spinnerService: SpinnerService
+    ) { }
 
   saveContactForm(data: any){
-    return this.http.post("api/Contact/SaveMoreInfo", data);
+    this.spinnerService.showSpinner();
+    let $o = this.http.post("api/Contact/SaveMoreInfo", data);
+    $o.subscribe(resp => {
+      this.spinnerService.hideSpinner();
+    });
+    return $o;
   }
 }

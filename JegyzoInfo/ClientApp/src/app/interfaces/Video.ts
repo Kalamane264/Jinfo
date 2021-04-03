@@ -13,4 +13,5 @@ export interface Video{
   tartalom: string;
   videoID: number;
   videoURL: string;
+  videoAltipus: string;
 }

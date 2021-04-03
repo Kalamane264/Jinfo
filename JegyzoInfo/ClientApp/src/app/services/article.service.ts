@@ -1,3 +1,4 @@
+import { SpinnerService } from './spinner.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -9,17 +10,37 @@ import { Folyamat } from '../interfaces/folyamat';
 })
 export class ArticleService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private spinnerService: SpinnerService
+    ) { }
 
   getArticles(): Observable<Article[]>{
-    return this.http.get<any[]>("/api/Article/getArticles");
+    this.spinnerService.showSpinner();
+    let $o = this.http.get<Article[]>("/api/Article/getArticles");
+    $o.subscribe(resp => {
+      this.spinnerService.hideSpinner();
+    });
+    return $o;
   }
 
   getArticle(id: number): Observable<Article>{
-    return this.http.get<Article>("/api/Article/getArticle/" + id);
+    this.spinnerService.showSpinner();
+    let $o = this.http.get<Article>("/api/Article/getArticle/" + id);
+    $o.subscribe(resp => {
+      this.spinnerService.hideSpinner();
+    });
+    return $o;
   }
 
   getArticleBySeoUrl(seoUrl: string): Observable<Article>{
-    return this.http.get<Article>("/api/Article/GetArticleBySeoUrl/" + seoUrl);
+    // return this.http.get<Article>("/api/Article/GetArticleBySeoUrl/" + seoUrl);
+
+    this.spinnerService.showSpinner();
+    let $o = this.http.get<Article>("/api/Article/GetArticleBySeoUrl/" + seoUrl);
+    $o.subscribe(resp => {
+      this.spinnerService.hideSpinner();
+    });
+    return $o;
   }
 }

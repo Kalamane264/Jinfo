@@ -2,24 +2,45 @@ import { Folyamat } from './../interfaces/folyamat';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { SpinnerService } from './spinner.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class KnowledgeBaseService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private spinnerService: SpinnerService
+    ) { }
 
   getFolyamats(): Observable<Folyamat[]>{
-    return this.http.get<Folyamat[]>("/api/KnowledgeBase/GetFolyamats");
+    this.spinnerService.showSpinner();
+    console.log("Tudástár: Sószpinner");
+    let $o = this.http.get<Folyamat[]>("/api/KnowledgeBase/GetFolyamats");
+    $o.subscribe(resp => {
+      this.spinnerService.hideSpinner();
+      console.log("Tudástár: hájdspinner");
+    });
+    return $o;
   }
 
   folyamatAgListazasaFoFolyamatIDSzerint(id: number): Observable<Folyamat> {
-    return this.http.get<Folyamat>("/api/KnowledgeBase/FolyamatAgListazasaFoFolyamatIDSzerint/" + id);
+    this.spinnerService.showSpinner();
+    let $o = this.http.get<Folyamat>("/api/KnowledgeBase/FolyamatAgListazasaFoFolyamatIDSzerint/" + id);
+    $o.subscribe(resp => {
+      this.spinnerService.hideSpinner();
+    });
+    return $o;
   }
 
   folyamatAgListazasaFoFolyamatSEOURLSzerint(seoUrl: string): Observable<Folyamat> {
-    return this.http.get<Folyamat>("/api/KnowledgeBase/FolyamatAgListazasaFoFolyamatSEOURLSzerint/" + seoUrl);
+    this.spinnerService.showSpinner();
+    let $o = this.http.get<Folyamat>("/api/KnowledgeBase/FolyamatAgListazasaFoFolyamatSEOURLSzerint/" + seoUrl);
+    $o.subscribe(resp => {
+      this.spinnerService.hideSpinner();
+    });
+    return $o;
   }
 
   folyamatFindById(folyamats: Folyamat[], id: number): Folyamat | undefined{

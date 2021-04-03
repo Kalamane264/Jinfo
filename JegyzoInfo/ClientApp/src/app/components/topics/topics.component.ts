@@ -13,6 +13,7 @@ export class TopicsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('folyamats in topics', this.folyamats)
   }
 
 }

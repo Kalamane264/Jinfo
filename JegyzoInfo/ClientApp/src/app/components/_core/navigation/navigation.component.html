@@ -26,9 +26,14 @@
           <hr/>
         </li>
         <li class="loginIcon">
-          <a (click)="clickLogin()">
-            <img src="/assets/img/iconUser.svg" alt="">
+          <a (click)="clickLogin()" *ngIf="userService.loginHappened.value; else iconUserLogged">
+            <img src="/assets/img/iconUserLogged.svg" alt="">
           </a>
+          <ng-template #iconUserLogged>
+            <a>
+              <img src="/assets/img/iconUser.svg" alt="">
+            </a>
+          </ng-template>
         </li>
         <li class="loginText">
           <a (click)="clickLogin()" *ngIf="!userService.userLoggedIn; else logout">

@@ -1,6 +1,7 @@
+import { UserService } from 'src/app/services/user.service';
 import { ExpertService } from './../../services/expert.service';
 import { ArticleService } from './../../services/article.service';
-import { Video } from './../../interfaces/Video';
+import { Video } from './../../interfaces/video';
 import { VideoService } from './../../services/video.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,19 +14,32 @@ export class VideosPageComponent implements OnInit {
 
   videos: Video[] = [];
 
+
   constructor(
     private videoService: VideoService,
     private articleService: ArticleService,
-    private expertService: ExpertService
+    private expertService: ExpertService,
+    private userService: UserService
     ) { }
 
   ngOnInit(): void {
-    this.getVideos();
+    if(this.userService.userLoggedIn) {
+      this.getVideos();
+    } else {
+      this.userService.loginHappened.subscribe(x => {
+        if(x) {
+          this.getVideos();
+        }
+      })
+    }
   }
 
   getVideos(){
-    this.videoService.GetLegfrissebbVideokBySiteID(25).subscribe(videos => {
-      this.videos = videos;
+    this.videoService.GetLegfrissebbVideok(50).subscribe(videos => {
+      videos.forEach(vid => {
+        vid.szakis = [];
+      });
+      this.videos = videos.filter(v => v.videoAltipus == "előadás");
       console.log('vids', videos);
       videos.forEach(vid => {
         if(vid.szakertoIDs.length > 0) {
@@ -36,11 +50,9 @@ export class VideosPageComponent implements OnInit {
   }
 
   getSzaki(vid: Video){
-    vid.szakis = [];
     vid.szakertoIDs.forEach(szakiid => {
       this.expertService.getSzakertoAdatokFullBySzakertoId(szakiid).subscribe(szaki => {
         vid.szakis.push(szaki);
-        console.log('vids', vid);
       });
     })
 

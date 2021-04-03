@@ -1,6 +1,8 @@
 import { StatuteService } from './../../services/statute.service';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
+import { PageScrollService } from 'ngx-page-scroll-core';
 
 @Component({
   selector: 'app-statute',
@@ -17,10 +19,13 @@ export class StatuteComponent implements OnInit {
   jsz = null;
 
   searchTerm = "";
+  searchTermSzam = "";
 
   constructor(
     private route: ActivatedRoute,
-    private statuteService: StatuteService) { }
+    private statuteService: StatuteService,
+    private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any
+    ) { }
 
   ngOnInit(): void {
     this.uid = this.route.snapshot.paramMap.get('uid')!;
@@ -70,6 +75,24 @@ export class StatuteComponent implements OnInit {
       console.log('inner', element.innerHTML);
       element.outerHTML = element.innerHTML;
     });
+  }
+
+  currentIndexOfScroll = 0;
+  searchSzam() {
+    let szams = Array.from(document.getElementsByClassName('szam'));
+    szams[this.currentIndexOfScroll].classList.remove("searchFound");
+
+    for(let i = this.currentIndexOfScroll + 1; i++; i < szams.length){
+      if(szams[i].innerHTML.indexOf(this.searchTermSzam) > -1) {
+        this.currentIndexOfScroll = i;
+
+        // console.log("scrollto", szams[i]);
+        szams[i].classList.add('searchFound');
+        szams[i].scrollIntoView({behavior: "smooth", block: "center"});
+        break;
+      }
+      this.currentIndexOfScroll = 0;
+    }
   }
 
 }

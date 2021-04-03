@@ -18,7 +18,7 @@
         Gazdálkodási jogkörök, kötelezettségvállalás, pénzügyi ellenjegyzés és teljesítésigazolás
       </li>
     </ul> -->
-    <div class="openTopic">
+    <div class="openTopic" *ngIf="userService.userLoggedIn && folyamat.seoURL">
       <a class="arrorange" [routerLink]="'/topic/' + folyamat.seoURL">
         Téma megnyitása
       </a>

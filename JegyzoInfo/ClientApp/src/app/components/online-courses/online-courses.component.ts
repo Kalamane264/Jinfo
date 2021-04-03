@@ -27,12 +27,15 @@ export class OnlineCoursesComponent implements OnInit {
 
   getEsemenyList(){
     this.courseService.getEsemenyList().subscribe(events => {
+      events.forEach(evt => {
+        evt.szakis = [];
+      });
       this.events = events;
+
       console.log("online events", events);
 
       this.events.forEach(evt => {
         if(evt.szakertoIDs.length) {
-          evt.szakis = [];
           this.expertService.getSzakertoAdatokFullBySzakertoId(evt.szakertoIDs[0]).subscribe(szaki => {
             console.log("szaki", szaki);
             evt.szakis.push(szaki);

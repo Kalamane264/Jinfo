@@ -12,7 +12,7 @@
             <h6>
               {{ vid.cim }}
             </h6>
-            <p class="author" *ngIf="vid.szakis">
+            <p class="author" *ngIf="vid.szakis.length">
               Előadó:
               {{ vid.szakis[0].nev }}
               {{ vid.szakis[0].szakterulet }}

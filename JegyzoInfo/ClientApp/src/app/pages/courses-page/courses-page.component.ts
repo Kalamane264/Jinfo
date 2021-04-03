@@ -31,7 +31,9 @@ export class CoursesPageComponent implements OnInit {
     }
     else {
       this.userService.loginHappened.subscribe(x => {
-        this.getDiaks();
+        if(x){
+          this.getDiaks();
+        }
       });
     }
   }

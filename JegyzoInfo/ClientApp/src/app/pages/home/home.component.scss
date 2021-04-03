@@ -98,6 +98,7 @@ header{
 }
 
 .topics{
+  margin-bottom: 196px;
   h1{
     text-align: center;
     margin-top: 80px;
@@ -105,10 +106,8 @@ header{
   }
   .buttonWrap{
     margin-top: 39px;
-    margin-bottom: 196px;
     text-align: center;
   }
-
 }
 
 .videos{
@@ -120,16 +119,9 @@ header{
   padding-bottom: 220px;
 }
 
-.howItWorksWrap{
-  @media(max-width: 991px) {
-    /* width: 100%;
-    overflow-x: scroll; */
-  }
-  .howItWorks{
-    background-color: white;
-    padding: 82px 0 160px 0;
-    // min-width: 920px;
-  }
+.howItWorks{
+  background-color: white;
+  padding: 82px 0 160px 0;
 }
 
 @media(max-width: 1199px){

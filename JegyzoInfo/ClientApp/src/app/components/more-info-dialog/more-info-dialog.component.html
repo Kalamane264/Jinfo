@@ -3,62 +3,64 @@
   <h4>
     Kérjen további tájékoztatást tanácsadónktól!
   </h4>
-  <p class="firstP">
-    A Jegyzőinfo éves előfizetése
-    <br/>
-    - a Tudástár és a Videótár korlátlan használatával,
-    <br/>
-    - továbbá az önkormányzat bármely munkatársának biztosított online képzésekkel mindössze bruttó <span class="bold_700">4500 Ft</span>, havi lebontásban.
-  </p>
-  <p class="secondP">
-    Használja ki a teljes szolgáltatási csomagot! Kérjen részletes tájékoztatást szakértő tanácsadónktól, az alábbi űrlap kitöltésével.
-  </p>
-  <div class="formWrap">
-    <form name="contactForm" #contactForm="ngForm">
-      <div class="formRow">
-        <p>
-          Az Ön neve
-        </p>
-        <input required #Name="ngModel" type="text" placeholder="Teljes név" name="Name" [(ngModel)]="form.Name"/>
-        <div class="validity" *ngIf="Name.touched && !Name.valid">
-          Kötelező mező!
+  <mat-dialog-content>
+    <p class="firstP">
+      A Jegyzőinfo éves előfizetése
+      <br/>
+      - a Tudástár és a Videótár korlátlan használatával,
+      <br/>
+      - továbbá az önkormányzat bármely munkatársának biztosított online képzésekkel mindössze bruttó <span class="bold_700">4500 Ft</span>, havi lebontásban.
+    </p>
+    <p class="secondP">
+      Használja ki a teljes szolgáltatási csomagot! Kérjen részletes tájékoztatást szakértő tanácsadónktól, az alábbi űrlap kitöltésével.
+    </p>
+    <div class="formWrap">
+      <form name="contactForm" #contactForm="ngForm">
+        <div class="formRow">
+          <p>
+            Az Ön neve
+          </p>
+          <input required #Name="ngModel" type="text" placeholder="Teljes név" name="Name" [(ngModel)]="form.Name"/>
+          <div class="validity" *ngIf="Name.touched && !Name.valid">
+            Kötelező mező!
+          </div>
         </div>
-      </div>
-      <div class="formRow">
-        <p>
-          Beosztása
-        </p>
-        <input required #Position="ngModel"  type="text" placeholder="pl. jegyző, hivatalvezető" name="Position" [(ngModel)]="form.Position"/>
-        <div class="validity" *ngIf="Position.touched && !Position.valid">
-          Kötelező mező!
+        <div class="formRow">
+          <p>
+            Beosztása
+          </p>
+          <input required #Position="ngModel"  type="text" placeholder="pl. jegyző, hivatalvezető" name="Position" [(ngModel)]="form.Position"/>
+          <div class="validity" *ngIf="Position.touched && !Position.valid">
+            Kötelező mező!
+          </div>
         </div>
-      </div>
-      <div class="formRow">
-        <p>
-          Település
-        </p>
-        <input required #Settlement="ngModel" type="text" placeholder="Község vagy város neve" name="Settlement" [(ngModel)]="form.Settlement"/>
-        <div class="validity" *ngIf="Settlement.touched && !Settlement.valid">
-          Kötelező mező!
+        <div class="formRow">
+          <p>
+            Település
+          </p>
+          <input required #Settlement="ngModel" type="text" placeholder="Község vagy város neve" name="Settlement" [(ngModel)]="form.Settlement"/>
+          <div class="validity" *ngIf="Settlement.touched && !Settlement.valid">
+            Kötelező mező!
+          </div>
         </div>
-      </div>
-      <div class="formRow">
-        <p>
-          Telefonos elérhetőség
-        </p>
-        <input required #Phone="ngModel" type="text" placeholder="pl. +36 30 234 4567" name="Phone" [(ngModel)]="form.Phone"/>
-        <div class="validity" *ngIf="Phone.touched && !Phone.valid">
-          Kötelező mező!
+        <div class="formRow">
+          <p>
+            Telefonos elérhetőség
+          </p>
+          <input required #Phone="ngModel" type="text" placeholder="pl. +36 30 234 4567" name="Phone" [(ngModel)]="form.Phone"/>
+          <div class="validity" *ngIf="Phone.touched && !Phone.valid">
+            Kötelező mező!
+          </div>
         </div>
-      </div>
-    </form>
-  </div>
-  <div class="buttWrap">
-    <button class="orange" (click)="submit()" [disabled]="!contactForm.valid">
-      Visszahívást kérek!
-    </button>
-    <button class="blueBorder" (click)="close()">
-      Mégse
-    </button>
-  </div>
+      </form>
+    </div>
+    <div class="buttWrap">
+      <button class="orange" (click)="submit()" [disabled]="!contactForm.valid">
+        Visszahívást kérek!
+      </button>
+      <button class="blueBorder" (click)="close()">
+        Mégse
+      </button>
+    </div>
+  </mat-dialog-content>
 </div>

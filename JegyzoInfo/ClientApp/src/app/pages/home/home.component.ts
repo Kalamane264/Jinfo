@@ -1,3 +1,4 @@
+import { UserService } from 'src/app/services/user.service';
 import { Article } from './../../interfaces/article';
 import { ArticleService } from './../../services/article.service';
 import { Component, OnInit } from '@angular/core';
@@ -19,6 +20,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private knowledgeBaseService: KnowledgeBaseService,
     private articleService: ArticleService,
+    public userService: UserService
     ) { }
 
   ngOnInit(): void {

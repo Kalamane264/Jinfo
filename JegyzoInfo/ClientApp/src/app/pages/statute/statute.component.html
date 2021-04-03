@@ -3,12 +3,14 @@
     <div class="searcher">
       <div class="leftSide">
         <input class="inText" type="text" placeholder="Keressen a szövegben" (keydown.enter)="search()" [(ngModel)]="searchTerm" />
-        <input class="inPar" type="text" placeholder="Írja be a keresett paragrafus számát" />
+        <input class="inPar" type="text" placeholder="Írja be a keresett paragrafus számát" (keydown.enter)="searchSzam()" [(ngModel)]="searchTermSzam" />
       </div>
       <div class="rightSide">
         <button class="defaultBlue">
           <span class="download">
-            Letöltöm PDF-ben
+            <a [href]="'https://lex-praxis.hu/jogszToPdf.php?id=' + uid" target="_blank">
+              Letöltöm PDF-ben
+            </a>
           </span>
         </button>
       </div>
