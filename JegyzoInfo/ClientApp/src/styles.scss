@@ -129,9 +129,14 @@ button, button:focus{
     display: inline-block;
     background-color: $orange;
     color: white;
-    padding: 3px 6px;
+    padding: 4px 6px;
     margin-right: 10px;
     margin-bottom: 5px;
+  }
+  &.green{
+    span{
+      background-color: #43C59E;
+    }
   }
 }
 

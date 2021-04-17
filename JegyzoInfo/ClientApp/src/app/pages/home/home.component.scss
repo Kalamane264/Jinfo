@@ -52,8 +52,15 @@ header{
           padding-left: 30px;
         }
       }
+      p{
+        margin-top: 40px;
+      }
+      .labelsWrap{
+        margin-bottom: 22px;
+      }
       .buttonWrap{
         margin-top: 75px;
+        display: flex;
         button{
           margin-right: 20px;
         }

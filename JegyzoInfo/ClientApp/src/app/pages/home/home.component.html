@@ -4,26 +4,44 @@
       <div class="col-lg-7">
         <div class="leftSide">
           <section>
-            <h1>
-              Online tudástár a jegyzői munka gyakorlati kihívásaihoz igazodva
-            </h1>
-            <ul>
-              <li>
-                Jogalkalmazási ismeretek, útmutatók ügymeneti modellek alapján
-              </li>
-              <li>
-                Közel 300 jegyző véleménye alapján válogatott témák
-              </li>
-              <li>
-                Gyakorlati tudásanyag, melynek elsajátítását tanúsítvánnyal ismerjük el
-              </li>
-              <li>
-                Oktatóvideók, webináriumok, e-learning rendszerű képzések
-              </li>
-            </ul>
+            <ng-template *ngIf="!userService.loginHappened.value; else loggedForHeaderLeftSide">
+              <h1>
+                Online tudástár a jegyzői munka gyakorlati kihívásaihoz igazodva
+              </h1>
+              <ul>
+                <li>
+                  Jogalkalmazási ismeretek, útmutatók ügymeneti modellek alapján
+                </li>
+                <li>
+                  Közel 300 jegyző véleménye alapján válogatott témák
+                </li>
+                <li>
+                  Gyakorlati tudásanyag, melynek elsajátítását tanúsítvánnyal ismerjük el
+                </li>
+                <li>
+                  Oktatóvideók, webináriumok, e-learning rendszerű képzések
+                </li>
+              </ul>
+            </ng-template>
+            <ng-template #loggedForHeaderLeftSide>
+              <div class="labelsWrap green">
+                <span>
+                  legfrissebb a tudástárban!
+                </span>
+              </div>
+              <h1>
+                {{ legfrissebbLegfrissebbCikk.cim }}
+              </h1>
+              <p>
+                {{ legfrissebbLegfrissebbCikk.bevezeto }}
+              </p>
+            </ng-template>
             <div class="buttonWrap">
-              <button class="defaultBlue" pageScroll href="#scrollHowItWorks">
+              <button class="defaultBlue" pageScroll href="#scrollHowItWorks" *ngIf="!userService.loginHappened.value">
                 Többet szeretnék tudni
+              </button>
+              <button class="defaultBlue" [routerLink]="['/', 'cikk', legfrissebbLegfrissebbCikk.seoUrl]" *ngIf="userService.loginHappened.value;">
+                Megnézem a részleteket
               </button>
               <button class="defaultBlue" pageScroll href="#scrollTudastar">
                 Megnézem a kiemelt témákat

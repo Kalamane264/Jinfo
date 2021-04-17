@@ -57,6 +57,8 @@ namespace Pwi2
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfesemeny))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfszakerto_rovidebb))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfszakerto_hosszabb))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfkategoriaV2andSEOSiteKategoriaV2))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfInt32))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfvideo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOffolyamat))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfjogszakasz))]
@@ -1036,6 +1038,50 @@ namespace Pwi2
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WMWIListResultOfkategoriaV2andSEOSiteKategoriaV2", Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class WMWIListResultOfkategoriaV2andSEOSiteKategoriaV2 : Pwi2.WMWIResult
+    {
+        
+        private Pwi2.ArrayOfKategoriaV2andSEOSiteKategoriaV2 ListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public Pwi2.ArrayOfKategoriaV2andSEOSiteKategoriaV2 List
+        {
+            get
+            {
+                return this.ListField;
+            }
+            set
+            {
+                this.ListField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WMWIListResultOfInt32", Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class WMWIListResultOfInt32 : Pwi2.WMWIResult
+    {
+        
+        private Pwi2.ArrayOfInt1 ListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public Pwi2.ArrayOfInt1 List
+        {
+            get
+            {
+                return this.ListField;
+            }
+            set
+            {
+                this.ListField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.Runtime.Serialization.DataContractAttribute(Name="WMWIListResultOfvideo", Namespace="http://pwi2.mpraxis.hu/")]
     public partial class WMWIListResultOfvideo : Pwi2.WMWIResult
     {
@@ -1256,6 +1302,8 @@ namespace Pwi2
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.jszwithnameanduid))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfFolyamatnameandid))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.folyamatnameandid))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfKategoriaV2andSEOSiteKategoriaV2))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.kategoriaV2andSEOSiteKategoriaV2))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfCikk))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfcikk))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.kategoriaV2))]
@@ -1273,8 +1321,10 @@ namespace Pwi2
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfszakerto_rovidebb))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfSzakerto_hosszabb))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfszakerto_hosszabb))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.video))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfkategoriaV2andSEOSiteKategoriaV2))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfInt1))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfInt32))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.video))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.ArrayOfVideo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.WMWIListResultOfvideo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Pwi2.folyamat))]
@@ -7404,6 +7454,8 @@ namespace Pwi2
         
         private Pwi2.ArrayOfFolyamatnameandid FolyamatsField;
         
+        private Pwi2.ArrayOfKategoriaV2andSEOSiteKategoriaV2 kategoriaV2andSEOSiteKategoriaV2sField;
+        
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int CikkID
         {
@@ -7728,6 +7780,19 @@ namespace Pwi2
                 this.FolyamatsField = value;
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=25)]
+        public Pwi2.ArrayOfKategoriaV2andSEOSiteKategoriaV2 kategoriaV2andSEOSiteKategoriaV2s
+        {
+            get
+            {
+                return this.kategoriaV2andSEOSiteKategoriaV2sField;
+            }
+            set
+            {
+                this.kategoriaV2andSEOSiteKategoriaV2sField = value;
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7844,6 +7909,185 @@ namespace Pwi2
             set
             {
                 this.seorulField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfKategoriaV2andSEOSiteKategoriaV2", Namespace="http://pwi2.mpraxis.hu/", ItemName="kategoriaV2andSEOSiteKategoriaV2")]
+    public class ArrayOfKategoriaV2andSEOSiteKategoriaV2 : System.Collections.Generic.List<Pwi2.kategoriaV2andSEOSiteKategoriaV2>
+    {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="kategoriaV2andSEOSiteKategoriaV2", Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class kategoriaV2andSEOSiteKategoriaV2 : object
+    {
+        
+        private System.Nullable<int> KategoriaV2IDField;
+        
+        private string NevField;
+        
+        private string Seo_UrlField;
+        
+        private string Meta_TitleField;
+        
+        private string Meta_DescField;
+        
+        private string Og_TitleField;
+        
+        private string Og_DescField;
+        
+        private string Kiemelt_Kep_UrlField;
+        
+        private string Kiemelet_Kep_Alt_TagField;
+        
+        private string HtmlField;
+        
+        private int SEOEntitasIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Nullable<int> KategoriaV2ID
+        {
+            get
+            {
+                return this.KategoriaV2IDField;
+            }
+            set
+            {
+                this.KategoriaV2IDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nev
+        {
+            get
+            {
+                return this.NevField;
+            }
+            set
+            {
+                this.NevField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Seo_Url
+        {
+            get
+            {
+                return this.Seo_UrlField;
+            }
+            set
+            {
+                this.Seo_UrlField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Meta_Title
+        {
+            get
+            {
+                return this.Meta_TitleField;
+            }
+            set
+            {
+                this.Meta_TitleField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Meta_Desc
+        {
+            get
+            {
+                return this.Meta_DescField;
+            }
+            set
+            {
+                this.Meta_DescField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Og_Title
+        {
+            get
+            {
+                return this.Og_TitleField;
+            }
+            set
+            {
+                this.Og_TitleField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Og_Desc
+        {
+            get
+            {
+                return this.Og_DescField;
+            }
+            set
+            {
+                this.Og_DescField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string Kiemelt_Kep_Url
+        {
+            get
+            {
+                return this.Kiemelt_Kep_UrlField;
+            }
+            set
+            {
+                this.Kiemelt_Kep_UrlField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string Kiemelet_Kep_Alt_Tag
+        {
+            get
+            {
+                return this.Kiemelet_Kep_Alt_TagField;
+            }
+            set
+            {
+                this.Kiemelet_Kep_Alt_TagField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string Html
+        {
+            get
+            {
+                return this.HtmlField;
+            }
+            set
+            {
+                this.HtmlField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public int SEOEntitasID
+        {
+            get
+            {
+                return this.SEOEntitasIDField;
+            }
+            set
+            {
+                this.SEOEntitasIDField = value;
             }
         }
     }
@@ -8632,6 +8876,13 @@ namespace Pwi2
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfInt1", Namespace="http://pwi2.mpraxis.hu/", ItemName="int")]
+    public class ArrayOfInt1 : System.Collections.Generic.List<int>
+    {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.Runtime.Serialization.DataContractAttribute(Name="video", Namespace="http://pwi2.mpraxis.hu/")]
     public partial class video : object
     {
@@ -8845,13 +9096,6 @@ namespace Pwi2
                 this.VideoAltipusField = value;
             }
         }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfInt1", Namespace="http://pwi2.mpraxis.hu/", ItemName="int")]
-    public class ArrayOfInt1 : System.Collections.Generic.List<int>
-    {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9670,11 +9914,29 @@ namespace Pwi2
         [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/CikkFullBySEOUrl", ReplyAction="*")]
         System.Threading.Tasks.Task<Pwi2.CikkFullBySEOUrlResponse> CikkFullBySEOUrlAsync(Pwi2.CikkFullBySEOUrlRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/CikkbeAgyazottKapcsolodoCikkAdatok", ReplyAction="*")]
+        System.Threading.Tasks.Task<Pwi2.CikkbeAgyazottKapcsolodoCikkAdatokResponse> CikkbeAgyazottKapcsolodoCikkAdatokAsync(Pwi2.CikkbeAgyazottKapcsolodoCikkAdatokRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/CikkFullBySEOUrlAndSiteID", ReplyAction="*")]
+        System.Threading.Tasks.Task<Pwi2.CikkFullBySEOUrlAndSiteIDResponse> CikkFullBySEOUrlAndSiteIDAsync(Pwi2.CikkFullBySEOUrlAndSiteIDRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/KategoriaV2sBySiteID", ReplyAction="*")]
+        System.Threading.Tasks.Task<Pwi2.KategoriaV2sBySiteIDResponse> KategoriaV2sBySiteIDAsync(Pwi2.KategoriaV2sBySiteIDRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasID", ReplyAction="*")]
+        System.Threading.Tasks.Task<Pwi2.SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDResponse> SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDAsync(Pwi2.SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/CikkListBySzakertoIdAndSiteID", ReplyAction="*")]
         System.Threading.Tasks.Task<Pwi2.CikkListBySzakertoIdAndSiteIDResponse> CikkListBySzakertoIdAndSiteIDAsync(Pwi2.CikkListBySzakertoIdAndSiteIDRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/LegfrissebbCikkekBySiteID", ReplyAction="*")]
         System.Threading.Tasks.Task<Pwi2.LegfrissebbCikkekBySiteIDResponse> LegfrissebbCikkekBySiteIDAsync(Pwi2.LegfrissebbCikkekBySiteIDRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/OsszesCikkSzamaBySiteIDAndKategorivaV2IDs", ReplyAction="*")]
+        System.Threading.Tasks.Task<Pwi2.OsszesCikkSzamaBySiteIDAndKategorivaV2IDsResponse> OsszesCikkSzamaBySiteIDAndKategorivaV2IDsAsync(Pwi2.OsszesCikkSzamaBySiteIDAndKategorivaV2IDsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDs", ReplyAction="*")]
+        System.Threading.Tasks.Task<Pwi2.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsResponse> LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsAsync(Pwi2.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://pwi2.mpraxis.hu/LegfrissebbVideokBySiteID", ReplyAction="*")]
         System.Threading.Tasks.Task<Pwi2.LegfrissebbVideokBySiteIDResponse> LegfrissebbVideokBySiteIDAsync(Pwi2.LegfrissebbVideokBySiteIDRequest request);
@@ -16512,6 +16774,338 @@ namespace Pwi2
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CikkbeAgyazottKapcsolodoCikkAdatokRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CikkbeAgyazottKapcsolodoCikkAdatok", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.CikkbeAgyazottKapcsolodoCikkAdatokRequestBody Body;
+        
+        public CikkbeAgyazottKapcsolodoCikkAdatokRequest()
+        {
+        }
+        
+        public CikkbeAgyazottKapcsolodoCikkAdatokRequest(Pwi2.CikkbeAgyazottKapcsolodoCikkAdatokRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class CikkbeAgyazottKapcsolodoCikkAdatokRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int cikkid;
+        
+        public CikkbeAgyazottKapcsolodoCikkAdatokRequestBody()
+        {
+        }
+        
+        public CikkbeAgyazottKapcsolodoCikkAdatokRequestBody(int cikkid)
+        {
+            this.cikkid = cikkid;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CikkbeAgyazottKapcsolodoCikkAdatokResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CikkbeAgyazottKapcsolodoCikkAdatokResponse", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.CikkbeAgyazottKapcsolodoCikkAdatokResponseBody Body;
+        
+        public CikkbeAgyazottKapcsolodoCikkAdatokResponse()
+        {
+        }
+        
+        public CikkbeAgyazottKapcsolodoCikkAdatokResponse(Pwi2.CikkbeAgyazottKapcsolodoCikkAdatokResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class CikkbeAgyazottKapcsolodoCikkAdatokResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Pwi2.WMWIListResultOfcikk CikkbeAgyazottKapcsolodoCikkAdatokResult;
+        
+        public CikkbeAgyazottKapcsolodoCikkAdatokResponseBody()
+        {
+        }
+        
+        public CikkbeAgyazottKapcsolodoCikkAdatokResponseBody(Pwi2.WMWIListResultOfcikk CikkbeAgyazottKapcsolodoCikkAdatokResult)
+        {
+            this.CikkbeAgyazottKapcsolodoCikkAdatokResult = CikkbeAgyazottKapcsolodoCikkAdatokResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CikkFullBySEOUrlAndSiteIDRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CikkFullBySEOUrlAndSiteID", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.CikkFullBySEOUrlAndSiteIDRequestBody Body;
+        
+        public CikkFullBySEOUrlAndSiteIDRequest()
+        {
+        }
+        
+        public CikkFullBySEOUrlAndSiteIDRequest(Pwi2.CikkFullBySEOUrlAndSiteIDRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class CikkFullBySEOUrlAndSiteIDRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string seourl;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int siteid;
+        
+        public CikkFullBySEOUrlAndSiteIDRequestBody()
+        {
+        }
+        
+        public CikkFullBySEOUrlAndSiteIDRequestBody(string seourl, int siteid)
+        {
+            this.seourl = seourl;
+            this.siteid = siteid;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CikkFullBySEOUrlAndSiteIDResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CikkFullBySEOUrlAndSiteIDResponse", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.CikkFullBySEOUrlAndSiteIDResponseBody Body;
+        
+        public CikkFullBySEOUrlAndSiteIDResponse()
+        {
+        }
+        
+        public CikkFullBySEOUrlAndSiteIDResponse(Pwi2.CikkFullBySEOUrlAndSiteIDResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class CikkFullBySEOUrlAndSiteIDResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Pwi2.WMWIListResultOfcikk CikkFullBySEOUrlAndSiteIDResult;
+        
+        public CikkFullBySEOUrlAndSiteIDResponseBody()
+        {
+        }
+        
+        public CikkFullBySEOUrlAndSiteIDResponseBody(Pwi2.WMWIListResultOfcikk CikkFullBySEOUrlAndSiteIDResult)
+        {
+            this.CikkFullBySEOUrlAndSiteIDResult = CikkFullBySEOUrlAndSiteIDResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class KategoriaV2sBySiteIDRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="KategoriaV2sBySiteID", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.KategoriaV2sBySiteIDRequestBody Body;
+        
+        public KategoriaV2sBySiteIDRequest()
+        {
+        }
+        
+        public KategoriaV2sBySiteIDRequest(Pwi2.KategoriaV2sBySiteIDRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class KategoriaV2sBySiteIDRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int siteid;
+        
+        public KategoriaV2sBySiteIDRequestBody()
+        {
+        }
+        
+        public KategoriaV2sBySiteIDRequestBody(int siteid)
+        {
+            this.siteid = siteid;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class KategoriaV2sBySiteIDResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="KategoriaV2sBySiteIDResponse", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.KategoriaV2sBySiteIDResponseBody Body;
+        
+        public KategoriaV2sBySiteIDResponse()
+        {
+        }
+        
+        public KategoriaV2sBySiteIDResponse(Pwi2.KategoriaV2sBySiteIDResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class KategoriaV2sBySiteIDResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Pwi2.WMWIListResultOfkategoriaV2 KategoriaV2sBySiteIDResult;
+        
+        public KategoriaV2sBySiteIDResponseBody()
+        {
+        }
+        
+        public KategoriaV2sBySiteIDResponseBody(Pwi2.WMWIListResultOfkategoriaV2 KategoriaV2sBySiteIDResult)
+        {
+            this.KategoriaV2sBySiteIDResult = KategoriaV2sBySiteIDResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasID", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDRequestBody Body;
+        
+        public SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDRequest()
+        {
+        }
+        
+        public SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDRequest(Pwi2.SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string seourl;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int siteid;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int seoentitasid;
+        
+        public SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDRequestBody()
+        {
+        }
+        
+        public SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDRequestBody(string seourl, int siteid, int seoentitasid)
+        {
+            this.seourl = seourl;
+            this.siteid = siteid;
+            this.seoentitasid = seoentitasid;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDResponse", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDResponseBody Body;
+        
+        public SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDResponse()
+        {
+        }
+        
+        public SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDResponse(Pwi2.SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Pwi2.WMWIListResultOfkategoriaV2andSEOSiteKategoriaV2 SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDResult;
+        
+        public SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDResponseBody()
+        {
+        }
+        
+        public SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDResponseBody(Pwi2.WMWIListResultOfkategoriaV2andSEOSiteKategoriaV2 SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDResult)
+        {
+            this.SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDResult = SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CikkListBySzakertoIdAndSiteIDRequest
     {
         
@@ -16673,6 +17267,182 @@ namespace Pwi2
         public LegfrissebbCikkekBySiteIDResponseBody(Pwi2.WMWIListResultOfcikk LegfrissebbCikkekBySiteIDResult)
         {
             this.LegfrissebbCikkekBySiteIDResult = LegfrissebbCikkekBySiteIDResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class OsszesCikkSzamaBySiteIDAndKategorivaV2IDsRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="OsszesCikkSzamaBySiteIDAndKategorivaV2IDs", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.OsszesCikkSzamaBySiteIDAndKategorivaV2IDsRequestBody Body;
+        
+        public OsszesCikkSzamaBySiteIDAndKategorivaV2IDsRequest()
+        {
+        }
+        
+        public OsszesCikkSzamaBySiteIDAndKategorivaV2IDsRequest(Pwi2.OsszesCikkSzamaBySiteIDAndKategorivaV2IDsRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class OsszesCikkSzamaBySiteIDAndKategorivaV2IDsRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int siteid;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string kategoriav2ids;
+        
+        public OsszesCikkSzamaBySiteIDAndKategorivaV2IDsRequestBody()
+        {
+        }
+        
+        public OsszesCikkSzamaBySiteIDAndKategorivaV2IDsRequestBody(int siteid, string kategoriav2ids)
+        {
+            this.siteid = siteid;
+            this.kategoriav2ids = kategoriav2ids;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class OsszesCikkSzamaBySiteIDAndKategorivaV2IDsResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="OsszesCikkSzamaBySiteIDAndKategorivaV2IDsResponse", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.OsszesCikkSzamaBySiteIDAndKategorivaV2IDsResponseBody Body;
+        
+        public OsszesCikkSzamaBySiteIDAndKategorivaV2IDsResponse()
+        {
+        }
+        
+        public OsszesCikkSzamaBySiteIDAndKategorivaV2IDsResponse(Pwi2.OsszesCikkSzamaBySiteIDAndKategorivaV2IDsResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class OsszesCikkSzamaBySiteIDAndKategorivaV2IDsResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Pwi2.WMWIListResultOfInt32 OsszesCikkSzamaBySiteIDAndKategorivaV2IDsResult;
+        
+        public OsszesCikkSzamaBySiteIDAndKategorivaV2IDsResponseBody()
+        {
+        }
+        
+        public OsszesCikkSzamaBySiteIDAndKategorivaV2IDsResponseBody(Pwi2.WMWIListResultOfInt32 OsszesCikkSzamaBySiteIDAndKategorivaV2IDsResult)
+        {
+            this.OsszesCikkSzamaBySiteIDAndKategorivaV2IDsResult = OsszesCikkSzamaBySiteIDAndKategorivaV2IDsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDs", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsRequestBody Body;
+        
+        public LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsRequest()
+        {
+        }
+        
+        public LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsRequest(Pwi2.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int siteid;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int max;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int tol;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string kategoriav2ids;
+        
+        public LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsRequestBody()
+        {
+        }
+        
+        public LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsRequestBody(int siteid, int max, int tol, string kategoriav2ids)
+        {
+            this.siteid = siteid;
+            this.max = max;
+            this.tol = tol;
+            this.kategoriav2ids = kategoriav2ids;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsResponse", Namespace="http://pwi2.mpraxis.hu/", Order=0)]
+        public Pwi2.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsResponseBody Body;
+        
+        public LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsResponse()
+        {
+        }
+        
+        public LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsResponse(Pwi2.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://pwi2.mpraxis.hu/")]
+    public partial class LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Pwi2.WMWIListResultOfcikk LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsResult;
+        
+        public LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsResponseBody()
+        {
+        }
+        
+        public LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsResponseBody(Pwi2.WMWIListResultOfcikk LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsResult)
+        {
+            this.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsResult = LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsResult;
         }
     }
     
@@ -18596,6 +19366,65 @@ namespace Pwi2
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Pwi2.CikkbeAgyazottKapcsolodoCikkAdatokResponse> Pwi2.WSSoap.CikkbeAgyazottKapcsolodoCikkAdatokAsync(Pwi2.CikkbeAgyazottKapcsolodoCikkAdatokRequest request)
+        {
+            return base.Channel.CikkbeAgyazottKapcsolodoCikkAdatokAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Pwi2.CikkbeAgyazottKapcsolodoCikkAdatokResponse> CikkbeAgyazottKapcsolodoCikkAdatokAsync(int cikkid)
+        {
+            Pwi2.CikkbeAgyazottKapcsolodoCikkAdatokRequest inValue = new Pwi2.CikkbeAgyazottKapcsolodoCikkAdatokRequest();
+            inValue.Body = new Pwi2.CikkbeAgyazottKapcsolodoCikkAdatokRequestBody();
+            inValue.Body.cikkid = cikkid;
+            return ((Pwi2.WSSoap)(this)).CikkbeAgyazottKapcsolodoCikkAdatokAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Pwi2.CikkFullBySEOUrlAndSiteIDResponse> Pwi2.WSSoap.CikkFullBySEOUrlAndSiteIDAsync(Pwi2.CikkFullBySEOUrlAndSiteIDRequest request)
+        {
+            return base.Channel.CikkFullBySEOUrlAndSiteIDAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Pwi2.CikkFullBySEOUrlAndSiteIDResponse> CikkFullBySEOUrlAndSiteIDAsync(string seourl, int siteid)
+        {
+            Pwi2.CikkFullBySEOUrlAndSiteIDRequest inValue = new Pwi2.CikkFullBySEOUrlAndSiteIDRequest();
+            inValue.Body = new Pwi2.CikkFullBySEOUrlAndSiteIDRequestBody();
+            inValue.Body.seourl = seourl;
+            inValue.Body.siteid = siteid;
+            return ((Pwi2.WSSoap)(this)).CikkFullBySEOUrlAndSiteIDAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Pwi2.KategoriaV2sBySiteIDResponse> Pwi2.WSSoap.KategoriaV2sBySiteIDAsync(Pwi2.KategoriaV2sBySiteIDRequest request)
+        {
+            return base.Channel.KategoriaV2sBySiteIDAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Pwi2.KategoriaV2sBySiteIDResponse> KategoriaV2sBySiteIDAsync(int siteid)
+        {
+            Pwi2.KategoriaV2sBySiteIDRequest inValue = new Pwi2.KategoriaV2sBySiteIDRequest();
+            inValue.Body = new Pwi2.KategoriaV2sBySiteIDRequestBody();
+            inValue.Body.siteid = siteid;
+            return ((Pwi2.WSSoap)(this)).KategoriaV2sBySiteIDAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Pwi2.SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDResponse> Pwi2.WSSoap.SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDAsync(Pwi2.SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDRequest request)
+        {
+            return base.Channel.SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Pwi2.SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDResponse> SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDAsync(string seourl, int siteid, int seoentitasid)
+        {
+            Pwi2.SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDRequest inValue = new Pwi2.SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDRequest();
+            inValue.Body = new Pwi2.SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDRequestBody();
+            inValue.Body.seourl = seourl;
+            inValue.Body.siteid = siteid;
+            inValue.Body.seoentitasid = seoentitasid;
+            return ((Pwi2.WSSoap)(this)).SEOSiteKategoriaV2BySeoUrlAndSiteIDAndSEOEntitasIDAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<Pwi2.CikkListBySzakertoIdAndSiteIDResponse> Pwi2.WSSoap.CikkListBySzakertoIdAndSiteIDAsync(Pwi2.CikkListBySzakertoIdAndSiteIDRequest request)
         {
             return base.Channel.CikkListBySzakertoIdAndSiteIDAsync(request);
@@ -18623,6 +19452,38 @@ namespace Pwi2
             inValue.Body.siteid = siteid;
             inValue.Body.max = max;
             return ((Pwi2.WSSoap)(this)).LegfrissebbCikkekBySiteIDAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Pwi2.OsszesCikkSzamaBySiteIDAndKategorivaV2IDsResponse> Pwi2.WSSoap.OsszesCikkSzamaBySiteIDAndKategorivaV2IDsAsync(Pwi2.OsszesCikkSzamaBySiteIDAndKategorivaV2IDsRequest request)
+        {
+            return base.Channel.OsszesCikkSzamaBySiteIDAndKategorivaV2IDsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Pwi2.OsszesCikkSzamaBySiteIDAndKategorivaV2IDsResponse> OsszesCikkSzamaBySiteIDAndKategorivaV2IDsAsync(int siteid, string kategoriav2ids)
+        {
+            Pwi2.OsszesCikkSzamaBySiteIDAndKategorivaV2IDsRequest inValue = new Pwi2.OsszesCikkSzamaBySiteIDAndKategorivaV2IDsRequest();
+            inValue.Body = new Pwi2.OsszesCikkSzamaBySiteIDAndKategorivaV2IDsRequestBody();
+            inValue.Body.siteid = siteid;
+            inValue.Body.kategoriav2ids = kategoriav2ids;
+            return ((Pwi2.WSSoap)(this)).OsszesCikkSzamaBySiteIDAndKategorivaV2IDsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Pwi2.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsResponse> Pwi2.WSSoap.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsAsync(Pwi2.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsRequest request)
+        {
+            return base.Channel.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Pwi2.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsResponse> LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsAsync(int siteid, int max, int tol, string kategoriav2ids)
+        {
+            Pwi2.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsRequest inValue = new Pwi2.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsRequest();
+            inValue.Body = new Pwi2.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsRequestBody();
+            inValue.Body.siteid = siteid;
+            inValue.Body.max = max;
+            inValue.Body.tol = tol;
+            inValue.Body.kategoriav2ids = kategoriav2ids;
+            return ((Pwi2.WSSoap)(this)).LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

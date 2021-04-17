@@ -74,7 +74,7 @@ import { ThxDialogComponent } from './components/thx-dialog/thx-dialog.component
     RegistrationDialogComponent,
     LoginDialogComponent,
     ForgotPassDialogComponent,
-    ThxDialogComponent
+    ThxDialogComponent,
   ],
   entryComponents: [
     LogoutDialogComponent,

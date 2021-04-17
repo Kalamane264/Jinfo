@@ -1,3 +1,4 @@
+import { CategoryService } from './../../services/category.service';
 import { UserService } from 'src/app/services/user.service';
 import { Article } from './../../interfaces/article';
 import { ArticleService } from './../../services/article.service';
@@ -16,16 +17,41 @@ export class HomeComponent implements OnInit {
 
   article: Article = new Article();
   folyamats: Folyamat[] = [];
+  legfrissebbLegfrissebbCikk = new Article();
 
   constructor(
     private knowledgeBaseService: KnowledgeBaseService,
     private articleService: ArticleService,
-    public userService: UserService
+    public userService: UserService,
+    private categoryService: CategoryService
     ) { }
 
   ngOnInit(): void {
+    this.headerLeftSideData();
     this.getFolyamats();
     this.getArticles();
+    this.headerLeftSideData();
+  }
+
+  headerLeftSideData() {
+    this.categoryService.kategoriaV2sBySiteID().subscribe(cats => {
+      // console.log('cats', cats);
+      let legfrissebbKat = cats.find(c => c.nev === 'Legfrissebb');
+      if(legfrissebbKat !== undefined) {
+        let data = {
+          Tol: 0,
+          Max: 1,
+          Kategoriav2ids: legfrissebbKat.kategoriaV2ID.toString()
+        };
+        this.categoryService.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDs(data).subscribe(firstLegfrissebb => {
+          // console.log('firstLegfrissebb', firstLegfrissebb);
+          if(firstLegfrissebb) {
+            this.legfrissebbLegfrissebbCikk = firstLegfrissebb[0];
+            // console.log('legfrissebbLegfrissebbCikk', this.legfrissebbLegfrissebbCikk);
+          }
+        });
+      }
+    });
   }
 
   getFolyamats(){
