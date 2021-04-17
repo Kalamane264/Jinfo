@@ -35,7 +35,6 @@ export class HomeComponent implements OnInit {
 
   headerLeftSideData() {
     this.categoryService.kategoriaV2sBySiteID().subscribe(cats => {
-      // console.log('cats', cats);
       let legfrissebbKat = cats.find(c => c.nev === 'Legfrissebb');
       if(legfrissebbKat !== undefined) {
         let data = {
@@ -44,10 +43,8 @@ export class HomeComponent implements OnInit {
           Kategoriav2ids: legfrissebbKat.kategoriaV2ID.toString()
         };
         this.categoryService.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDs(data).subscribe(firstLegfrissebb => {
-          // console.log('firstLegfrissebb', firstLegfrissebb);
           if(firstLegfrissebb) {
             this.legfrissebbLegfrissebbCikk = firstLegfrissebb[0];
-            // console.log('legfrissebbLegfrissebbCikk', this.legfrissebbLegfrissebbCikk);
           }
         });
       }
