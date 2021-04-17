@@ -7,19 +7,19 @@
     </div>
     <div class="side rightSide">
       <ul class="defaultMenu" [class.opened]="menuIsOpened">
-        <li pageScroll href="#scrollTudastar" *ngIf="itsHomePage">
+        <li pageScroll [href]="!userService.loginHappened.value? '#scrollTudastar': ''" *ngIf="itsHomePage || userService.loginHappened.value" [routerLink]="userService.loginHappened.value? ['/', 'tudastar']: ''">
           <a >
             Tudástár
           </a>
           <hr/>
         </li>
-        <li pageScroll href="#scrollVideos" *ngIf="itsHomePage">
+        <li pageScroll [href]="!userService.loginHappened.value? '#scrollVideos': ''" *ngIf="itsHomePage || userService.loginHappened.value" [routerLink]="userService.loginHappened.value? ['/', 'videos']: ''">
           <a>
             Videotár
           </a>
           <hr/>
         </li>
-        <li pageScroll href="#scrollCourses" *ngIf="itsHomePage">
+        <li pageScroll [href]="!userService.loginHappened.value? '#scrollCourses': ''" *ngIf="itsHomePage || userService.loginHappened.value" [routerLink]="userService.loginHappened.value? ['/', 'courses']: ''">
           <a>
             Online képzéseink
           </a>
