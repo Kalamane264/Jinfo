@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user.service';
 import { Folyamat } from './../../interfaces/folyamat';
 import { KnowledgeBaseService } from './../../services/knowledge-base.service';
 import { Component, OnInit } from '@angular/core';
@@ -12,11 +13,18 @@ export class TopicPageComponent implements OnInit {
 
   public folyamat = new Folyamat();
 
-  constructor(private knowledgeBaseService: KnowledgeBaseService, private route: ActivatedRoute) { }
+  constructor(
+    private knowledgeBaseService: KnowledgeBaseService,
+    private route: ActivatedRoute,
+    private userService: UserService
+    ) { }
 
   ngOnInit(): void {
     let seoUrl: string = this.route.snapshot.paramMap.get('seourl')!;
-    this.getFolyamat(seoUrl);
+
+    if(this.userService.loginHappened.value) {
+      this.getFolyamat(seoUrl);
+    }
   }
 
   getFolyamat(seoUrl: string){

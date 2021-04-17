@@ -7,25 +7,25 @@
     </div>
     <div class="side rightSide">
       <ul class="defaultMenu" [class.opened]="menuIsOpened">
-        <li pageScroll href="#scrollTudastar">
+        <li pageScroll href="#scrollTudastar" *ngIf="itsHomePage">
           <a >
             Tudástár
           </a>
           <hr/>
         </li>
-        <li pageScroll href="#scrollVideos">
+        <li pageScroll href="#scrollVideos" *ngIf="itsHomePage">
           <a>
             Videotár
           </a>
           <hr/>
         </li>
-        <li pageScroll href="#scrollCourses">
+        <li pageScroll href="#scrollCourses" *ngIf="itsHomePage">
           <a>
             Online képzéseink
           </a>
           <hr/>
         </li>
-        <li class="loginIcon">
+        <li class="loginIcon" [class.noDelim]="!itsHomePage">
           <a (click)="clickLogin()" *ngIf="userService.loginHappened.value; else iconUserLogged">
             <img src="/assets/img/iconUserLogged.svg" alt="">
           </a>

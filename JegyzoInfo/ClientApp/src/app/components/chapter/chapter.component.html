@@ -69,7 +69,9 @@
     </div>
     <div class="documentSamples">
       <h5>
-        Letölthető iratminták
+        <!--
+          Letölthető iratminták
+        -->
       </h5>
       <ng-container *ngIf="folyamat.csatolmanyEntitasok.length > 0">
         <app-document-sample *ngFor="let csati of folyamat.csatolmanyEntitasok" [nev]="csati.nev" [url]="csati.urlEleres"></app-document-sample>

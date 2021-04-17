@@ -36,9 +36,14 @@
             </div>
           </div>
           <div class="buttonWrap">
-            <button class="hollow" routerLink="/courses">
+            <button class="hollow" routerLink="/courses" *ngIf="!userService.loginHappened.value ; else loggedButton">
               Megnézem a részleteket
             </button>
+            <ng-template #loggedButton>
+              <button class="orange" routerLink="/courses">
+                Részletek és jelentkezés
+              </button>
+            </ng-template>
           </div>
         </ng-template>
       </ngb-carousel>

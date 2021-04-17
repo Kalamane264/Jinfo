@@ -80,7 +80,7 @@ export class RegistrationDialogComponent implements OnInit {
   }
 
   setFormValuesByDiak(diak: Diak) {
-    this.form.adoszam = diak.adoszam;
+    this.form.adoszam = diak.adoszam!;
     this.form.allampolgarsag = diak.allampolgarsag;
     this.form.anyjaneve = diak.anyjaneve;
     this.form.elonev = diak.elonev;

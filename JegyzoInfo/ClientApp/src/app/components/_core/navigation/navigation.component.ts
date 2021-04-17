@@ -1,4 +1,6 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, NavigationStart, NavigationEnd, Event as NavigationEvent } from '@angular/router';
+import {filter} from 'rxjs/operators';
+
 import { LoginDialogComponent } from './../../login-dialog/login-dialog.component';
 import { LogoutDialogComponent } from './../../logout-dialog/logout-dialog.component';
 import { UserService } from './../../../services/user.service';
@@ -14,14 +16,29 @@ export class NavigationComponent implements OnInit {
 
   menuIsOpened = false;
   loginIsOpened = false;
+  itsHomePage = false
 
   constructor(
     public userService: UserService,
     private dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
     ) { }
 
   ngOnInit(): void {
+    this.router.events
+          .subscribe(
+            (event: NavigationEvent) => {
+              if(event instanceof NavigationStart) {
+                // console.log('XXXS', event.url);
+                if(event.url == '/' || event.url == "/home") {
+                  this.itsHomePage = true;
+                }
+                else {
+                  this.itsHomePage = false;
+                }
+              }
+            });
   }
 
   gotoVideotar(){

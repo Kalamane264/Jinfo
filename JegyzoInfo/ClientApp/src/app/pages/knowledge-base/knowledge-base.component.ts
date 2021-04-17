@@ -1,7 +1,9 @@
+import { MoreInfoDialogComponent } from './../../components/more-info-dialog/more-info-dialog.component';
 import { UserService } from 'src/app/services/user.service';
 import { Folyamat } from './../../interfaces/folyamat';
 import { KnowledgeBaseService } from './../../services/knowledge-base.service';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-knowledge-base',
@@ -14,19 +16,12 @@ export class KnowledgeBaseComponent implements OnInit {
 
   constructor(
     private knowledgeBaseService: KnowledgeBaseService,
-    private userService: UserService
+    private userService: UserService,
+    private dialog: MatDialog
     ) { }
 
   ngOnInit(): void {
-    if(this.userService.userLoggedIn) {
-      this.getFolyamats();
-    } else {
-      this.userService.loginHappened.subscribe(x => {
-        if(x) {
-          this.getFolyamats();
-        }
-      });
-    }
+    this.getFolyamats();
   }
 
   getFolyamats(){
@@ -34,5 +29,12 @@ export class KnowledgeBaseComponent implements OnInit {
       this.folyamats = folyamats;
       console.log('diz folyamacc', this.folyamats);
     });
+  }
+
+  clickMoreInfo(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+
+    const dialogRef = this.dialog.open(MoreInfoDialogComponent, dialogConfig);
   }
 }

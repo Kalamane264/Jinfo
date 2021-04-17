@@ -1,5 +1,5 @@
 export class Diak{
-  adoszam = "";
+  adoszam =  undefined;
   allampolgarsag = "";
   anyjaneve = "";
   elonev = "";

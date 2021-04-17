@@ -1,3 +1,4 @@
+import { UserService } from 'src/app/services/user.service';
 import { ExpertService } from './../../services/expert.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
@@ -17,12 +18,15 @@ export class OnlineCoursesComponent implements OnInit {
 
   constructor(
     private courseService: CourseService,
-    private expertService: ExpertService
+    private expertService: ExpertService,
+    public userService: UserService
     ) { }
 
   ngOnInit(): void {
     this.getEsemenyList();
     this.ngCarousel.pause();
+
+    console.log('Faaaaasz', this.userService.loginHappened.value);
   }
 
   getEsemenyList(){
