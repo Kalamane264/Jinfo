@@ -5,26 +5,28 @@
       <p>
         Rendezés
       </p>
-      <ul>
-        <li>
-          <input id="orderDate" type="checkbox" class="myCheckbox" />
-          <label for="orderDate">
-            Legutóbbi frissítés dátuma szerint
-          </label>
-        </li>
-        <li>
-          <input id="orderAddress" type="checkbox" class="myCheckbox" />
-          <label for="orderAddress">
-            Cím szerint
-          </label>
-        </li>
-        <li>
-          <input id="orderPopularity" type="checkbox" class="myCheckbox" />
-          <label for="orderPopularity">
-            Legnépszerűbbek elöl
-          </label>
-        </li>
-      </ul>
+      <form>
+        <ul>
+          <li>
+            <input id="orderDate" type="checkbox" class="myCheckbox" name="legfrissebb" [(ngModel)]="legfrissebb" (change)="cimszerint = false; legnepszerubb = false; orderByLegfrissebb()"/>
+            <label for="orderDate">
+              Legutóbbi frissítés dátuma szerint
+            </label>
+          </li>
+          <li>
+            <input id="orderAddress" type="checkbox" class="myCheckbox" name="cimszerint" [(ngModel)]="cimszerint" (change)="legfrissebb = false; legnepszerubb = false; orderByName()"/>
+            <label for="orderAddress">
+              Cím szerint
+            </label>
+          </li>
+          <!-- <li>
+            <input id="orderPopularity" type="checkbox" class="myCheckbox" name="legnepszerubb" [(ngModel)]="legnepszerubb" (change)="cimszerint = false; legfrissebb = false;"/>
+            <label for="orderPopularity">
+              Legnépszerűbbek elöl
+            </label>
+          </li> -->
+        </ul>
+      </form>
     </div>
     <app-topics [folyamats]="folyamats"></app-topics>
     <div class="buttonWrap">

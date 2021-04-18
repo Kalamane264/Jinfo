@@ -13,6 +13,9 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 export class KnowledgeBaseComponent implements OnInit {
 
   folyamats: Folyamat[] = [];
+  legfrissebb = true;
+  cimszerint = false;
+  legnepszerubb = false;
 
   constructor(
     private knowledgeBaseService: KnowledgeBaseService,
@@ -27,7 +30,13 @@ export class KnowledgeBaseComponent implements OnInit {
   getFolyamats(){
     this.knowledgeBaseService.getFolyamats().subscribe(folyamats => {
       this.folyamats = folyamats;
+      this.folyamats.forEach(folycsi => {
+        if(!folycsi.megjelenesDatum) {
+          folycsi.megjelenesDatum = new Date(1991, 3, 3);
+        }
+      });
       console.log('diz folyamacc', this.folyamats);
+      this.orderByLegfrissebb();
     });
   }
 
@@ -36,5 +45,17 @@ export class KnowledgeBaseComponent implements OnInit {
     dialogConfig.autoFocus = true;
 
     const dialogRef = this.dialog.open(MoreInfoDialogComponent, dialogConfig);
+  }
+
+  orderByName() {
+    this.folyamats.sort((a, b) => {
+      return (a.nev > b.nev) ? 1 : -1;
+    });
+  }
+
+  orderByLegfrissebb() {
+    this.folyamats.sort((a, b) => {
+      return +new Date(b.megjelenesDatum) - +new Date(a.megjelenesDatum);
+    });
   }
 }

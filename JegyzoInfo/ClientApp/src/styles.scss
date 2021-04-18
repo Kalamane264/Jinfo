@@ -169,6 +169,9 @@ button, button:focus{
     + label{
       &::before{
         background-color: $blue;
+        background-image: url('/assets/img/checked.svg');
+        background-position: center;
+        background-repeat: no-repeat;
       }
     }
   }
