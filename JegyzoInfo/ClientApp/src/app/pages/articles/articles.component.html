@@ -2,7 +2,7 @@
   <div class="container">
     <app-back></app-back>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-3" *ngIf="catid == '' || catid == null">
         <div class="interests">
           <p>
             Ezek érdekelnek
@@ -17,7 +17,14 @@
           </ul>
         </div>
       </div>
-      <div class="col-md-9">
+      <div [class.col-md-9]="catid == '' || catid == null" [class.col-md-12]="catid">
+        <div class="catTitle" *ngIf='catid && articles.length > 0'>
+          Cikkek
+          <img src="/assets/img/breadcrumbdelim.svg" alt="">
+          <span class="catName">
+            {{ selectedCatname }}
+          </span>
+        </div>
         <div class="articlesList" *ngIf="articles">
           <ng-container *ngFor="let article of articles">
               <article *ngIf="article.bevezetoKepUrl==''; else withPic">
@@ -27,7 +34,8 @@
                   </h5>
                 </a>
                 <div class="labelsWrap">
-                  <span *ngFor="let cat of article.kategoriaV2andSEOSiteKategoriaV2s" (click)="clickCat(cat.kategoriaV2ID)">
+                  <span *ngFor="let cat of article.kategoriaV2andSEOSiteKategoriaV2s" (click)="clickCat(cat.kategoriaV2ID)"
+                  [routerLink]="['/', 'cikkek', cat.kategoriaV2ID]">
                     {{ cat.nev }}
                   </span>
                   <!-- <span>
@@ -46,30 +54,33 @@
                 </div>
               </article>
             <ng-template #withPic>
-              <a routerLink="/cikk/{{ article.seoUrl }}">
-                <article class="withPic">
-                  <div class="leftSide" style="background-image: url('{{ article.bevezetoKepUrl }}');">
+              <article class="withPic">
+                <div class="leftSide" style="background-image: url('{{ article.bevezetoKepUrl }}');">
+                  <a routerLink="/cikk/{{ article.seoUrl }}">
                     <h5>
                       {{ article.cim }}
                     </h5>
+                  </a>
+                </div>
+                <div class="rightSide">
+                  <div class="labelsWrap">
+                    <span *ngFor="let cat of article.kategoriaV2andSEOSiteKategoriaV2s" (click)="clickCat(cat.kategoriaV2ID)"
+                    [routerLink]="['/', 'cikkek', cat.kategoriaV2ID]">
+                      {{ cat.nev }}
+                    </span>
                   </div>
-                  <div class="rightSide">
-                    <div class="labelsWrap">
-                      <span *ngFor="let cat of article.kategoriaV2andSEOSiteKategoriaV2s" (click)="clickCat(cat.kategoriaV2ID)">
-                        {{ cat.nev }}
-                      </span>
-                    </div>
-                    <p>
+                  <p>
+                    <a routerLink="/cikk/{{ article.seoUrl }}">
                       {{ article.bevezeto }}
-                    </p>
-                    <div class="date">
-                      <div class="clockIcon">
-                        {{ article.megjelenesDatum | date : 'YYYY-MM-dd' }}
-                      </div>
+                    </a>
+                  </p>
+                  <div class="date">
+                    <div class="clockIcon">
+                      {{ article.megjelenesDatum | date : 'YYYY-MM-dd' }}
                     </div>
                   </div>
-                </article>
-              </a>
+                </div>
+              </article>
             </ng-template>
           </ng-container>
           <div class="buttonWrap">

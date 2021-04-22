@@ -7,7 +7,8 @@
           {{ article.cim }}
         </h1>
         <div class="labelsWrap">
-          <span *ngFor="let cat of article.kategoriaV2andSEOSiteKategoriaV2s" (click)="clickCat(cat.kategoriaV2ID)">
+          <span *ngFor="let cat of article.kategoriaV2andSEOSiteKategoriaV2s" (click)="clickCat(cat.kategoriaV2ID)"
+          [routerLink]="['/', 'cikkek', cat.kategoriaV2ID]">
             {{ cat.nev }}
           </span>
         </div>
@@ -19,7 +20,8 @@
           {{ article.cim }}
         </h1>
         <div class="labelsWrap">
-          <span *ngFor="let cat of article.kategoriaV2andSEOSiteKategoriaV2s" (click)="clickCat(cat.kategoriaV2ID)">
+          <span *ngFor="let cat of article.kategoriaV2andSEOSiteKategoriaV2s" (click)="clickCat(cat.kategoriaV2ID)"
+          [routerLink]="['/', 'cikkek', cat.kategoriaV2ID]">
             {{ cat.nev }}
           </span>
         </div>

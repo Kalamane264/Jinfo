@@ -25,6 +25,10 @@ const routes: Routes = [
     component: ArticlesComponent
   },
   {
+    path: "cikkek/:catid",
+    component: ArticlesComponent
+  },
+  {
     path: "jogszabaly/:uid",
     component: StatuteComponent
   },

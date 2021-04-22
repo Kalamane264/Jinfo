@@ -9,15 +9,26 @@
     margin-top: 20px;
   }
 }
-
+.catTitle{
+  display: flex;
+  align-items: center;
+  margin-bottom: 21px;
+  img{
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+  .catName{
+    font-weight: 700;
+  }
+}
 .articlesList{
   margin-bottom: 160px;
   a{
     display: block;
-    margin-bottom: 20px;
   }
   article{
     background-color: white;
+    margin-bottom: 20px;
     padding: 30px 40px 20px 40px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
     @media(max-width: 575px){

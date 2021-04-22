@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from './../../services/category.service';
 import { Kategoria } from './../../interfaces/kategoria';
 import { Article } from './../../interfaces/article';
@@ -16,19 +17,25 @@ export class ArticlesComponent implements OnInit {
   counter = 5;
   dose = 5;
   categories: Kategoria[] = [];
+  catid = '';
+  selectedCatname = ''
 
   constructor(
     private articleService: ArticleService,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private activatedRoute: ActivatedRoute
     ) { }
 
   ngOnInit(): void {
+    this.catid = this.activatedRoute.snapshot.paramMap.get('catid')!;
+    console.log('catid', this.catid);
     this.getArticlesListNew();
     this.getCategories();
   }
 
   getCategories() {
     this.categoryService.kategoriaV2sBySiteID().subscribe(cats => {
+      this.selectedCatname = cats.find(c => c.kategoriaV2ID == parseInt(this.catid))?.nev!;
       this.categories = cats.filter(c => c.kategoriaV2ID != 76);
       console.log('Cikkek categories', this.categories);
     });
@@ -38,7 +45,7 @@ export class ArticlesComponent implements OnInit {
     let data = {
       Tol: 0,
       Max: 0,
-      Kategoriav2ids: ''
+      Kategoriav2ids: this.catid == null? '' : this.catid
     };
     this.categoryService.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDs(data).subscribe(cikks => {
       this.articleList = cikks;
