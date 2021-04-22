@@ -6,14 +6,11 @@
         <h1>
           {{ article.cim }}
         </h1>
-        <!-- <div class="labelsWrap">
-          <span>
-            számviteli szabályzatok
+        <div class="labelsWrap">
+          <span *ngFor="let cat of article.kategoriaV2andSEOSiteKategoriaV2s" (click)="clickCat(cat.kategoriaV2ID)">
+            {{ cat.nev }}
           </span>
-          <span>
-            TB JÁRULÉK
-          </span>
-        </div> -->
+        </div>
       </div>
     </div>
     <article>
@@ -21,14 +18,11 @@
         <h1>
           {{ article.cim }}
         </h1>
-        <!-- <div class="labelsWrap">
-          <span>
-            számviteli szabályzatok
+        <div class="labelsWrap">
+          <span *ngFor="let cat of article.kategoriaV2andSEOSiteKategoriaV2s" (click)="clickCat(cat.kategoriaV2ID)">
+            {{ cat.nev }}
           </span>
-          <span>
-            TB JÁRULÉK
-          </span>
-        </div> -->
+        </div>
       </ng-container>
       <div class="infosActions">
         <div class="leftSide">

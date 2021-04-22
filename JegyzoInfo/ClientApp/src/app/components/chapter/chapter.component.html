@@ -59,10 +59,12 @@
         Kérdése van a fejezettel kapcsolatban?  Küldje el szakértőnknek!
       </h6>
       <div>
-        <textarea id="question">Kérjük, ide írja le kérdését...</textarea>
+        <form #questionForm="ngForm">
+          <textarea required id="question" name="question" [(ngModel)]="form.kerdes" placeholder="Kérjük, ide írja le kérdését..."></textarea>
+        </form>
       </div>
       <div class="buttonWrap">
-        <button class="hollow">
+        <button class="hollow" (click)="question()" [disabled]="!questionForm.valid">
           Elküldöm
         </button>
       </div>

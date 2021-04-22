@@ -1,3 +1,4 @@
+import { Kategoria } from './kategoria';
 import { Folyamat } from './folyamat';
 import { Jogszabaly } from './jogszabaly';
 
@@ -27,4 +28,5 @@ export class Article{
   olvasasiIdo?: string;
   jogszabalys: Jogszabaly[] = [];
   folyamats: any[] = [];
+  kategoriaV2andSEOSiteKategoriaV2s: Kategoria[] = [];
 }

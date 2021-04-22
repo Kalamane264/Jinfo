@@ -8,22 +8,10 @@
             Ezek érdekelnek
           </p>
           <ul>
-            <li>
-              <input id="chk_1" type="checkbox" class="myCheckbox" />
-              <label class="colored-background" for="chk_1">
-                Ingatlan
-              </label>
-            </li>
-            <li>
-              <input id="chk_2" type="checkbox" class="myCheckbox" />
-              <label class="colored-background" for="chk_2">
-                Adó
-              </label>
-            </li>
-            <li>
-              <input id="chk_3" type="checkbox" class="myCheckbox" />
-              <label class="colored-background" for="chk_3">
-                Környezetvédelem
+            <li *ngFor="let cat of categories">
+              <input [id]="'chk_' + cat.kategoriaV2ID" type="checkbox" class="myCheckbox" />
+              <label class="colored-background" [for]="'chk_' + cat.kategoriaV2ID">
+                {{ cat.nev }}
               </label>
             </li>
           </ul>
@@ -32,29 +20,31 @@
       <div class="col-md-9">
         <div class="articlesList" *ngIf="articles">
           <ng-container *ngFor="let article of articles">
-            <a *ngIf="article.bevezetoKepUrl==''; else withPic" routerLink="/cikk/{{ article.seoUrl }}">
-              <article>
-                <h5>
-                  {{ article.cim }}
-                </h5>
-                <!-- <div class="labelsWrap">
-                  <span>
-                    számviteli szabályzatok
+              <article *ngIf="article.bevezetoKepUrl==''; else withPic">
+                <a routerLink="/cikk/{{ article.seoUrl }}">
+                  <h5>
+                    {{ article.cim }}
+                  </h5>
+                </a>
+                <div class="labelsWrap">
+                  <span *ngFor="let cat of article.kategoriaV2andSEOSiteKategoriaV2s" (click)="clickCat(cat.kategoriaV2ID)">
+                    {{ cat.nev }}
                   </span>
-                  <span>
-                    TB JÁRULÉK
-                  </span>
-                </div> -->
-                <p>
-                  {{ article.bevezeto }}
-                </p>
+                  <!-- <span>
+                    A "legfrissebb"-et majd kiszedem
+                  </span> -->
+                </div>
+                <a *ngIf="article.bevezetoKepUrl==''; else withPic" routerLink="/cikk/{{ article.seoUrl }}">
+                  <p>
+                    {{ article.bevezeto }}
+                  </p>
+                </a>
                 <div class="date">
                   <div class="clockIcon">
                     {{ article.megjelenesDatum | date : 'YYYY.MM.dd.' }}
                   </div>
                 </div>
               </article>
-            </a>
             <ng-template #withPic>
               <a routerLink="/cikk/{{ article.seoUrl }}">
                 <article class="withPic">
@@ -64,14 +54,11 @@
                     </h5>
                   </div>
                   <div class="rightSide">
-                    <!-- <div class="labelsWrap">
-                      <span>
-                        számviteli szabályzatok
+                    <div class="labelsWrap">
+                      <span *ngFor="let cat of article.kategoriaV2andSEOSiteKategoriaV2s" (click)="clickCat(cat.kategoriaV2ID)">
+                        {{ cat.nev }}
                       </span>
-                      <span>
-                        TB JÁRULÉK
-                      </span>
-                    </div> -->
+                    </div>
                     <p>
                       {{ article.bevezeto }}
                     </p>

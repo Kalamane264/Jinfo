@@ -33,11 +33,11 @@ export class ArticleService {
     return $o;
   }
 
-  getArticleBySeoUrl(seoUrl: string): Observable<Article>{
+  CikkFullBySEOUrlAndSiteID(seoUrl: string): Observable<Article>{
     // return this.http.get<Article>("/api/Article/GetArticleBySeoUrl/" + seoUrl);
 
     this.spinnerService.showSpinner();
-    let $o = this.http.get<Article>("/api/Article/GetArticleBySeoUrl/" + seoUrl);
+    let $o = this.http.get<Article>("api/Category/CikkFullBySEOUrlAndSiteID/" + seoUrl);
     $o.subscribe(resp => {
       this.spinnerService.hideSpinner();
     });

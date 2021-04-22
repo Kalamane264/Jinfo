@@ -43,7 +43,7 @@ export class ArticleComponent implements OnInit {
   }
 
   getArticle() {
-    this.articleService.getArticleBySeoUrl(this.seoUrl).subscribe(article => {
+    this.articleService.CikkFullBySEOUrlAndSiteID(this.seoUrl).subscribe(article => {
       this.article = article;
       if(article.latogatovezerloCikkID) {
         this.getLatogatovezerloCikk(article.latogatovezerloCikkID);
@@ -91,5 +91,9 @@ export class ArticleComponent implements OnInit {
     // dialogConfig.disableClose = true;
 
     const dialogRef = this.dialog.open(MoreInfoDialogComponent, dialogConfig);
+  }
+
+  clickCat(kategoriaV2ID: number) {
+    console.log('catClick');
   }
 }

@@ -52,5 +52,24 @@ namespace JegyzoInfo.Controllers
 
             return new JsonResult("");
         }
+
+        
+        [Route("api/Category/CikkFullBySEOUrlAndSiteID/{seourl}")]
+        public async Task<JsonResult> CikkFullBySEOUrlAndSiteID(string seourl)
+        {
+            var siteIDForAdmiral = _configuration["SiteIDForAdmiral"];
+
+            Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
+            Pwi2.CikkFullBySEOUrlAndSiteIDResponse resp =
+                await pwi2.CikkFullBySEOUrlAndSiteIDAsync(seourl, Convert.ToInt32(siteIDForAdmiral));
+
+            if (resp.Body.CikkFullBySEOUrlAndSiteIDResult.ErrorCode == Pwi2.WMWIErrorCode.NoError)
+            {
+                var cikks = resp.Body.CikkFullBySEOUrlAndSiteIDResult.List[0];
+                return new JsonResult(cikks);
+            }
+
+            return new JsonResult("");
+        }
     }
 }

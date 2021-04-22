@@ -101,4 +101,13 @@ export class UserService {
     });
     return $o;
   }
+
+  kerdes(form: any): Observable<boolean>{
+    this.spinnerService.showSpinner();
+    let $o = this.http.post<boolean>('/api/User/Kerdes', form);
+    $o.subscribe(resp => {
+      this.spinnerService.hideSpinner();
+    });
+    return $o;
+  }
 }

@@ -12,6 +12,8 @@ namespace JegyzoInfo.Controllers
     [ApiController]
     public class UserController : Controller
     {
+        public static int bereczErikaCRMID = 32824;
+
         private readonly IConfiguration _configuration;
         public UserController(IConfiguration configuration) {
             this._configuration = configuration;
@@ -70,7 +72,7 @@ namespace JegyzoInfo.Controllers
         }
 
         [Route("api/User/FelhasznalohozKapcsolodoDiakok/{userId}")]
-        public async Task<JsonResult> FolyamatAgListazasaFoFolyamatSEOURLSzerint(int userId)
+        public async Task<JsonResult> FelhasznalohozKapcsolodoDiakok(int userId)
         {
 
             Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
@@ -121,6 +123,18 @@ namespace JegyzoInfo.Controllers
             {
                 throw new Exception(resp.Body.KepzesJelentkezesResult.ErrorText);
             }
+        }
+
+        [HttpPost]
+        [Route("api/User/Kerdes")]
+        public async Task<bool> Kerdes(KerdesVM kerdes)
+        {
+            Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
+            var SiteCode = _configuration["SiteCode"];
+
+            await pwi2.FeladatSzakertoInsertAsync(kerdes.felhasznaloID, kerdes.kerdes, SiteCode, "", "Jegyzőinfó V2 kérdés", 0, bereczErikaCRMID, 0, 0);
+
+            return true;
         }
     }
 }
