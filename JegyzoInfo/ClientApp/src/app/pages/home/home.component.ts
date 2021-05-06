@@ -31,6 +31,8 @@ export class HomeComponent implements OnInit {
     this.getFolyamats();
     this.getArticles();
     this.headerLeftSideData();
+
+    console.log('loginHappened', this.userService.loginHappened.value);
   }
 
   headerLeftSideData() {

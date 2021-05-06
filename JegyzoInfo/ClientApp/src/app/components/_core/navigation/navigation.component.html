@@ -7,19 +7,19 @@
     </div>
     <div class="side rightSide">
       <ul class="defaultMenu" [class.opened]="menuIsOpened">
-        <li pageScroll [href]="!userService.loginHappened.value? '#scrollTudastar': ''" *ngIf="itsHomePage || userService.loginHappened.value" [routerLink]="userService.loginHappened.value? ['/', 'tudastar']: ''">
+        <li pageScroll [href]="!userService.loginHappened.value? '#scrollTudastar': ''" *ngIf="itsHomePage || userService.loginHappened.value" [routerLink]="userService.loginHappened.value? ['/', 'tudastar']: ''" [routerLinkActive]="userService.loginHappened.value? 'on' : ''">
           <a >
             Tudástár
           </a>
           <hr/>
         </li>
-        <li pageScroll [href]="!userService.loginHappened.value? '#scrollVideos': ''" *ngIf="itsHomePage || userService.loginHappened.value" [routerLink]="userService.loginHappened.value? ['/', 'videos']: ''">
+        <li pageScroll [href]="!userService.loginHappened.value? '#scrollVideos': ''" *ngIf="itsHomePage || userService.loginHappened.value" [routerLink]="userService.loginHappened.value? ['/', 'videos']: ''" [routerLinkActive]="userService.loginHappened.value? 'on' : ''">
           <a>
             Videotár
           </a>
           <hr/>
         </li>
-        <li pageScroll [href]="!userService.loginHappened.value? '#scrollCourses': ''" *ngIf="itsHomePage || userService.loginHappened.value" [routerLink]="userService.loginHappened.value? ['/', 'courses']: ''">
+        <li pageScroll [href]="!userService.loginHappened.value? '#scrollCourses': ''" *ngIf="itsHomePage || userService.loginHappened.value" [routerLink]="userService.loginHappened.value? ['/', 'courses']: ''" [routerLinkActive]="userService.loginHappened.value? 'on' : ''">
           <a>
             Online képzéseink
           </a>

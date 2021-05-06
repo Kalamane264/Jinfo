@@ -44,6 +44,7 @@ export class ArticleComponent implements OnInit {
 
   getArticle() {
     this.articleService.CikkFullBySEOUrlAndSiteID(this.seoUrl).subscribe(article => {
+      article.kategoriaV2andSEOSiteKategoriaV2s = article.kategoriaV2andSEOSiteKategoriaV2s.filter(k => k.kategoriaV2ID != 76);
       this.article = article;
       if(article.latogatovezerloCikkID) {
         this.getLatogatovezerloCikk(article.latogatovezerloCikkID);

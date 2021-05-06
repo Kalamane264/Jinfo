@@ -4,7 +4,7 @@
       <div class="col-lg-7">
         <div class="leftSide">
           <section>
-            <ng-template *ngIf="!userService.loginHappened.value; else loggedForHeaderLeftSide">
+            <div *ngIf="!userService.loginHappened.value; else loggedForHeaderLeftSide">
               <h1>
                 Online tudástár a jegyzői munka gyakorlati kihívásaihoz igazodva
               </h1>
@@ -22,7 +22,7 @@
                   Oktatóvideók, webináriumok, e-learning rendszerű képzések
                 </li>
               </ul>
-            </ng-template>
+            </div>
             <ng-template #loggedForHeaderLeftSide>
               <div class="labelsWrap green">
                 <span>

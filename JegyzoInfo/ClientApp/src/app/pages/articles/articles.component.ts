@@ -37,6 +37,7 @@ export class ArticlesComponent implements OnInit {
     this.categoryService.kategoriaV2sBySiteID().subscribe(cats => {
       this.selectedCatname = cats.find(c => c.kategoriaV2ID == parseInt(this.catid))?.nev!;
       this.categories = cats.filter(c => c.kategoriaV2ID != 76);
+      // this.categories.forEach(c => c.checked = true);
       console.log('Cikkek categories', this.categories);
     });
   }
@@ -48,17 +49,12 @@ export class ArticlesComponent implements OnInit {
       Kategoriav2ids: this.catid == null? '' : this.catid
     };
     this.categoryService.LegfrissebbCikkekBySiteIDandFirstCikkIDandKategoriaV2IDs(data).subscribe(cikks => {
-      this.articleList = cikks;
-      console.log('núártikülsz', this.articleList/* .map(s => s.kategoriaV2andSEOSiteKategoriaV2s) */);
-      this.getGivenAmountOfArticlesNew();
-    });
-  }
-
-  getArticlesList() {
-    this.articleService.getArticles().subscribe(articleList => {
-      this.articleList = articleList;
-      console.log("Ertiküliszt", articleList);
-      this.getGivenAmountOfArticles();
+      cikks.forEach(c => {
+        c.kategoriaV2andSEOSiteKategoriaV2s = c.kategoriaV2andSEOSiteKategoriaV2s.filter(k => k.kategoriaV2ID !== 76);
+      });
+      this.articles = cikks;
+      console.log('núártikülsz', this.articles/* .map(s => s.kategoriaV2andSEOSiteKategoriaV2s) */);
+      // this.getGivenAmountOfArticlesNew();
     });
   }
 
@@ -71,22 +67,26 @@ export class ArticlesComponent implements OnInit {
     }
   }
 
-  getGivenAmountOfArticles(){
-    this.articleService.getArticle(this.articleList[this.articles.length].cikkID).subscribe(article => {
-      this.articles.push(article);
-      console.log('Ertikül', article);
-      if (this.articles.length < this.counter && this.articles.length < this.articleList.length){
-        this.getGivenAmountOfArticles();
-      }
-    });
-  }
-
   clickMoreArticles(){
     this.counter += this.dose;
     this.getGivenAmountOfArticlesNew();
   }
 
-  clickCat(kategoriaV2ID: number) {
-    console.log('kategoriaV2ID', kategoriaV2ID);
+  isSelected(kategoriaV2andSEOSiteKategoriaV2s: Kategoria[]): boolean{
+
+    let checkeds = this.categories.filter(c => c.checked === true);
+    if(checkeds.length == 0) {
+      return true;
+    }
+
+    let ret = false;
+    kategoriaV2andSEOSiteKategoriaV2s.forEach(k => {
+      checkeds.forEach(checkedCat => {
+        if(k.kategoriaV2ID === checkedCat.kategoriaV2ID) {
+          ret = true;
+        }
+      })
+    });
+    return ret;
   }
 }

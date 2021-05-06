@@ -9,7 +9,7 @@
           </p>
           <ul>
             <li *ngFor="let cat of categories">
-              <input [id]="'chk_' + cat.kategoriaV2ID" type="checkbox" class="myCheckbox" />
+              <input [id]="'chk_' + cat.kategoriaV2ID" type="checkbox" class="myCheckbox" [checked]="cat.checked" (change)="cat.checked=!cat.checked"/>
               <label class="colored-background" [for]="'chk_' + cat.kategoriaV2ID">
                 {{ cat.nev }}
               </label>
@@ -27,6 +27,7 @@
         </div>
         <div class="articlesList" *ngIf="articles">
           <ng-container *ngFor="let article of articles">
+            <ng-container *ngIf="isSelected(article.kategoriaV2andSEOSiteKategoriaV2s)">
               <article *ngIf="article.bevezetoKepUrl==''; else withPic">
                 <a routerLink="/cikk/{{ article.seoUrl }}">
                   <h5>
@@ -34,7 +35,7 @@
                   </h5>
                 </a>
                 <div class="labelsWrap">
-                  <span *ngFor="let cat of article.kategoriaV2andSEOSiteKategoriaV2s" (click)="clickCat(cat.kategoriaV2ID)"
+                  <span *ngFor="let cat of article.kategoriaV2andSEOSiteKategoriaV2s"
                   [routerLink]="['/', 'cikkek', cat.kategoriaV2ID]">
                     {{ cat.nev }}
                   </span>
@@ -53,41 +54,42 @@
                   </div>
                 </div>
               </article>
-            <ng-template #withPic>
-              <article class="withPic">
-                <div class="leftSide" style="background-image: url('{{ article.bevezetoKepUrl }}');">
-                  <a routerLink="/cikk/{{ article.seoUrl }}">
-                    <h5>
-                      {{ article.cim }}
-                    </h5>
-                  </a>
-                </div>
-                <div class="rightSide">
-                  <div class="labelsWrap">
-                    <span *ngFor="let cat of article.kategoriaV2andSEOSiteKategoriaV2s" (click)="clickCat(cat.kategoriaV2ID)"
-                    [routerLink]="['/', 'cikkek', cat.kategoriaV2ID]">
-                      {{ cat.nev }}
-                    </span>
-                  </div>
-                  <p>
+              <ng-template #withPic>
+                <article class="withPic">
+                  <div class="leftSide" style="background-image: url('{{ article.bevezetoKepUrl }}');">
                     <a routerLink="/cikk/{{ article.seoUrl }}">
-                      {{ article.bevezeto }}
+                      <h5>
+                        {{ article.cim }}
+                      </h5>
                     </a>
-                  </p>
-                  <div class="date">
-                    <div class="clockIcon">
-                      {{ article.megjelenesDatum | date : 'YYYY-MM-dd' }}
+                  </div>
+                  <div class="rightSide">
+                    <div class="labelsWrap">
+                      <span *ngFor="let cat of article.kategoriaV2andSEOSiteKategoriaV2s"
+                      [routerLink]="['/', 'cikkek', cat.kategoriaV2ID]">
+                        {{ cat.nev }}
+                      </span>
+                    </div>
+                    <p>
+                      <a routerLink="/cikk/{{ article.seoUrl }}">
+                        {{ article.bevezeto }}
+                      </a>
+                    </p>
+                    <div class="date">
+                      <div class="clockIcon">
+                        {{ article.megjelenesDatum | date : 'YYYY-MM-dd' }}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </article>
-            </ng-template>
+                </article>
+              </ng-template>
+            </ng-container>
           </ng-container>
-          <div class="buttonWrap">
+          <!-- <div class="buttonWrap">
             <button *ngIf="counter < articleList.length" class="hollow" (click)="clickMoreArticles()">
               További cikkek betöltése
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

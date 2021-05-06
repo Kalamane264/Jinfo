@@ -153,16 +153,13 @@ export class RegistrationDialogComponent implements OnInit {
     console.log("Submit form:", this.form );
 
     this.userService.kepzesJelentkezes(this.form).subscribe(resp => {
-      if(resp) {
-        this.thx();
-        this.close();
-      } else {
-        alert('A jelentkezés során hiba történt.');
-      }
+      this.thx();
+      this.close();
     },
     error => {
       console.log('Oops', error);
       alert(error.error);
+      this.close();
     });
   }
 
