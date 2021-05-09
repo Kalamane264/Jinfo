@@ -21,6 +21,7 @@ export class ArticleComponent implements OnInit {
   seoUrl = "";
   szaki: any;
   daysOld = 0;
+  fullUrl = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -31,6 +32,7 @@ export class ArticleComponent implements OnInit {
     public userService: UserService) { }
 
   ngOnInit(): void {
+    this.fullUrl = window.location.href;
     this.seoUrl = this.route.snapshot.paramMap.get('id')!;
     this.getArticle();
   }

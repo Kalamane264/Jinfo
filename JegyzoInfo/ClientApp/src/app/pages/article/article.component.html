@@ -36,9 +36,11 @@
           </span>
         </div>
         <div class="rightSide">
-          <img src="/assets/img/iconPrint.svg" alt="" />
-          <img src="/assets/img/iconPlane.svg" alt="" />
-          <img src="/assets/img/iconFacebook.svg" alt="" />
+          <img src="/assets/img/iconPrint.svg" alt=""  onclick="window.print()" />
+          <!-- <img src="/assets/img/iconPlane.svg" alt="" /> -->
+          <a [href]="'https://www.facebook.com/sharer/sharer.php?u=' + fullUrl " target="_blank">
+            <img src="/assets/img/iconFacebook.svg" alt="" />
+          </a>
         </div>
       </div>
       <div class="infoAlert" *ngIf="article.kiegeszites" pageScroll href="#freshContent">

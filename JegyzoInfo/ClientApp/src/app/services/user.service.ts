@@ -98,6 +98,9 @@ export class UserService {
     let $o = this.http.post<User>('/api/User/KepzesJelentkezes', form);
     $o.subscribe(resp => {
       this.spinnerService.hideSpinner();
+    },
+    error => {
+      this.spinnerService.hideSpinner();
     });
     return $o;
   }
