@@ -12,13 +12,13 @@ export class SpinnerService {
   showSpinner() {
     this.spinnerCounter++;
     this.spinnerCounterBehavior.next(this.spinnerCounter);
-    // console.log("spinnerCounter", this.spinnerCounter);
+    console.log("spinnerCounter", this.spinnerCounter);
   }
 
   hideSpinner() {
     this.spinnerCounter--;
     this.spinnerCounterBehavior.next(this.spinnerCounter);
-    // console.log("spinnerCounter", this.spinnerCounter);
+    console.log("spinnerCounter", this.spinnerCounter);
   }
 
   constructor() { }

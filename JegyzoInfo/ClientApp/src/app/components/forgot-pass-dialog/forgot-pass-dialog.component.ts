@@ -48,7 +48,7 @@ export class ForgotPassDialogComponent implements OnInit {
     dialogConfig.autoFocus = true;
     let data = new ThxDialogData();
     data.textH4 = 'Köszönjük!';
-    data.textP = 'Jelszavát továbbítottuk megadott e-mail címére.';
+    data.textP = 'Az új jelszó beállításához szükséges linket továbbítottuk e-mail címére.';
     data.closeAndLogin = true;
     dialogConfig.data = data;
 

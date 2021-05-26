@@ -168,8 +168,10 @@ export class RegistrationDialogComponent implements OnInit {
     dialogConfig.autoFocus = true;
     let data = new ThxDialogData();
     data.textH4 = 'Köszönjük jelentkezését!';
-    data.textP = 'Most átirányítjuk a <img class="moodle" src="/assets/img/moodle.svg" alt="" /> e-learning rendszerbe, ahol tájékoztatjuk a képzéshez kapcsolódó további információkról.';
-    data.buttText = "Tovább";
+    // data.textP = 'Most átirányítjuk a <img class="moodle" src="/assets/img/moodle.svg" alt="" /> e-learning rendszerbe, ahol tájékoztatjuk a képzéshez kapcsolódó további információkról.';
+    data.textP = 'Munkatársaink hamarosan tájékoztatják a képzéssel kapcsolatos további részletekről.';
+    // data.buttText = "Tovább";
+    data.buttText = "Vissza az oldalra";
     dialogConfig.data = data;
 
     const dialogRef = this.dialog.open(ThxDialogComponent, dialogConfig);

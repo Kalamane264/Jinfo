@@ -18,4 +18,5 @@ export class Folyamat{
   megjelenesDatum: Date = new Date();
   olvasasiIdo = "";
   csatolmanyEntitasok: any[] = [];
+  frissitesDatum: Date = new Date();
 };

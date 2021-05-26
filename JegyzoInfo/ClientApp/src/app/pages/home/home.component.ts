@@ -1,3 +1,4 @@
+import { SpinnerService } from './../../services/spinner.service';
 import { CategoryService } from './../../services/category.service';
 import { UserService } from 'src/app/services/user.service';
 import { Article } from './../../interfaces/article';
@@ -23,7 +24,8 @@ export class HomeComponent implements OnInit {
     private knowledgeBaseService: KnowledgeBaseService,
     private articleService: ArticleService,
     public userService: UserService,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private spinnerService: SpinnerService
     ) { }
 
   ngOnInit(): void {
@@ -54,10 +56,16 @@ export class HomeComponent implements OnInit {
   }
 
   getFolyamats(){
+    this.spinnerService.showSpinner();
     this.knowledgeBaseService.getFolyamats().subscribe(folyamats => {
+      this.spinnerService.hideSpinner();
+      folyamats.sort((a, b) => {
+        return +new Date(b.frissitesDatum) - +new Date(a.frissitesDatum);
+      });
       this.folyamats = folyamats.slice(0, 3);
       console.log('home folyamats resp', folyamats);
       console.log('home folyamats slice', this.folyamats);
+
     });
   }
 

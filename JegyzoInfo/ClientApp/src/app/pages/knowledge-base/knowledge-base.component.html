@@ -30,7 +30,7 @@
     </div>
     <app-topics [folyamats]="folyamats"></app-topics>
     <div class="buttonWrap">
-      <button class="orange" (click)="clickMoreInfo()">
+      <button class="orange" (click)="clickMoreInfo()" *ngIf="!userService.loginHappened">
         Érdekel az előfizetés
       </button>
     </div>

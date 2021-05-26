@@ -1,3 +1,4 @@
+import { UserService } from 'src/app/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MoreInfoDialogComponent } from '../more-info-dialog/more-info-dialog.component';
@@ -10,7 +11,8 @@ import { MoreInfoDialogComponent } from '../more-info-dialog/more-info-dialog.co
 export class HowItWorksComponent implements OnInit {
 
   constructor(
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    public userService: UserService
   ) { }
 
   ngOnInit(): void {

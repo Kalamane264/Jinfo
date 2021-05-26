@@ -8,6 +8,11 @@
   padding-bottom: 66px;
   padding-left: 126px;
   padding-right: 126px;
+  @media(max-width: 767px){
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
   .closerX{
     width: 20px;
@@ -58,7 +63,17 @@
     button.blueBorder{
       padding-left: 54px;
       padding-right: 54px;
-
+      @media(max-width: 767px){
+        margin-left: 0;
+      }
+    }
+    button{
+      @media(max-width: 767px){
+        margin-top: 15px;
+        &:first-child{
+          margin-top: 0;
+        }
+      }
     }
   }
 }

@@ -15,12 +15,12 @@ export class KnowledgeBaseService {
     ) { }
 
   getFolyamats(): Observable<Folyamat[]>{
-    this.spinnerService.showSpinner();
-    console.log("Tudástár: Sószpinner");
+    //this.spinnerService.showSpinner();
+    //console.log("Tudástár: Sószpinner");
     let $o = this.http.get<Folyamat[]>("/api/KnowledgeBase/GetFolyamats");
     $o.subscribe(resp => {
-      this.spinnerService.hideSpinner();
-      console.log("Tudástár: hájdspinner");
+      //this.spinnerService.hideSpinner();
+      //console.log("Tudástár: hájdspinner");
     });
     return $o;
   }

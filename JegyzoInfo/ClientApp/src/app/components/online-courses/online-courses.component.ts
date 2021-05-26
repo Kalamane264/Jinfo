@@ -25,8 +25,6 @@ export class OnlineCoursesComponent implements OnInit {
   ngOnInit(): void {
     this.getEsemenyList();
     this.ngCarousel.pause();
-
-    console.log('Faaaaasz', this.userService.loginHappened.value);
   }
 
   getEsemenyList(){

@@ -1,3 +1,4 @@
+import { SpinnerService } from './../../services/spinner.service';
 import { MoreInfoDialogComponent } from './../../components/more-info-dialog/more-info-dialog.component';
 import { UserService } from 'src/app/services/user.service';
 import { Folyamat } from './../../interfaces/folyamat';
@@ -19,8 +20,9 @@ export class KnowledgeBaseComponent implements OnInit {
 
   constructor(
     private knowledgeBaseService: KnowledgeBaseService,
-    private userService: UserService,
-    private dialog: MatDialog
+    public userService: UserService,
+    private dialog: MatDialog,
+    private spinnerService: SpinnerService
     ) { }
 
   ngOnInit(): void {
@@ -28,13 +30,10 @@ export class KnowledgeBaseComponent implements OnInit {
   }
 
   getFolyamats(){
+    this.spinnerService.showSpinner();
     this.knowledgeBaseService.getFolyamats().subscribe(folyamats => {
+      this.spinnerService.hideSpinner();
       this.folyamats = folyamats;
-      this.folyamats.forEach(folycsi => {
-        if(!folycsi.megjelenesDatum) {
-          folycsi.megjelenesDatum = new Date(1991, 3, 3);
-        }
-      });
       console.log('diz folyamacc', this.folyamats);
       this.orderByLegfrissebb();
     });
@@ -55,7 +54,7 @@ export class KnowledgeBaseComponent implements OnInit {
 
   orderByLegfrissebb() {
     this.folyamats.sort((a, b) => {
-      return +new Date(b.megjelenesDatum) - +new Date(a.megjelenesDatum);
+      return +new Date(b.frissitesDatum) - +new Date(a.frissitesDatum);
     });
   }
 }

@@ -4,7 +4,7 @@
       {{ folyamat.nev }}
     </h6>
     <p class="clockIcon">
-      Legutóbb frissítve: {{ folyamat.megjelenesDatum | date : 'YYYY.MM.dd.' }}
+      Legutóbb frissítve: {{ folyamat.frissitesDatum | date : 'YYYY.MM.dd.' }}
     </p>
     <div [innerHTML]="folyamat.szoveg "></div>
     <!-- <ul>
