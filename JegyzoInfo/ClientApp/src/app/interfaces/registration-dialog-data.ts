@@ -5,4 +5,6 @@ export class RegistrationDialogData{
   itsme = false;
   diakMe = new Diak();
   diakOthers: Diak[] = [];
+
+  reducedForm = false;
 }

@@ -25,5 +25,6 @@ namespace JegyzoInfo.ViewModels
         public int szulHonap { get; set; }
         public int szulNap { get; set; }
 
+        public int reducedForm { get; set; }
     }
 }

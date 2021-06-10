@@ -7,6 +7,9 @@ import { ArticleService } from 'src/app/services/article.service';
 import { Route } from '@angular/compiler/src/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MoreInfoDialogComponent } from 'src/app/components/more-info-dialog/more-info-dialog.component';
+import { RegistrationDialogData } from 'src/app/interfaces/registration-dialog-data';
+import { Diak } from 'src/app/interfaces/diak';
+import { RegistrationDialogComponent } from 'src/app/components/registration-dialog/registration-dialog.component';
 
 @Component({
   selector: 'app-article',
@@ -98,5 +101,19 @@ export class ArticleComponent implements OnInit {
 
   clickCat(kategoriaV2ID: number) {
     console.log('catClick');
+  }
+
+  clickRegistration() {
+    let data = new RegistrationDialogData();
+    data.kepzesId = 2281;
+    data.diakMe = new Diak();
+    data.itsme = true;
+    data.reducedForm = true;
+
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = data;
+
+    const dialogRef = this.dialog.open(RegistrationDialogComponent, dialogConfig);
   }
 }

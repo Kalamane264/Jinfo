@@ -141,9 +141,14 @@
         </div>
       </div>
       <div class="ctaWrap" *ngIf="!userService.userLoggedIn">
-        <button class="orange" (click)="clickMoreInfo()">
+        <button class="orange" (click)="clickMoreInfo()" *ngIf="article.cikkID != 2192; else regbutton">
           Érdekel az előfizetés
         </button>
+        <ng-template #regbutton>
+          <button class="orange" (click)="clickRegistration()">
+            Regisztrálok a képzésre
+          </button>
+        </ng-template>
       </div>
       <div class="related" *ngIf="article.jogszabalys.length > 0">
         <h5>

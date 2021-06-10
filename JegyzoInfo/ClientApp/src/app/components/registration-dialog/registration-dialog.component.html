@@ -60,80 +60,76 @@
             Kötelező mező!
           </div>
         </div>
-        <div class="formRow">
-          <p>
-            Születési név
-          </p>
-          <input required #szuletesinev="ngModel" type="text" name="szuletesinev" [(ngModel)]="form.szuletesinev"/>
-          <div class="validity" *ngIf="szuletesinev.touched && !szuletesinev.valid">
-            Kötelező mező!
+        <ng-container *ngIf="!data.reducedForm">
+          <div class="formRow">
+            <p>
+              Születési név
+            </p>
+            <input required #szuletesinev="ngModel" type="text" name="szuletesinev" [(ngModel)]="form.szuletesinev"/>
+            <div class="validity" *ngIf="szuletesinev.touched && !szuletesinev.valid">
+              Kötelező mező!
+            </div>
           </div>
-        </div>
-        <div class="formRow">
-          <p>
-            Anyja neve
-          </p>
-          <input required #anyjaneve="ngModel"  type="text" name="anyjaneve" [(ngModel)]="form.anyjaneve"/>
-          <div class="validity" *ngIf="anyjaneve.touched && !anyjaneve.valid">
-            Kötelező mező!
+          <div class="formRow">
+            <p>
+              Anyja neve
+            </p>
+            <input required #anyjaneve="ngModel"  type="text" name="anyjaneve" [(ngModel)]="form.anyjaneve"/>
+            <div class="validity" *ngIf="anyjaneve.touched && !anyjaneve.valid">
+              Kötelező mező!
+            </div>
           </div>
-        </div>
-        <div class="formRow">
-          <p>
-            Állampolgárság
-          </p>
-          <input type="text" name="allampolgarsag" [(ngModel)]="form.allampolgarsag"/>
-        </div>
-        <!-- <div class="formRow">
-          <input id="chkForeignBirth" type="checkbox" class="myCheckbox" />
-          <label class="colored-background" for="chkForeignBirth">
-            Külföldi születési hely
-          </label>
-        </div> -->
-        <div class="formRow">
-          <p>
-            Születési hely
-          </p>
-          <input required #szulhely="ngModel" type="text" name="CountryOfBirth" [(ngModel)]="form.szulhely"/>
-          <div class="validity" *ngIf="szulhely.touched && !szulhely.valid">
-            Kötelező mező!
+          <div class="formRow">
+            <p>
+              Állampolgárság
+            </p>
+            <input type="text" name="allampolgarsag" [(ngModel)]="form.allampolgarsag"/>
           </div>
-        </div>
-        <div class="formRow flex">
-          <mat-form-field appearance="fill">
-            <mat-label>Születési év</mat-label>
-            <mat-select [(value)]="form.szulEv" (selectionChange)="reFillDays()">
-              <mat-option *ngFor="let year of years" [value]="year">
-                {{ year }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>hónap</mat-label>
-            <mat-select [(value)]="form.szulHonap" (selectionChange)="reFillDays()">
-              <mat-option *ngFor="let month of months; let index = index" [value]="index + 1">
-                {{ month }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>nap</mat-label>
-            <mat-select [(value)]="form.szulNap">
-              <mat-option *ngFor="let day of days; let index = index" [value]="index + 1">
-                {{ day }}.
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="formRow">
-          <p>
-            Adóazonosító jel
-          </p>
-          <input required #adoszam="ngModel" type="text" name="adoszam" [(ngModel)]="form.adoszam" class="halfWidth"/>
-          <div class="validity" *ngIf="adoszam.touched && !adoszam.valid">
-            Kötelező mező!
+          <div class="formRow">
+            <p>
+              Születési hely
+            </p>
+            <input required #szulhely="ngModel" type="text" name="CountryOfBirth" [(ngModel)]="form.szulhely"/>
+            <div class="validity" *ngIf="szulhely.touched && !szulhely.valid">
+              Kötelező mező!
+            </div>
           </div>
-        </div>
+          <div class="formRow flex">
+            <mat-form-field appearance="fill">
+              <mat-label>Születési év</mat-label>
+              <mat-select [(value)]="form.szulEv" (selectionChange)="reFillDays()">
+                <mat-option *ngFor="let year of years" [value]="year">
+                  {{ year }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>hónap</mat-label>
+              <mat-select [(value)]="form.szulHonap" (selectionChange)="reFillDays()">
+                <mat-option *ngFor="let month of months; let index = index" [value]="index + 1">
+                  {{ month }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>nap</mat-label>
+              <mat-select [(value)]="form.szulNap">
+                <mat-option *ngFor="let day of days; let index = index" [value]="index + 1">
+                  {{ day }}.
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="formRow">
+            <p>
+              Adóazonosító jel
+            </p>
+            <input required #adoszam="ngModel" type="text" name="adoszam" [(ngModel)]="form.adoszam" class="halfWidth"/>
+            <div class="validity" *ngIf="adoszam.touched && !adoszam.valid">
+              Kötelező mező!
+            </div>
+          </div>
+        </ng-container>
         <div class="formRow flex">
           <div class="formCol">
             <p>
@@ -154,7 +150,7 @@
             </div>
           </div>
         </div>
-        <div class="formRow">
+        <div class="formRow" *ngIf="!data.reducedForm">
           <p>
             Legmagasabb iskolai végzettség
           </p>

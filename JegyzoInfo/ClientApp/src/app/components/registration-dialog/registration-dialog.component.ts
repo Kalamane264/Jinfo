@@ -32,7 +32,9 @@ export class RegistrationDialogComponent implements OnInit {
 
     szulEv: 1970,
     szulHonap: 0,
-    szulNap: 0
+    szulNap: 0,
+
+    reducedForm: 0
   };
 
   public years: number[] = [];
@@ -70,6 +72,7 @@ export class RegistrationDialogComponent implements OnInit {
     this.reFillDays();
     this.form.felhasznaloID = this.userService.user.felhasznaloID!;
     this.form.kepzesId = this.data.kepzesId;
+    this.form.reducedForm = this.data.reducedForm? 1 : 0;
 
     if(this.data.itsme) {
       this.setFormValuesByDiak(this.data.diakMe);
@@ -159,7 +162,7 @@ export class RegistrationDialogComponent implements OnInit {
     error => {
       console.log('Oops', error);
       alert(error.error);
-      this.close();
+      // this.close();
     });
   }
 

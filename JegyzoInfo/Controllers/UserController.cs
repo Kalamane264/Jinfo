@@ -91,8 +91,29 @@ namespace JegyzoInfo.Controllers
         [Route("api/User/KepzesJelentkezes")]
         public async Task<bool> KepzesJelentkezes(JelentkezesVM jelentkezes)
         {
+            if (jelentkezes.reducedForm == 1)
+            { 
+                PWI1.PWIServiceSoapClient pwi1 = new PWI1.PWIServiceSoapClient(PWI1.PWIServiceSoapClient.EndpointConfiguration.PWIServiceSoap12);
+                PWI1.KepzesRegisztracioResponse response = await pwi1.KepzesRegisztracioAsync(jelentkezes.kepzesId, 
+                    jelentkezes.elonev + " " + jelentkezes.vezeteknev + " " + jelentkezes.keresztnev + " ", jelentkezes.email, jelentkezes.telefoN1);
+                if (response.Body.KepzesRegisztracioResult.ErrorCode == PWI1.PWIErrorCode.NoError)
+                {
+                    return true;
+                }
+                else
+                {
+                    if (response.Body.KepzesRegisztracioResult.ErrorCode == PWI1.PWIErrorCode.Error)
+                    { 
+                        throw new Exception("Ezzel az e-mail címmel már történt regisztráció!");
+                    }
+                    else 
+                    {
+                        throw new Exception(response.Body.KepzesRegisztracioResult.ErrorText);
+                    }
+                }
+            }
+            
             Pwi2.WSSoapClient pwi2 = new Pwi2.WSSoapClient(Pwi2.WSSoapClient.EndpointConfiguration.WSSoap12);
-
             var modositas = jelentkezes.iD_DIAK > 0 ? true : false;
 
             Pwi2.KepzesJelentkezesResponse resp = await pwi2.KepzesJelentkezesAsync(
